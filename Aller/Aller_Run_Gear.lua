@@ -55,8 +55,8 @@ function init_gear_sets()
 		 back=gear.enmity_jse_back,waist="Sinew Belt",legs="Eri. Leg Guards +1",feet="Ahosi Leggings"}
 		 
     sets.Enmity.SIRD = {}
-
-    sets.Enmity.DT = {}
+	
+    sets.Enmity.DT = {} --changing test
 
 	--------------------------------------
 	-- Precast sets
