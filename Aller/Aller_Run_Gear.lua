@@ -56,7 +56,7 @@ function init_gear_sets()
 		 
     sets.Enmity.SIRD = {}
 	
-    sets.Enmity.DT = {} --changing test
+    sets.Enmity.DT = {} 
 
 	--------------------------------------
 	-- Precast sets

@@ -61,9 +61,8 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Aeneas = {main="Aeneas",sub="Ternion Dagger +1"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife"}
-	--sets.weapons.LowBuff = {}
 	sets.weapons.MagicWeapons = {main="Aeneas",sub="Malevolence"}
-	--sets.weapons.Throwing = {}
+	
 	
     -- Actions we want to use to tag TH.
     sets.precast.Step = {}
