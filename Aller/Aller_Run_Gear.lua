@@ -137,7 +137,7 @@ function init_gear_sets()
 	sets.precast.JA['Violent Flourish'] = {}
 		
 	-- Fast cast sets for spells
-    sets.precast.FC = {ammo="Impatiens",
+    sets.precast.FC = {ammo="Sapience Orb",
             head="Rune. Bandeau +3",neck="Orunmila's Torque",ear1="Etiolation Earring",ear2={name="Odnowa Earring +1", priority=15},
             body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2={name="Gelatinous Ring +1", priority=15},
             back=gear.fc_jse_back,waist="Kasiri Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1"
@@ -223,7 +223,8 @@ function init_gear_sets()
     sets.midcast.Cure = {ammo="Staunch Tathlum +1",
         head="Fu. Bandeau +3",ear1="Mendi. Earring",ear2="Tuisto Earring", --neck="Sacro Gorget"
         body="Vrikodara Jupon",ring1="Defending Ring",ring2="Moonlight Ring",
-        waist=gear.ElementalObi,legs="Eri. Leg Guards +1"}
+        waist=gear.ElementalObi,legs="Eri. Leg Guards +1"
+		}
 		
 	sets.midcast['Wild Carrot'] = set_combine(sets.midcast.Cure, {})
 		
@@ -244,7 +245,8 @@ function init_gear_sets()
     sets.idle = {ammo="Staunch Tathlum +1",
 		head="Turms Cap +1",neck="Futhark Torque +1",ear1={name="Tuisto Earring", priority = 15},ear2="Etiolation Earring",
 		body="Runeist's Coat +3",hands="Turms Mittens +1",ring1="Defending Ring",ring2={name="Gelatinous Ring +1", priority=15},
-		back=gear.enmity_jse_back,waist="Flume Belt",legs="Eri. Leg Guards +1",feet="Erilaz Greaves +1"}
+		back=gear.enmity_jse_back,waist="Flume Belt",legs="Eri. Leg Guards +1",feet="Erilaz Greaves +1"
+		}
 		
     sets.idle.Sphere = set_combine(sets.idle,{}) --body="Mekosu. Harness"
 			
