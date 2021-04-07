@@ -49,7 +49,7 @@ end
 
 function init_gear_sets()
 
-    sets.Enmity = {ammo="Aqreqaq Bomblet",
+    sets.Enmity = {ammo="Sapience Orb",
 	    head="Halitus Helm",neck="Futhark Torque +1",ear1="Cryptic Earring",ear2="Trux Earring",
 	    body="Emet Harness +1",hands="Kurys Gloves",ring1="Vengeful Ring",ring2="Petrov Ring",
 		back=gear.enmity_jse_back,waist="Kasiri Belt",legs="Eri. Leg Guards +1",feet="Ahosi Leggings"
@@ -252,7 +252,7 @@ function init_gear_sets()
 			
 	sets.idle.Tank = {ammo="Staunch Tathlum +1",
 		head="Turms Cap +1",neck="Futhark Torque +1",ear1={name="Tuisto Earring", priority=15},ear2={name="Odnowa Earring +1", priority=15},
-		body="Runeist's Coat +3",hands="Turms Mittens +1",ring1="Defending Ring",ring2="{name="Gelatinous Ring +1", priority=15},
+		body="Runeist's Coat +3",hands="Turms Mittens +1",ring1="Defending Ring",ring2={name="Gelatinous Ring +1", priority=15},
 		back=gear.enmity_jse_back,waist="Engraved Belt",legs="Eri. Leg Guards +1",feet="Erilaz Greaves +1"
 		}
 	
@@ -324,7 +324,7 @@ function init_gear_sets()
 	}
     sets.engaged.Acc.DTLite = {}
 	sets.engaged.DT = {ammo="Staunch Tathlum +1",
-		head="Turms Cap +1",neck="Futhark Torque +1".ear1="Eabani Earring",ear2="Odnowa Earring +1",
+		head="Turms Cap +1",neck="Futhark Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
 		body="Futhark Coat +3",hands="Turms Mittens +1",ring1="Defending Ring",ring2="Moonlight Ring",
 		back=gear.enmity_jse_back,waist="Flume Belt",legs="Eri. Leg Guards +1",feet="Turms Leggings +1"
 		
