@@ -101,10 +101,10 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.precast.JA['Bounty Shot'] = set_combine(sets.TreasureHunter, {hands="Amini Glove. +1"})
-	sets.precast.JA['Camouflage'] = {} --body="Orion Jerkin +1"
-	sets.precast.JA['Scavenge'] = {} --feet="Orion Socks +1"
-	sets.precast.JA['Shadowbind'] = {} --hands="Orion Bracers +1"
-	sets.precast.JA['Sharpshot'] = {} --legs="Orion Braccae +3"
+	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
+	sets.precast.JA['Scavenge'] = {feet="Orion Socks +2"}
+	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +3"}
+	sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +2"}
 	sets.precast.JA['Double Shot'] = {back=gear.rngtp_jse_back}
 
 
@@ -213,7 +213,7 @@ function init_gear_sets()
 		back=crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1",}
 		
 	--These sets will overlay based on accuracy level, regardless of other options.
-	sets.buff.Camouflage = {} --body="Orion Jerkin +1"
+	sets.buff.Camouflage = {body="Orion Jerkin +3"}
 	sets.buff.Camouflage.Acc = {}
 	sets.buff['Double Shot'] = {
 		head="Arcadian Beret +3",
@@ -223,7 +223,7 @@ function init_gear_sets()
 	sets.buff['Double Shot'].Acc = {}
 	sets.buff.Barrage = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Enervating Earring",ear2="Telos Earring",
-		body="Orion Jerkin +2",hands="Orion Bracers +2",ring1="Regal Ring",
+		body="Orion Jerkin +3",hands="Orion Bracers +3",ring1="Regal Ring",
 		back=gear.crit_jse_back,waist="K. Kachina Belt +1",feet="Orion Socks +2"
 	}
 	
