@@ -79,7 +79,7 @@ function init_gear_sets()
 	sets.precast.FC = {main="Vampirism",sub="Vampirism",ammo="Staunch Tathlum +1",
 		head="Carmine Mask +1",neck="Orunmila's torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
-		waist="Witful Belt",legs="Malignance Tights",feet="Malignance Boots"
+		waist="Witful Belt",legs="Malignance Tights",feet="Malignance Boots" --ambu cape?
 		}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {}) --body="Passion Jacket"
@@ -272,7 +272,8 @@ function init_gear_sets()
 	sets.idle.PDT = {main="Bolelabunga",sub=gear.colada_refresh,ammo="Staunch Tathlum +1",
 				head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring", ear2="Genmei Earring",
 		        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Stikini Ring +1",
-				back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet}
+				back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
+		}
 
 	sets.idle.DTHippo = set_combine(sets.idle.PDT, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
 
