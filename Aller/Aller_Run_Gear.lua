@@ -75,7 +75,7 @@ function init_gear_sets()
     sets.precast.JA['Pflug'] = set_combine(sets.Enmity,{feet="Runeist Bottes +1"})
     sets.precast.JA['Battuta'] = set_combine(sets.Enmity,{head="Futhark Bandeau +3"})
     sets.precast.JA['Liement'] = set_combine(sets.Enmity,{body="Futhark Coat +3"})
-    sets.precast.JA['Gambit'] = set_combine(sets.Enmity,{hands="Runeist Mitons +2"})
+    sets.precast.JA['Gambit'] = set_combine(sets.Enmity,{hands="Runeist's Mitons +2"})
     sets.precast.JA['Rayke'] = set_combine(sets.Enmity,{feet="Futhark Boots +1"})
     sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity,{body="Futhark Coat +3"})
     sets.precast.JA['Swordplay'] = set_combine(sets.Enmity,{hands="Futhark Mitons +1"})
@@ -94,7 +94,7 @@ function init_gear_sets()
     sets.precast.JA['Pflug'].DT = set_combine(sets.Enmity.DT,{feet="Runeist Bottes +1"})
     sets.precast.JA['Battuta'].DT = set_combine(sets.Enmity.DT,{head="Futhark Bandeau +3"})
     sets.precast.JA['Liement'].DT = set_combine(sets.Enmity.DT,{body="Futhark Coat +3"})
-    sets.precast.JA['Gambit'].DT = set_combine(sets.Enmity.DT,{hands="Runeist Mitons +2"})
+    sets.precast.JA['Gambit'].DT = set_combine(sets.Enmity.DT,{hands="Runeist's Mitons +2"})
     sets.precast.JA['Rayke'].DT = set_combine(sets.Enmity.DT,{feet="Futhark Boots +1"})
     sets.precast.JA['Elemental Sforzo'].DT = set_combine(sets.Enmity.DT,{body="Futhark Coat +3"})
     sets.precast.JA['Swordplay'].DT = set_combine(sets.Enmity.DT,{hands="Futhark Mitons +1"})
@@ -143,7 +143,7 @@ function init_gear_sets()
             back=gear.fc_jse_back,waist="Kasiri Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1"
 			}
 			
-	sets.precast.FC.DT = {}
+	sets.precast.FC.DT = set_combine(sets.precast.FC, {ammo="Staunch Tathlum +1",body="Futhark Coat +3",ring1="Defending Ring",waist="Audumbla Sash"})
 			
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {legs="Futhark Trousers +3"})
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck='Magoraga beads'})
@@ -185,12 +185,12 @@ function init_gear_sets()
 
     sets.midcast['Enhancing Magic'] = {
 		head="Carmine Mask +1",neck="Incanter's Torque",ear1="Mimir Earring",ear2="Andoaa Earring",
-		body="Manasa Chasuble",hands="Runeist Mitons +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		body="Manasa Chasuble",hands="Runeist's Mitons +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Merciful Cape",waist="Olympus Sash",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"
 		}
     sets.midcast['Enhancing Magic'].DT = {ammo="Staunch Tathlum +1",
 		head="Carmine Mask +1",neck="Incanter's Torque",ear1="Mimir Earring",ear2={name="Odnowa Earring +1", priority=15},
-		body="Manasa Chasuble",hands="Runeist Mitons +2",ring1="Stikini Ring +1",ring2={name="Gelatinous Ring +1", priority=15},
+		body="Manasa Chasuble",hands="Runeist's Mitons +2",ring1="Stikini Ring +1",ring2={name="Gelatinous Ring +1", priority=15},
 		back={name="Moonlight Cape", prioriy=15},waist="Olympus Sash",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"
 		}
 	sets.midcast['Phalanx'] = {}
