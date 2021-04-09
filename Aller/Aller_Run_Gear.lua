@@ -167,7 +167,11 @@ function init_gear_sets()
 		head=gear.herculean_WSD_head,neck="Caro Necklace",left_ear="Moonshade Earring",right_ear="Ishvara Earring",
 		body="Adhemar Jacket +1",hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Ilabrat Ring",
 		back=gear.dimi_jse_back,waist="Grunfeld Rope",legs="Lustr. Subligar +1",feet="Lustra. Leggings +1"}
-    sets.precast.WS['Dimidiation'].DT = set_combine(sets.precast.WS['Dimidiation'],{})
+    sets.precast.WS['Dimidiation'].DT = set_combine(sets.precast.WS['Dimidiation'],{
+			head="Fu. Bandaeu +3",ear1="Eabani Earring",ear2={name="Odnowa Earring +1", priority=15},
+			body="Futhark Coat +3",ring2="Moonlight Ring",
+			legs="Meg. Chausses +2",feet="Meg. Jam. +2"
+			})
 	
 	sets.precast.WS['Ground Strike'] = set_combine(sets.precast.WS,{})
     sets.precast.WS['Ground Strike'].Acc = set_combine(sets.precast.WS.Acc,{})
