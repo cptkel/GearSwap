@@ -4,7 +4,7 @@ function user_job_setup()
 	state.HybridMode:options('Normal','DT')
     state.WeaponskillMode:options('Match','Normal','Acc')
     state.CastingMode:options('Normal','Resistant','Proc')
-    state.IdleMode:options('Normal','Sphere','PDT','DTHippo')
+    state.IdleMode:options('Normal','Evasion','PDT','DTHippo')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
@@ -17,6 +17,7 @@ function user_job_setup()
 	gear.tp_jse_back = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.nuking_back = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.expsb_jse_back = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.evasion_jse_back = {name="Rosmerta's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Mag.Atk.Bns."+10','Evasion+15',}}
 	
 	--gear.obi_cure_waist = ""
 	--gear.obi_nuke_waist = ""
@@ -267,14 +268,18 @@ function init_gear_sets()
 		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
 		}
 
-	sets.idle.Sphere = set_combine(sets.idle, {})
+	sets.idle.Evasion = {ammo="Amar Cluster",
+		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
+		}
 
 	sets.idle.PDT = {main="Bolelabunga",sub=gear.colada_refresh,ammo="Staunch Tathlum +1",
 				head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring", ear2="Genmei Earring",
 		        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Stikini Ring +1",
 				back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
 		}
-
+	
 	sets.idle.DTHippo = set_combine(sets.idle.PDT, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
 
 	-- Defense sets
