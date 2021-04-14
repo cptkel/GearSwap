@@ -3,7 +3,7 @@ function user_job_setup()
     state.OffenseMode:options('Normal','Acc')
 	state.HybridMode:options('Normal','DT')
     state.WeaponskillMode:options('Match','Normal','Acc')
-    state.CastingMode:options('Normal','Resistant','Proc')
+    state.CastingMode:options('Normal','Evasion')
     state.IdleMode:options('Normal','Evasion','PDT','DTHippo')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
@@ -47,7 +47,7 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 
-	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +2"} --feet="Hashi. Basmak +1"
+	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3"} --feet="Hashi. Basmak +1"
 	sets.buff['Chain Affinity'] = {feet="Assim. Charuqs +2"}
 	sets.buff.Convergence = {}
 	sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
@@ -77,15 +77,21 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	sets.precast.FC = {main="Vampirism",sub="Vampirism",ammo="Staunch Tathlum +1",
-		head="Carmine Mask +1",neck="Orunmila's torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
-		waist="Witful Belt",legs="Malignance Tights",feet="Malignance Boots" --ambu cape?
+	sets.precast.FC = {ammo="Sapience Orb",
+		head="Carmine Mask +1",neck="Orunmila's torque",ear1="Enchntr. Earring +1",ear2="Odnowa Earring",
+		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2="Gelatinous Ring +1",
+		back="Fi Follet Cape +1",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1" --ambu cape?
 		}
-
+		
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {}) --body="Passion Jacket"
 
 	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan +1"})
+	
+	--[[sets.precast.FC['Blue Magic'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
+		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
+		})]]--	
 
 
 	-- Weaponskill sets
@@ -126,7 +132,7 @@ function init_gear_sets()
 		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"
 		}
 					 
-	sets.precast.WS['Black Nova'] = set_combine(sets.precast.WS['Savage Blade'], {ear2="Regal Earring",ring1="Metamor. Ring +1",waist="Luminary Sash"})
+	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {ear2="Regal Earring",ring1="Metamor. Ring +1",waist="Luminary Sash"})
 
 	sets.precast.WS['Flash Nova'] = {}
 					 
@@ -135,11 +141,7 @@ function init_gear_sets()
 	sets.AccMaxTP = {ear1="Regal Earring",ear2="Telos Earring"}
 
 	-- Midcast Sets
-	sets.midcast.FastRecast = {main="Vampirism",sub="Vampirism",ammo="Impatiens",
-		head="Carmine Mask +1",neck="Orunmila's torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
-		back="Perimede Cape",waist="Witful Belt",legs="Malignance Tights",feet="Malignance Boots"
-		}
+	sets.midcast.FastRecast = {}
 
 	sets.midcast['Blue Magic'] = {}
 
@@ -181,7 +183,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
 		head="Assim. Keffiyeh +2",neck="Mirage Stole +1",right_ear="Regal Earring", --left_ear="Digni. Earring",
 		body="Jhakri Robe +2",hands="Malignance Gloves",left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
-		back=gear.nuking_back,waist="Luminary Sash",legs="Assim. Shalwar +2",feet="Malignance Boots"
+		back=gear.nuking_back,waist="Luminary Sash",legs="Assim. Shalwar +3",feet="Malignance Boots"
 		}
    
 	sets.midcast['Enfeebling Magic'] = {}
@@ -231,6 +233,12 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic']['Dream Flower'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {head="Wh. Rarab Cap +1",legs={ name="Herculean Trousers", augments={'Accuracy+17','CHR+2','"Treasure Hunter"+2',}},waist="Chaac Belt"})
 	
+	sets.midcast['Blue Magic']['Dream Flower'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
+		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
+		})
+	
 	sets.midcast['Blue Magic']['White Wind'] = {}
 					
 	sets.midcast['Blue Magic']['Healing Breeze'] = sets.midcast['Blue Magic']['White Wind']
@@ -268,10 +276,10 @@ function init_gear_sets()
 		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
 		}
 
-	sets.idle.Evasion = {ammo="Amar Cluster",
+	sets.idle.Evasion = {ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
+		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"
 		}
 
 	sets.idle.PDT = {main="Bolelabunga",sub=gear.colada_refresh,ammo="Staunch Tathlum +1",
@@ -280,7 +288,7 @@ function init_gear_sets()
 				back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
 		}
 	
-	sets.idle.DTHippo = set_combine(sets.idle.PDT, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
+	sets.idle.DTHippo = set_combine(sets.idle.Evasion, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
 
 	-- Defense sets
 	sets.defense.PDT = {}

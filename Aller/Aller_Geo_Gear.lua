@@ -11,7 +11,7 @@ function user_setup()
 	
 	gear.nuke_jse_back = {name="Nantosuelta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 	gear.idle_jse_back = {name="Nantosuelta's Cape",augments={'HP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10'}}
-	gear.fc_jse_back = {name="Nantosuelta's Cape", augments={'"Fast Cast"+10',}}
+	
 	
 	--gear.obi_low_nuke_waist = "Sacro Cord"
 	--gear.obi_high_nuke_waist = "Sacro Cord"
@@ -64,7 +64,7 @@ function init_gear_sets()
 	sets.precast.FC = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap",range="Dunna",
 		head="Amalric Coif +1",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Zendik Robe",ring1="Kishar Ring",ring2="Prolix Ring", --volte gloves 6
-		back=gear.fc_jse_back,waist="Witful Belt",legs="Geomancy Pants +3",feet="Regal Pumps +1"}
+		back="Fi Follet Cape +1",waist="Witful Belt",legs="Geomancy Pants +3",feet="Regal Pumps +1"}
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC,{})
 	

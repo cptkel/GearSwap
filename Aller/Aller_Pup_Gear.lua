@@ -74,12 +74,11 @@ function user_setup()
 	deactivatehpp = 85
 	
 	--check about dropping idle cape + changing tank/mab cape
-	gear.idle_jse_back={name="Visucius's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5',}}
-	gear.petDT_jse_back={name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
-    gear.strDA_jse_back={name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+	gear.idle_jse_back={name="Visucius's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
+	gear.strDA_jse_back={name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.strCRIT_jse_back={name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
-	gear.TPhybrid_jse_back={name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
-	gear.MAB_jse_back={name="Visucius's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Mag. Acc+20 /Mag. Dmg.+20','Pet: Mag. Acc.+10','Pet: Haste+10',}}
+	gear.pethybrid_jse_back={name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}}
+	
 	
 	gear.taeon_head={name="Taeon Chapeau", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
 	gear.taeon_body={name="Taeon Tabard", augments={'Pet: Attack+19 Pet: Rng.Atk.+19','Pet: "Dbl. Atk."+3','Pet: Damage taken -4%',}}
@@ -141,7 +140,7 @@ function init_gear_sets()
     sets.precast.FC = {
 	head=gear.herculean_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 	body="Zendik Robe",ring1="Lebeche Ring",ring2="Prolix Ring", --rahab ring, herc hands aug:FC
-	legs=gear.herculean_refresh_legs,feet="Regal Pumps +1"
+	back="Fi Follet Cape +1",legs=gear.herculean_refresh_legs,feet="Regal Pumps +1"
 	}
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -219,12 +218,12 @@ function init_gear_sets()
 	-- The following sets are predictive and are equipped before we even know the ability will happen, as a workaround due to
 	-- the fact that start of ability packets are too late in the case of Pup abilities, WS, and certain spells.
 	sets.midcast.Pet.PetEnmityGear = {
-		head="Heyoka Cap",ear1="Rimeice Earring",ear2="Domes. Earring",
+		head="Heyoka Cap +1",ear1="Rimeice Earring",ear2="Domes. Earring",
         body="Heyoka Harness",hands="Heyoka Mittens",
         legs="Heyoka Subligar +1",feet="Heyoka Leggings"
 		}
 	sets.midcast.Pet.PetEnmityGear.LightTank = {
-		head="Heyoka Cap",ear1="Rimeice Earring",ear2="Domes. Earring",
+		head="Heyoka Cap +1",ear1="Rimeice Earring",ear2="Domes. Earring",
         body="Heyoka Harness",hands="Heyoka Mittens",
         legs="Heyoka Subligar +1",feet="Heyoka Leggings"
 		}
@@ -240,19 +239,19 @@ function init_gear_sets()
 		main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Kyrene's Earring",ear2="Domes. Earring",
 		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
-		back=gear.TPhybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"
+		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"
 	}
 	sets.midcast.Pet.PetWSGear.Tank = {
 		main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Kyrene's Earring",ear2="Domes. Earring",
 		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
-		back=gear.TPhybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"
+		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"
 		}
 	sets.midcast.Pet.PetWSGear.LightTank = {
 		main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Kyrene's Earring",ear2="Domes. Earring",
 		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
-		back=gear.TPhybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"
+		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"
 		}
     sets.midcast.Pet.PetWSGear.Magic = set_combine(sets.midcast.Pet.PetWSGear, {})
 	sets.midcast.Pet.PetWSGear.Heal = set_combine(sets.midcast.Pet.PetWSGear, {})
@@ -285,14 +284,14 @@ function init_gear_sets()
 		main="Xiucoatl",range="Animator P +1", --Ohtas (BiS but will drop 150HP when swapping)
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
 		body="Pitre Tobe +3",hands=gear.taeon_hands,ring1="Thurandaut Ring",ring2="C. Palug Ring",
-		back=gear.TPhybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet="Mpaca's Boots" --Incarnation sash
+		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet="Mpaca's Boots" --Incarnation sash
 		}
 		
 	sets.idle.Pet.Engaged.Ranged = {
 		main="Xiucoatl",range="Animator P II +1",
 		head="Pitre Taj +3",neck="Shulmanu Collar",ear1="Burana Earring",ear2="Enmerkar Earring",
 		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="Varar Ring +1",
-		back=gear.TPhybrid_jse_back,waist="Klouskap Sash +1",legs="Kara. Pantaloni +1",feet="Mpaca's Boots"
+		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs="Kara. Pantaloni +1",feet="Mpaca's Boots"
 		}
 		
 	sets.idle.Pet.Engaged.HybridRanged = set_combine(sets.idle.Pet.Engaged, {})
@@ -301,14 +300,14 @@ function init_gear_sets()
 		main="Gnafron's Adargas",ranged="Animator P +1",
 		head=gear.rao_head,neck="Shepherd's Chain",ear1="Rimeice Earring",ear2="Enmerkar Earring",
 		body="Rao Togi +1",hands="Rao Kote +1",ring1="Thurandaut Ring",ring2="Overbearing Ring",
-		back=gear.petDT_jse_back,waist="Isa Belt",legs="Rao Haidate +1",feet="Rao Sune-Ate +1"
+		back=gear.idle_jse_back,waist="Isa Belt",legs="Rao Haidate +1",feet="Rao Sune-Ate +1"
 		}
 		
 	sets.idle.Pet.Engaged.LightTank = {
 		main="Ohtas",ranged="Animator P +1",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
 		body=gear.taeon_body,hands=gear.taeon_hands,ring1="Thurandaut Ring",ring2="C. Palug Ring",
-		back=gear.petDT_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet=gear.taeon_feet
+		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet=gear.taeon_feet
 		}
 	
 	sets.idle.Pet.Engaged.Magic = set_combine(sets.idle.Pet.Engaged, {})
@@ -333,7 +332,7 @@ function init_gear_sets()
 		main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
 		body=gear.taeon_body,hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
-		back=gear.TPhybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet="Mpaca's Boots"
+		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet="Mpaca's Boots"
 		}
 	
 		
@@ -386,16 +385,16 @@ function init_gear_sets()
 	sets.engaged.Acc.DT = {}
     sets.engaged.Pet = {
         main="Xiucoatl",
-		head="Heyoka Cap",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Dedition Earring",
+		head="Heyoka Cap +1",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Dedition Earring",
 		body="Mpaca's Doublet",hands="Mpaca's Gloves",ring1="Gere Ring",ring2="Niqmaddu Ring",
-		back=gear.TPhybrid_jse_back,waist="Moonbow Belt +1",legs="Heyoka Subligar +1",feet="Mpaca's Boots"
+		back=gear.pethybrid_jse_back,waist="Moonbow Belt +1",legs="Heyoka Subligar +1",feet="Mpaca's Boots"
 		}
 		
     sets.engaged.Pet.AM = {
 		main="Xiucoatl",
-		head="Heyoka Cap",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Dedition Earring",
+		head="Heyoka Cap +1",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Dedition Earring",
 		body="Mpaca's Doublet",hands="Mpaca's Gloves",ring1="Gere Ring",ring2="Niqmaddu Ring",
-		back=gear.TPhybrid_jse_back,waist="Moonbow Belt +1",legs="Heyoka Subligar +1",feet="Mpaca's Boots"
+		back=gear.pethybrid_jse_back,waist="Moonbow Belt +1",legs="Heyoka Subligar +1",feet="Mpaca's Boots"
 		}
 		
 	sets.engaged.PetDT = {}
