@@ -12,8 +12,8 @@ function user_setup()
 		Melee = {
 			{Name='Fire Maneuver', 	  Amount=1},
 			{Name='Thunder Maneuver', Amount=0},
-			{Name='Wind Maneuver', 	  Amount=0},
-			{Name='Dark Maneuver',	  Amount=1},
+			{Name='Wind Maneuver', 	  Amount=1},
+			{Name='Dark Maneuver',	  Amount=0},
 			{Name='Light Maneuver',	  Amount=1},
 			{Name='Water Maneuver',	  Amount=0},
 		},

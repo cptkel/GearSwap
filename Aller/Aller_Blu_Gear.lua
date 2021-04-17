@@ -8,7 +8,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('MagicWeapons','Tizbron','Sanguine','None')
+	state.Weapons:options('MagicWeapons','Tizbron','Sanguine','TizMACC','None')
 	state.AutoBuffMode:options('Off','Auto','Default','Cleave')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','MP','SuppaBrutal','DWEarrings','DWMax'}
@@ -47,7 +47,7 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 
-	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3"} --feet="Hashi. Basmak +1"
+	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3",feet="Hashi. Basmak +1"}
 	sets.buff['Chain Affinity'] = {feet="Assim. Charuqs +2"}
 	sets.buff.Convergence = {}
 	sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
@@ -283,9 +283,9 @@ function init_gear_sets()
 		}
 
 	sets.idle.PDT = {main="Bolelabunga",sub=gear.colada_refresh,ammo="Staunch Tathlum +1",
-				head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring", ear2="Genmei Earring",
-		        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Stikini Ring +1",
-				back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
+		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring", ear2="Genmei Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Stikini Ring +1",
+		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
 		}
 	
 	sets.idle.DTHippo = set_combine(sets.idle.Evasion, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
@@ -314,40 +314,42 @@ function init_gear_sets()
 	sets.weapons.MagicWeapons = {main="Maxentius",sub="Kaja Rod"}
 	sets.weapons.Tizbron = {main="Tizona",sub="Thibron"}
 	sets.weapons.Sanguine = {main="Naegling",sub="Maxentius"}
-	
+	sets.weapons.TizMACC = {main="Tizona",sub="Maxentius"}
 	
 
 	-- Engaged sets
 
 	sets.engaged = {ammo="Ginsen",
-			    head="Adhemar Bonnet +1",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Suppanomimi",
-			    body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
-			    back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet
-				}
+		head="Adhemar Bonnet +1",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Suppanomimi",
+		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
+		back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet
+		}
 
 	sets.engaged.AM = {ammo="Ginsen",
-			    head="Malignance Chapeau",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Eabani Earring",
-			    body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-			    back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
-				}
+		head="Malignance Chapeau",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
+		}
 
 	sets.engaged.Acc = set_combine(sets.engaged, {})
 
 	sets.engaged.Acc.AM = set_combine(sets.engaged.AM, {})
 
 	sets.engaged.DT = {ammo="Ginsen",
-			    head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
-			    body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
-			    back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
-				}
+		head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
+		}
 
 	sets.engaged.DT.AM = {ammo="Ginsen",
-			    head="Malignance Chapeau",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Eabani Earring",
-			    body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-			    back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
-				}
+		head="Malignance Chapeau",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
+		}
 
-	sets.engaged.Acc.DT = {}
+	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {ammo="Amar Cluster",
+		head="Malignance Chapeau",neck="Mirage Stole +1",
+		ring2="Chirich Ring +1"})
 				
 	sets.engaged.Acc.DT.AM = {}
 
