@@ -105,7 +105,7 @@ function init_gear_sets()
 		hands="Adhemar Wrist. +1",
 		legs="Tatena. Haidate +1", 
 		feet=gear.herculean_tp_feet,
-		neck={ name="Mnk. Nodowa +1", augments={'Path: A',}},
+		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		right_ear="Sherida Earring",
@@ -114,7 +114,7 @@ function init_gear_sets()
 		back=gear.STRda_back,
 	})
 	sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
-		head="Mpaca's Cap",neck="Monk's Nodowa +1",ear1="Moonshade Earring",
+		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",
 		body="Tatena. Harama. +1",hands=gear.herculean_strTA_hands, 
 		back=gear.HF_back,legs="Tatena. Haidate +1",feet=gear.herculean_tp_feet 
 	})
@@ -127,7 +127,7 @@ function init_gear_sets()
 		hands=gear.ryuo_hands,
 		legs="Ken. Hakama +1",
 		feet=gear.herculean_crit_feet,
-		neck="Mnk. Nodowa +1",
+		neck="Mnk. Nodowa +2",
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
 		right_ear="Odr Earring",
@@ -142,7 +142,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		legs="Tatena. Haidate +1", 
 		feet=gear.herculean_tp_feet,
-		neck="Mnk. Nodowa +1",
+		neck="Mnk. Nodowa +2",
 		waist="Moonbow Belt +1",
 		left_ear="Mache Earring +1",
 		right_ear="Sherida Earring",
@@ -158,7 +158,7 @@ function init_gear_sets()
 		hands=gear.herculean_ta_hands,
 		legs="Tatena. Haidate +1",
 		feet="Anch. Gaiters +3",
-		neck={ name="Mnk. Nodowa +1", augments={'Path: A',}},
+		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -261,7 +261,7 @@ function init_gear_sets()
 		hands="Adhemar wrist. +1",
 		legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
 		feet="Anchorite's Gaiters +3",
-		neck={ name="Mnk. Nodowa +1", augments={'Path: A',}},
+		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
 		ear2="Sherida earring",
 		ear1="Telos Earring",
@@ -270,18 +270,18 @@ function init_gear_sets()
 		back=gear.tp_back,
 	}
 	sets.engaged.Acc = {ammo="Ginsen",
-		head="Ken. Jinpachi +1",neck="Monk's Nodowa +1",ear1="Telos Earring",ear2="Sherida Earring",
+		head="Ken. Jinpachi +1",neck="Monk's Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
 		body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-ate +1"}
 	
 
 	-- Defensive melee hybrid sets
 	sets.engaged.PDT = {ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",neck="Monk's Nodowa +1",ear1="Brutal Earring",ear2="Sherida Earring",
+		head="Malignance Chapeau",neck="Monk's Nodowa +2",ear1="Brutal Earring",ear2="Sherida Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring2="Gere Ring",ring1="Niqmaddu Ring",
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 	sets.engaged.Acc.PDT = {ammo="Ginsen",
-		head="Ken. Jinpachi +1",neck="Monk's Nodowa +1",ear1="Brutal Earring",ear2="Sherida Earring",
+		head="Ken. Jinpachi +1",neck="Monk's Nodowa +2",ear1="Brutal Earring",ear2="Sherida Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring2="Defending Ring",ring1="Niqmaddu Ring",
 		back=gear.tp_back,waist,waist="Moonbow Belt +1",legs="Malignance Tights",feet="Ken. Sune-Ate +1"}
 	sets.engaged.PDTOnly = {}

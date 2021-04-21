@@ -5,7 +5,7 @@ function user_job_setup()
     state.WeaponskillMode:options('Match','Normal','Acc')
     state.CastingMode:options('Normal','Evasion')
     state.IdleMode:options('Normal','Evasion','PDT','DTHippo')
-	state.PhysicalDefenseMode:options('PDT')
+	state.PhysicalDefenseMode:options('PDT','Evasion')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('MagicWeapons','Tizbron','Sanguine','TizMACC','None')
@@ -78,7 +78,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	
 	sets.precast.FC = {ammo="Sapience Orb",
-		head="Carmine Mask +1",neck="Orunmila's torque",ear1="Enchntr. Earring +1",ear2="Odnowa Earring",
+		head="Carmine Mask +1",neck="Orunmila's torque",ear1="Enchntr. Earring +1",ear2="Odnowa Earring +1",
 		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2="Gelatinous Ring +1",
 		back="Fi Follet Cape +1",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1" --ambu cape?
 		}
@@ -181,8 +181,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
 	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
-		head="Assim. Keffiyeh +2",neck="Mirage Stole +1",right_ear="Regal Earring", --left_ear="Digni. Earring",
-		body="Jhakri Robe +2",hands="Malignance Gloves",left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
+		head="Assim. Keffiyeh +3",neck="Mirage Stole +1",right_ear="Regal Earring", --left_ear="Digni. Earring",
+		body="Jhakri Robe +2",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
 		back=gear.nuking_back,waist="Luminary Sash",legs="Assim. Shalwar +3",feet="Malignance Boots"
 		}
    
@@ -239,6 +239,12 @@ function init_gear_sets()
 		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
 		})
 	
+	--[[sets.midcast['Blue Magic']['Entomb'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
+		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
+		})]]--
+	
 	sets.midcast['Blue Magic']['White Wind'] = {}
 					
 	sets.midcast['Blue Magic']['Healing Breeze'] = sets.midcast['Blue Magic']['White Wind']
@@ -291,8 +297,18 @@ function init_gear_sets()
 	sets.idle.DTHippo = set_combine(sets.idle.Evasion, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
 
 	-- Defense sets
-	sets.defense.PDT = {}
+	sets.defense.PDT = {ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"
+		}
 
+	sets.defense.Evasion = {ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"
+		}
+		
 	sets.defense.MDT = {}
 
     sets.defense.MEVA = {}

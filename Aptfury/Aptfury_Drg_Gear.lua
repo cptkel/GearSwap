@@ -1,13 +1,13 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_job_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
-    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder')
+    state.OffenseMode:options('Normal','Acc')
+    state.WeaponskillMode:options('Match','Normal','Acc')
     state.HybridMode:options('Normal')
-    state.PhysicalDefenseMode:options('PDT', 'PDTReraise')
-    state.MagicalDefenseMode:options('MDT', 'MDTReraise')
+    state.PhysicalDefenseMode:options('PDT')
+    state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
+	state.IdleMode:options('Normal', 'PDT','Refresh')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Weapons:options('Trishula')
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
@@ -186,44 +186,28 @@ function init_gear_sets()
 	
 	-- Normal melee group
 
-	sets.engaged = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Brutal Earring",ear2="Sherida Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
-    sets.engaged.SomeAcc = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Brutal Earring",ear2="Sherida Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Regal Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
-	sets.engaged.Acc = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Digni. Earring",ear2="Telos Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Ramuh Ring +1",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
-    sets.engaged.FullAcc = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Mache Earring +1",ear2="Telos Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
-    sets.engaged.Fodder = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+	sets.engaged = {ammo="Coiste Bodhar",
+		head="Flam. Zucchetto +2",neck="Vim Torque +1",ear1="Telos Earring",ear2="Sherida Earring",
+		body="Hjarrandi Breastplate",hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back="Brigantia's Mantle",waist="Ioskeha Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+   
+	sets.engaged.Acc = {}
+    
 
     sets.engaged.AM = {}
-    sets.engaged.AM.SomeAcc = {}
+    
 	sets.engaged.AM.Acc = {}
-    sets.engaged.AM.FullAcc = {}
-    sets.engaged.AM.Fodder = {}
+   
 	
     sets.engaged.PDT = {}
-    sets.engaged.SomeAcc.PDT = {}
+    
 	sets.engaged.Acc.PDT = {}
-    sets.engaged.FullAcc.PDT = {}
-    sets.engaged.Fodder.PDT = {}
+    
 	
     sets.engaged.AM.PDT = {}
-    sets.engaged.AM.SomeAcc.PDT = {}
+    
 	sets.engaged.AM.Acc.PDT = {}
-    sets.engaged.AM.FullAcc.PDT = {}
-    sets.engaged.AM.Fodder.PDT = {}
+    
 		
 	--[[ Melee sets for in Adoulin, which has an extra 2% Haste from Ionis.
 	
