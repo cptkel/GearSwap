@@ -14,6 +14,9 @@ function user_job_setup()
 
     select_default_macro_book()
 	
+	gear.tp_back = {name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+	gear.stardiver_back = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
+	
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
@@ -82,7 +85,10 @@ function init_gear_sets()
 	
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Stardiver'] ={ammo="Coiste Bodhar",
+		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
+		body="Valorous Mail",hands="Sulev. Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back=gear.Stardiver_back,waist="Fotia Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
 	
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {})
 	
@@ -100,7 +106,7 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {ammo="Staunch Tathlum +1",
-		head="Loess Barbuta +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
 		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Dark Ring",
 		back="Shadow Mantle",waist="Flume Belt +1",legs="Carmine Cuisses +1",feet="Amm Greaves"}
 		
@@ -127,8 +133,8 @@ function init_gear_sets()
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	
     -- Extra defense sets.  Apply these on top of melee or defense sets.
-    sets.passive.MP = {ear2="Ethereal Earring",waist="Flume Belt +1"}
-    sets.passive.Twilight = {head="Twilight Helm", body="Twilight Mail"}
+    --sets.passive.MP = {}
+    --sets.passive.Twilight = {head="Twilight Helm", body="Twilight Mail"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
@@ -153,8 +159,8 @@ function init_gear_sets()
 
 	sets.engaged = {ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",neck="Vim Torque +1",ear1="Telos Earring",ear2="Sherida Earring",
-		body="Hjarrandi Breastplate",hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Ioskeha Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+		body="Hjarrandi Breastplate",hands="Acro Gauntlets",ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
    
 	sets.engaged.Acc = {}
     
