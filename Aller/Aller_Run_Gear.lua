@@ -50,18 +50,18 @@ end
 function init_gear_sets()
 
     sets.Enmity = {ammo="Sapience Orb",
-	    head="Halitus Helm",neck="Futhark Torque +1",ear1="Cryptic Earring",ear2="Trux Earring",
-	    body="Emet Harness +1",hands="Kurys Gloves",ring1="Vengeful Ring",ring2="Petrov Ring",
+		head="Halitus Helm",neck="Futhark Torque +1",ear1="Cryptic Earring",ear2="Trux Earring",
+		body="Emet Harness +1",hands="Kurys Gloves",ring1="Vengeful Ring",ring2="Petrov Ring",
 		back=gear.enmity_jse_back,waist="Kasiri Belt",legs="Eri. Leg Guards +1",feet="Ahosi Leggings"
-		}
-		 
+	}
+	 
     sets.Enmity.SIRD = {}
 	
     sets.Enmity.DT = {ammo="Staunch Tathlum +1",
 		head="Halitus Helm",neck="Futhark Torque +1",ear1={name="Cryptic Earring", priority=15},ear2={name="Odnowa Earring +1", priority=15},
 		body="Emet Harness +1",hands="Kurys Gloves",ring1={name="Eihwaz Ring", priority=15},ring2={name="Gelatinous Ring +1", priority=1},
 		back=gear.enmity_jse_back,waist={name="Kasiri Belt", priority=15},legs="Eri. Leg Guards +1",feet="Ahosi Leggings"
-		} 
+	} 
 
 	--------------------------------------
 	-- Precast sets

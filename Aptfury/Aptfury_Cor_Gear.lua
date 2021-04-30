@@ -25,7 +25,7 @@ function user_setup()
 	gear.shoot_jse_back = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10',}}
 	
 	set_lockstyle(1)
-	ammostock = 198
+	ammostock = 98
 	-- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode')
 	send_command('bind !` gs c elemental quickdraw')

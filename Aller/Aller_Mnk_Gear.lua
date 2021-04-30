@@ -79,20 +79,18 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	sets.precast.FC = {ammo="Impatiens",
-	head=gear.herculean_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
-	body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Prolix Ring",ring2="Kishar Ring",
-	legs="Rawhide Trousers"}
+	sets.precast.FC = {ammo="Sapience Orb",
+		head=gear.herculean_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
+		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Prolix Ring",
+		legs=gear.herculean_refresh_legs,feet=gear.herculean_fc_feet}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"}) --body="Passion Jacket"
 
        
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {ammo="Knobkierrie",
-		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Sherida Earring",
-		body="Ken. Samue +1",hands=gear.ryuo_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
-		back=gear.STRcrit_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet=gear.herculean_crit_feet}
+	
+	sets.precast.WS = {}
 	
 
 

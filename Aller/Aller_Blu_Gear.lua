@@ -3,7 +3,7 @@ function user_job_setup()
     state.OffenseMode:options('Normal','Acc')
 	state.HybridMode:options('Normal','DT')
     state.WeaponskillMode:options('Match','Normal','Acc')
-    state.CastingMode:options('Normal','Evasion')
+    state.CastingMode:options('Normal','Evasion','Ody')
     state.IdleMode:options('Normal','Evasion','PDT','DTHippo')
 	state.PhysicalDefenseMode:options('PDT','Evasion')
 	state.MagicalDefenseMode:options('MDT')
@@ -238,8 +238,12 @@ function init_gear_sets()
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
 		})
+	sets.midcast['Blue Magic']['Dream Flower'].Ody = sets.midcast['Blue Magic']['Dream Flower'].Evasion
 	
 	sets.midcast['Blue Magic']['Entomb'] = sets.midcast['Blue Magic'].Magical
+	
+	sets.midcast['Blue Magic']['Entomb'].Ody = sets.midcast['Blue Magic']['Dream Flower'].Evasion
+	
 	--[[sets.midcast['Blue Magic']['Entomb'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",

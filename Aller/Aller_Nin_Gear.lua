@@ -102,7 +102,7 @@ function init_gear_sets()
     sets.precast.FC = {ammo="Impatiens",
 		head=gear.herculean_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Prolix Ring",ring2="Kishar Ring",
-		back=gear.fc_jse_back,legs="Rawhide Trousers",feet=gear.herculean_fc_feet
+		back=gear.fc_jse_back,legs=gear.herculean_refresh_legs,feet=gear.herculean_fc_feet
 		}
 		
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",feet="Hattori Kyahan +1"}) --body="Mochi. Chainmail +3",
