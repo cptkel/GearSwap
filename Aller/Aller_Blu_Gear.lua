@@ -5,7 +5,7 @@ function user_job_setup()
     state.WeaponskillMode:options('Match','Normal','Acc')
     state.CastingMode:options('Normal','Evasion','Ody')
     state.IdleMode:options('Normal','Evasion','PDT','DTHippo')
-	state.PhysicalDefenseMode:options('PDT','Evasion')
+	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('MagicWeapons','Tizbron','Sanguine','TizMACC','None')
@@ -80,8 +80,8 @@ function init_gear_sets()
 	sets.precast.FC = {ammo="Sapience Orb",
 		head="Carmine Mask +1",neck="Orunmila's torque",ear1="Enchntr. Earring +1",ear2="Odnowa Earring +1",
 		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2="Gelatinous Ring +1",
-		back="Fi Follet Cape +1",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1" --ambu cape?
-		}
+		back="Fi Follet Cape +1",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1"} --ambu cape?
+		
 		
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {}) --body="Passion Jacket"
 
@@ -117,11 +117,10 @@ function init_gear_sets()
 		
 	sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
 	
-	sets.precast.WS['Expiacion'] = {ammo="Knobkierrie",
+	sets.precast.WS['Expiacion'] = {ammo="Aurgelmir Orb +1",
 		head=gear.herculean_WSD_head,neck="Mirage Stole +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
 		body="Assim. Jubbah +3",hands="Jhakri Cuffs +2",ring1="Ilabrat Ring", ring2="Epaminondas's Ring",
-		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Jhakri Pigaches +2"
-		}
+		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Jhakri Pigaches +2"}
 		
 	sets.precast.WS['Expiacion'].Acc = set_combine(sets.precast.WS['Expiacion'], {})
 	sets.precast.WS['Expiacion'].DT = set_combine(sets.precast.WS.DT, {})
@@ -129,8 +128,7 @@ function init_gear_sets()
 	sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo Tathlum",
 		head="Pixie Hairpin +1",neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
 		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
-		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"
-		}
+		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
 					 
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {ear2="Regal Earring",ring1="Metamor. Ring +1",waist="Luminary Sash"})
 
@@ -172,8 +170,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Magical = {main="Maxentius",sub="Kaja Rod",ammo="Ghastly Tathlum +1",
 		 head="Jhakri Coronal +2",neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
 		 body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
-		 back=gear.nuking_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"
-		 }
+		 back=gear.nuking_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
 					 
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {})
 	sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical, {})
@@ -183,8 +180,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
 		neck="Mirage Stole +1",ear1="Regal Earring",ear2="Digni. Earring",
 		body="Cohort Cloak +1",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
-		back=gear.nuking_back,waist="Luminary Sash",legs="Assim. Shalwar +3",feet="Malignance Boots"
-		}
+		back=gear.nuking_back,waist="Luminary Sash",legs="Assim. Shalwar +3",feet="Malignance Boots"}
    
 	sets.midcast['Enfeebling Magic'] = {}
 
@@ -236,8 +232,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic']['Dream Flower'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
-		})
+		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"})
+	
 	sets.midcast['Blue Magic']['Dream Flower'].Ody = sets.midcast['Blue Magic']['Dream Flower'].Evasion
 	
 	sets.midcast['Blue Magic']['Entomb'] = sets.midcast['Blue Magic'].Magical
@@ -284,36 +280,20 @@ function init_gear_sets()
 	sets.idle = {main="Bolelabunga",sub=gear.colada_refresh,ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Etiolation Earring", ear2="Odnowa Earring +1",
 		body="Jhakri Robe +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
-		}
+		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet}
 
 	sets.idle.Evasion = {ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"
-		}
+		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
-	sets.idle.PDT = {main="Bolelabunga",sub=gear.colada_refresh,ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring", ear2="Genmei Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Stikini Ring +1",
-		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet
-		}
+	sets.idle.PDT = {}
 	
 	sets.idle.DTHippo = set_combine(sets.idle.Evasion, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
 
 	-- Defense sets
-	sets.defense.PDT = {ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"
-		}
+	sets.defense.PDT = {}
 
-	sets.defense.Evasion = {ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"
-		}
-		
 	sets.defense.MDT = {}
 
     sets.defense.MEVA = {}
@@ -343,14 +323,12 @@ function init_gear_sets()
 	sets.engaged = {ammo="Ginsen",
 		head="Adhemar Bonnet +1",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Suppanomimi",
 		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
-		back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet
-		}
+		back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet}
 
 	sets.engaged.AM = {ammo="Ginsen",
 		head="Malignance Chapeau",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
-		}
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 
 	sets.engaged.Acc = set_combine(sets.engaged, {})
 
@@ -359,14 +337,12 @@ function init_gear_sets()
 	sets.engaged.DT = {ammo="Ginsen",
 		head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
-		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
-		}
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 
 	sets.engaged.DT.AM = {ammo="Ginsen",
 		head="Malignance Chapeau",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
-		}
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 
 	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Mirage Stole +1",
