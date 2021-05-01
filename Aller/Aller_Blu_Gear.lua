@@ -335,7 +335,7 @@ function init_gear_sets()
 	sets.weapons.MagicWeapons = {main="Maxentius",sub="Kaja Rod"}
 	sets.weapons.Tizbron = {main="Tizona",sub="Thibron"}
 	sets.weapons.Sanguine = {main="Naegling",sub="Maxentius"}
-	sets.weapons.TizMACC = {main="Tizona",sub="Maxentius"}
+	sets.weapons.TizMACC = {main="Tizona",sub="Naegling"}
 	
 
 	-- Engaged sets
