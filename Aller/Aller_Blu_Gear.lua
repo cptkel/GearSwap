@@ -181,8 +181,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
 	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
-		head="Assim. Keffiyeh +3",neck="Mirage Stole +1",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Jhakri Robe +2",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
+		neck="Mirage Stole +1",ear1="Regal Earring",ear2="Digni. Earring",
+		body="Cohort Cloak +1",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
 		back=gear.nuking_back,waist="Luminary Sash",legs="Assim. Shalwar +3",feet="Malignance Boots"
 		}
    
