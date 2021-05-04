@@ -28,7 +28,7 @@ function user_setup()
 	send_command('bind !backspace input /ja "Hide" <me>')
 	send_command('bind ^\\\\ input /ja "Despoil" <t>')
 	send_command('bind !\\\\ input /ja "Mug" <t>')
-	send_command('bind @k input /item "Living Key" <t>')
+	send_command('bind @k input /item "Skeleton Key" <t>')
 
 	set_lockstyle(6)
 
