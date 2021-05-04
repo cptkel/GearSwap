@@ -44,7 +44,7 @@ function init_gear_sets()
     --------------------------------------
 	
 	-- Weapons sets
-	sets.weapons.Khatvanga = {main="Khatvanga",sub="Bloodrain Strap"}
+	sets.weapons.Khatvanga = {}
 	
     sets.buff.Sublimation = {waist="Embla Sash"}
     sets.buff.DTSublimation = {waist="Embla Sash"}	
@@ -66,10 +66,10 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
 
-    sets.precast.FC = {ammo="Impatiens",
+    sets.precast.FC = {ammo="Sapience Orb",
 		head=gear.merlinic_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Zendik Robe",hands=gear.merlinic_fc_hands,ring1="Kishar Ring",ring2="Prolix Ring",
-		back=gear.fc_jse_back,waist="Witful Belt",legs="Psycloth Lappas",feet=gear.merlinic_fc_feet}
+		back="Fi Follet Cape +1",waist="Embla Sash",legs="Psycloth Lappas",feet=gear.merlinic_fc_feet}
 		
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
 	
@@ -100,10 +100,10 @@ function init_gear_sets()
     
     ---- Midcast Sets ----
 
-    sets.midcast.FastRecast = {ammo="Impatiens",
+    sets.midcast.FastRecast = {ammo="Sapience Orb",
 		head=gear.merlinic_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Zendik Robe",hands=gear.merlinic_fc_hands,ring1="Kishar Ring",ring2="Prolix Ring",
-		back=gear.fc_jse_back,waist="Embla Sash",legs="Psycloth Lappas",feet=gear.merlinic_fc_feet}
+		back="Fi Follet Cape +1",waist="Embla Sash",legs="Psycloth Lappas",feet=gear.merlinic_fc_feet}
 
     sets.midcast.Cure = {}
 		
@@ -203,25 +203,19 @@ function init_gear_sets()
     -- Idle sets
     
     -- Normal refresh idle set
-    sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
+    sets.idle = {main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
+		head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
 		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Umbra Cape",waist="Flax Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
+		back="Moonlight Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
-    sets.idle.PDT = {main="Malignance Pole",sub="Alber Strap",ammo="Staunch Tathlum +1",
-        head="Blistering Sallet +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Lugalbanda Earring",
-        body="Mallquis Saio +2",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.nuke_jse_back,waist="Carrier's Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +2"}
+    sets.idle.PDT = {}
 		
 	sets.idle.DTHippo = set_combine(sets.idle.PDT, {feet="Hippo. Socks +1"})
 
 	sets.idle.Death = {}
 
-    sets.idle.Weak = {main="Malignance Pole",sub="Alber Strap",ammo="Staunch Tathlum +1",
-        head="Blistering Sallet +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Lugalbanda Earring",
-        body="Mallquis Saio +2",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.nuke_jse_back,waist="Carrier's Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +2"}
+    sets.idle.Weak = sets.idle
 
     -- Defense sets
 
@@ -233,7 +227,7 @@ function init_gear_sets()
 
 	sets.Kiting = {feet="Herald's Gaiters"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
-	sets.latent_refresh_grip = {sub="Oneiros Grip"}
+	sets.latent_refresh_grip = {}
 	sets.TPEat = {}
 	sets.DayIdle = {}
 	sets.NightIdle = {}

@@ -88,7 +88,7 @@ function init_gear_sets()
 	sets.precast.WS['Stardiver'] ={ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
 		body="Valorous Mail",hands="Sulev. Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
-		back=gear.Stardiver_back,waist="Fotia Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+		back=gear.stardiver_back,waist="Fotia Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
 	
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {})
 	
