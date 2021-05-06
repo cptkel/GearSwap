@@ -1,11 +1,11 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal','Acc')
+    state.OffenseMode:options('Normal','Acc','DT')
     state.HybridMode:options('Pet','DT','PDT','Normal')
     state.WeaponskillMode:options('Match','Normal','Acc')
     state.PhysicalDefenseMode:options('PDT','MDT','MEVA')
 	state.IdleMode:options('Normal')
-	state.Weapons:options('None','Su5','Kenkonken','Godhands')
+	state.Weapons:options('None','Su5','Kenkonken','Godhands','Aeolian')
 	
 	-- Default/Automatic maneuvers for each pet mode.  Define at least 3.
 	defaultManeuvers = {
@@ -78,7 +78,7 @@ function user_setup()
 	gear.strDA_jse_back={name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.strCRIT_jse_back={name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
 	gear.pethybrid_jse_back={name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}}
-	
+	gear.aeolian_jse_back={name="Visucius's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	
 	gear.taeon_head={name="Taeon Chapeau", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
 	gear.taeon_body={name="Taeon Tabard", augments={'Pet: Attack+19 Pet: Rng.Atk.+19','Pet: "Dbl. Atk."+3','Pet: Damage taken -4%',}}
@@ -186,7 +186,11 @@ function init_gear_sets()
 	
 	sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS['Howling Fist'], {})
 	
-  
+	sets.precast.WS['Aeolian Edge'] = {
+		neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
+		body="Cohort Cloak +1",hands=gear.herculean_tp_hands,ring1="Epaminondas's Ring",ring2="Metamor. Ring +1",
+		back=gear.aeolian_jse_back,waist="Orpheus's Sash",legs=gear.herculean_mab_legs,feet="Mpaca's Boots"}
+		
     -- Midcast Sets
 
     sets.midcast.FastRecast = {
@@ -256,8 +260,8 @@ function init_gear_sets()
     -- Idle sets
 
     sets.idle = {main="Kenkonken",range="Animator P +1",ammo="Automat. Oil +3",
-		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.idle_jse_back,waist="Carrier's Sash",legs="Malignance Tights",feet="Malignance Boots"}
 		
 		
@@ -330,7 +334,7 @@ function init_gear_sets()
     sets.engaged.Acc = {}
     
 	sets.engaged.PDT = {
-        head="Mpaca's Cap",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Brutal Earring", --ear2=Schere
+        head="Mpaca's Cap",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Schere Earring", 
 		body="Mpaca's Doublet",hands="Mpaca's Gloves",ring1="Gere Ring",ring2="Niqmaddu Ring",
 		back=gear.strDA_jse_back,waist="Moonbow Belt +1",legs="Mpaca's Hose",feet="Mpaca's Boots"}
 		
@@ -343,6 +347,11 @@ function init_gear_sets()
 		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Telos Earring",ear2="Odnowa Earring +1",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Gere Ring",ring2="Niqmaddu Ring",
 		back=gear.strDA_jse_back,waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
+	
+	sets.engaged.DT.Pet = {
+		head="Heyoka Cap +1",neck="Loricate Torque +1",ear1="Telos Earring",ear2="Odnowa Earring +1",
+		body="Mpaca's Doublet",hands="Mpaca's Gloves",ring1="Defending Ring",ring2="Niqmaddu Ring",
+		back=gear.pethybrid_jse_back,waist="Moonbow Belt +1",legs="Heyoka Subligar +1",feet="Mpaca's Boots"}
 		
 	sets.engaged.AM = {
 		head="Malignance Chapeau",neck="Bilious Torque",ear1="Telos Earring",ear2="Dedition Earring",
@@ -366,9 +375,10 @@ function init_gear_sets()
 	sets.engaged.Acc.Pet = {}
     
 	-- Weapons sets
-	sets.weapons.Kenkonken = {main="Kenkonken",range="Animator P +1",}
-	sets.weapons.Su5 = {main="Xiucoatl",range="Animator P +1",}
-	sets.weapons.Godhands = {main="Godhands",range="Animator P +1",}
+	sets.weapons.Kenkonken = {main="Kenkonken",range="Animator P +1"}
+	sets.weapons.Su5 = {main="Xiucoatl",range="Animator P +1"}
+	sets.weapons.Godhands = {main="Godhands",range="Animator P +1"}
+	sets.weapons.Aeolian = {main="Tauret",sub="Kaja Knife",range="Neo Animator"}
 	
 end
 
