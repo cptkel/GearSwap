@@ -64,6 +64,7 @@ function user_job_setup()
 	send_command('bind ^q gs c weapons SingleWeapon;gs c update')
 	
 	set_lockstyle(2)
+	ammostock = 98
 	
 	select_default_macro_book()
 
