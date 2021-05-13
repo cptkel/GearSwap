@@ -163,7 +163,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Savage Blade'] = {ammo="Seething Bomblet +1",
 		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Moonshade Earring",
-		ring1="Regal Ring",ring2="Epaminondas's Ring",
+		body=gear.herculean_wsd_body,hands="Mpaca's Gloves",ring1="Regal Ring",ring2="Epaminondas's Ring",
 		waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet=gear.herculean_WSD_feet
 		}
 	

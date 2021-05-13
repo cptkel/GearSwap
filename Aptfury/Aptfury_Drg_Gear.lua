@@ -106,9 +106,9 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {ammo="Staunch Tathlum +1",
-		head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-		body="Tartarus Platemail",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Dark Ring",
-		back="Shadow Mantle",waist="Flume Belt +1",legs="Carmine Cuisses +1",feet="Amm Greaves"}
+		head="Hjarrandi Helm",neck="Dgn. Collar +2",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
+		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +2",feet="Flam. Gambieras +2"}
 		
 	sets.idle.Refresh = {}
 
