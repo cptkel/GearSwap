@@ -96,22 +96,12 @@ function init_gear_sets()
 	
 	--sets.precast.WS['Flash Nova'] = {}
 
-    sets.precast.WS['Mystic Boon'] = {
-		ammo="Staunch Tathlum +1",
-		head={ name="Piety Cap +2", augments={'Enhances "Devotion" effect',}},
-		body={ name="Piety Briault +3", augments={'Enhances "Benediction" effect',}},
-		hands={ name="Piety Mitts +2", augments={'Enhances "Martyr" effect',}},
-		legs={ name="Piety Pantaln. +2", augments={'Enhances "Afflatus Misery" effect',}},
-		feet={ name="Piety Duckbills +2", augments={'Enhances "Afflatus Solace" effect',}},
-		neck={ name="Clr. Torque +1", augments={'Path: A',}},
-		waist="Grunfeld Rope",
-		left_ear="Telos Earring",
-		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		left_ring="Epaminondas's Ring",
-		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		back=gear.wsd_jse_back
-	}
-
+    sets.precast.WS['Mystic Boon'] = {ammo="Staunch Tathlum +1",
+		head="Piety Cap +2",neck="Clr. Torque +1",ear1="Moonshade Earring",ear2="Telos Earring",
+		body="Piety Briault +3",hands="Piety Mitts +2",ring1="Epaminondas's Ring",ring2="Metamor. Ring +1",
+		back=gear.wsd_jse_back,waist="Grunfeld Rope",legs="Piety Pantaln. +2", feet="Piety Duckbills +2"}
+		
+		
     -- Midcast Sets
 
     sets.Kiting = {feet="Herald's Gaiters"}
@@ -143,23 +133,11 @@ function init_gear_sets()
 
 	sets.midcast['Full Cure'] = sets.midcast.FastRecast
 	
-	sets.midcast.Cure = {
-		main="Queller Rod",
-		sub="Sors Shield",
-		ammo="Pemphredo Tathlum",
-		head="Kaykaus Mitra",
-		body="Theo. Briault +2",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +1",
-		feet="Kaykaus Boots",
-		neck="Clr. Torque +1",
-		waist="Luminary Sash",
-		left_ear="Calamitous Earring",
-		right_ear="Glorious Earring",
-		left_ring="Menelaus's Ring",
-		right_ring="Lebeche Ring",
-		back=gear.fc_jse_back
-	}
+	sets.midcast.Cure = {main="Queller Rod",sub="Sors Shield",ammo="Pemphredo Tathlum",
+		head="Kaykaus Mitra",neck="Clr. Torque +1",ear1="Calamitous Earring",ear2="Glorious Earring",
+		body="Theo. Briault +2",hands="Theophany Mitts +2",ring1="Lebeche Ring",ring2="Menelaus's Ring",
+		back=gear.fc_jse_back,waist="Luminary Sash",legs="Ebers Pant. +1",feet="Kaykaus Boots"}
+		
 		
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{body="Ebers Bliaud +1"})
 
@@ -315,23 +293,11 @@ function init_gear_sets()
 	sets.resting = {}
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Staunch Tathlum +1",
-		head="Inyanga Tiara +2",
-		body={ name="Piety Briault +3", augments={'Enhances "Benediction" effect',}},
-		hands="Inyan. Dastanas +2",
-		legs="Inyanga Shalwar +2",
-		feet="Inyan. Crackows +2",
-		neck="Warder's Charm +1",
-		waist="Slipor Sash",
-		left_ear="Etiolation Earring",
-		right_ear="Hearty Earring",
-		left_ring="Defending Ring",
-		right_ring="Inyanga Ring",
-		back=gear.idle_jse_back
-	}
+	sets.idle = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		head="Inyanga Tiara +2",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Hearty Earring",
+		body="Piety Briault +3",hands="Inyan. Dastanas +2",ring1="Defending Ring",ring2="Inyanga Ring",
+		back=gear.idle_jse_back,waist="Slipor Sash",legs="Inyanga Shalwar +2",feet="Inyan. Crackows +2"}
+		
 
 	sets.idle.PDT = {}
 		
@@ -360,39 +326,18 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     -- Basic set for if no TP weapon is defined.
-    sets.engaged = {
-		ammo="Amar Cluster",
-		head="Aya. Zucchetto +2",
-		body="Ayanmo Corazza +2",
-		hands="Aya. Manopolas +2",
-		legs="Aya. Cosciales +2",
-		feet="Aya. Gambieras +2",
-		neck="Lissome Necklace",
-		waist="Windbuffet Belt +1",
-		left_ear="Telos Earring",
-		right_ear="Brutal Earring",
-		left_ring="Petrov Ring",
-		right_ring="Hetairoi Ring",
-		back=gear.tp_jse_back
-	}
-
+    sets.engaged = {ammo="Amar Cluster",
+	head="Aya. Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Telos Earring",
+	body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Hetairoi Ring",
+	back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2}
+		
     sets.engaged.Acc = {}
 
-	sets.engaged.DW = {
-		ammo="Amar Cluster",
-		head="Aya. Zucchetto +2",
-		body="Ayanmo Corazza +2",
-		hands="Aya. Manopolas +2",
-		legs="Aya. Cosciales +2",
-		feet="Aya. Gambieras +2",
-		neck="Lissome Necklace",
-		waist="Windbuffet Belt +1",
-		left_ear="Eabani Earring",
-		right_ear="Suppanomimi",
-		left_ring="Petrov Ring",
-		right_ring="Hetairoi Ring",
-		back=gear.tp_jse_back
-	}
+	sets.engaged.DW = {ammo="Amar Cluster",
+	head="Aya. Zucchetto +2",neck="Lissome Necklace",ear1="Eabani Earring",ear2="Suppanomimi",
+	body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Hetairoi Ring",
+	back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2}
+			
 
     sets.engaged.DW.Acc = {}
 
