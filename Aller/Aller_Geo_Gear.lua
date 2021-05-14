@@ -2,8 +2,8 @@ function user_setup()
 
 	-- Options: Override default values
     state.OffenseMode:options('Normal')
-	state.CastingMode:options('Normal', 'Resistant', 'Proc')
-    state.IdleMode:options('Normal', 'PDT', 'TPEat')
+	state.CastingMode:options('Normal', 'Resistant')
+    state.IdleMode:options('Normal', 'PDT')
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
@@ -98,47 +98,20 @@ function init_gear_sets()
 		body="Zendik Robe",ring1="Kishar Ring",ring2="Prolix Ring", --volte gloves 6
 		back=gear.fc_jse_back,waist="Witful Belt",legs="Geomancy Pants +3",feet="Regal Pumps +1"}
 
-	sets.midcast.Geomancy = {
-		main="Idris",
-		sub="Genmei Shield",
-		range="Dunna",
-		head="Azimuth Hood +1",
-		body="Vedic Coat",
-		hands="Azimuth Gloves +1",
-		legs="Vanya Slops",
-		feet="Azimuth Gaiters +1",
-		neck="Bagua Charm +1",
-		--waist="Shinjutsu-no-obi +1",
-		left_ear="Calamitous Earring",
-		right_ear="Mendi. Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Mephitas's Ring +1",
-		back="Lifestream Cape"
-	}
-
-
+	sets.midcast.Geomancy = {main="Idris",sub="Genmei Shield",range="Dunna",
+		head="Azimuth Hood +1",neck="Bagua Charm +1",ear1="Calamitous Earring",ear2="Mendi. Earring",
+		body="Vedic Coat",hands="Azimuth Gloves +1",ring1="Stikini Ring +1",ring2="Mephitas's Ring",
+		back="Lifestream Cape",legs="Vanya Slops",feet="Azimuth Gaiters +1"}--waist="Shinjutsu-no-obi +1",
+		
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {head={name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},neck="Incanter's Torque",legs="Bagua Pants +3"})
 		
-    sets.midcast.Cure = {
-		main="Gada",
-		sub="Sors Shield",
-		ammo="Hasty Pinion +1",
-		head="Vanya Hood",
-		body="Vanya Robe",
-		hands="Vanya Cuffs",
-		legs="Vanya Slops",
-		feet="Vanya Clogs",
-		neck="Incanter's Torque",
-		waist="Bishop's Sash",
-		left_ear="Meili Earring",
-		right_ear="Mendi. Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Haoma's Ring",
-		back="Tempered Cape +1",
-		}
+    sets.midcast.Cure = {main="Gada",sub="Sors Shield",ammo="Hasty Pinion +1",
+		head="Vanya Hood",neck="Incanter's Torque",ear1="Meili Earring",ear2="Mendi. Earring",
+		body="Vanya Robe",hands="Vanya Cuffs",ring1="Stikini Ring +1",ring2="Haoma's Ring",
+		back="Tempered Cape +1",waist="Bishop's Sash",legs="Vanya Slops",feet="Vanya Clogs"}
 		
-    sets.midcast.LightWeatherCure = {}
+sets.midcast.LightWeatherCure = {}
 		
 		--Cureset for if it's not light weather but is light day.
     sets.midcast.LightDayCure = {}
@@ -149,23 +122,11 @@ function init_gear_sets()
 	
 	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {}) --main="Oranyan",sub="Clemency Grip"
 	
-    sets.midcast['Elemental Magic'] = {
-		main="Daybreak",
-		sub="Ammurapi Shield",
-		ammo="Pemphredo Tathlum",
-		head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
-		body="Geomancy Tunic +3",
-		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},
-		feet={ name="Bagua Sandals +3", augments={'Enhances "Radial Arcana" effect',}},
-		neck="Sanctity Necklace",
-		waist=gear.ElementalObi, --sacro cord
-		ear2="Malignance Earring",
-		ear1="Regal Earring",
-		left_ring="Freke Ring",
-		right_ring="Metamor. Ring +1",
-		back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
-	}
+    sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
+		head="Bagua Galero +3",neck="Sanctity Necklace",ear1="Regal Earring",ear2="Malignance Earring",
+		body="Geomancy Tunic +3",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamor. Ring +1",
+		gear.nuke_jse_back,waist=gear.ElementalObi,legs="Bagua Pants +3", feet="Bagua Sandals +3"} --sacro cord
+		
 
     sets.midcast['Elemental Magic'].Resistant = {}
 		
@@ -237,24 +198,11 @@ function init_gear_sets()
 
 	-- Idle sets
 
-	sets.idle = {
-		main="Bolelabunga",
-		sub="Genmei Shield",
-		ammo="Staunch Tathlum +1",
-		head="Befouled Crown",
-		body="Mallquis Saio +2",
-		hands={ name="Bagua Mitaines +3", augments={'Enhances "Curative Recantation" effect',}},
-		legs="Assid. Pants +1",
-		feet="Geo. Sandals +3",
-		neck="Loricate Torque +1",
-		waist="Fucho-no-Obi",
-		left_ear="Odnowa Earring +1",
-		right_ear="Genmei Earring",
-		left_ring="Defending Ring",
-		right_ring="Gelatinous Ring +1",
-		back=gear.idle_jse_back,
-	}
-		
+	sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Odnowa Earring +1",
+		body="Mallquis Saio +2",hands="Bagua Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.idle_jse_back,waist="Fucho-no-Obi",,legs="Assid. Pants +1",feet="Geo. Sandals +3}
+	
 	sets.idle.PDT = {}
 		
 	sets.idle.TPEat = set_combine(sets.idle, {})
@@ -265,23 +213,11 @@ function init_gear_sets()
 		body="Geomancy Tunic +3",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.idle_jse_back,waist="Isa Belt",legs="Gyve Trousers",feet="Bagua Sandals +3"}
 
-	sets.idle.PDT.Pet = {
-		main="Idris",
-		sub="Genmei Shield",
-		ammo="Staunch Tathlum +1",
-		head="Azimuth Hood +1",
-		body="Mallquis Saio +2",
-		hands="Geo. Mitaines +3",
-		legs="Miasmic Pants",
-		feet={ name="Bagua Sandals +3", augments={'Enhances "Radial Arcana" effect',}},
-		neck="Bagua Charm +1",
-		waist="Isa Belt",
-		left_ear="Lugalbanda Earring",
-		right_ear="Genmei Earring",
-		left_ring="Defending Ring",
-		right_ring="Gelatinous Ring +1",
-		back=gear.idle_jse_back,
-	}
+	sets.idle.PDT.Pet = {main="Idris",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		head="Azimuth Hood +1",neck="Bagua Charm +1",ear1="Genmei Earring",ear2="Lugalbanda Earring",
+		body="Mallquis Saio +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.idle_jse_back,waist="Isa Belt",legs="Miasmic Pants",feet="Bagua Sandals +3"}
+		
 
 	-- .Indi sets are for when an Indi-spell is active.
 	sets.idle.Indi = set_combine(sets.idle, {})
