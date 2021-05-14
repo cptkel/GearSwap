@@ -4,7 +4,7 @@ function user_setup()
     state.HybridMode:options('Normal','Evasion','PDT')
     state.RangedMode:options('Normal','Acc')
     state.WeaponskillMode:options('Match','Normal','AttCap','Acc')
-    state.CastingMode:options('Normal','Proc','Resistant')
+    state.CastingMode:options('Normal','Tank','Resistant')
     state.IdleMode:options('Normal','Sphere')
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
@@ -193,6 +193,8 @@ function init_gear_sets()
 	
     sets.midcast.Utsusemi = {} 
 
+	sets.midcast.Utsusemi.Tank = {} 
+	
     sets.midcast.RA = {}
 		
     sets.midcast.RA.Acc = {}
