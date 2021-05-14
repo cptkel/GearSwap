@@ -98,86 +98,38 @@ function init_gear_sets()
 
 	sets.precast.WS['Raging Fists'] = {ammo="Knobkierrie",
 		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",ear2="Sherida Earring",
-		body=
-		hands="Adhemar Wrist. +1",
-		legs="Tatena. Haidate +1", 
-		feet=gear.herculean_tp_feet,
-		neck="Mnk. Nodowa +2",
-		waist="Moonbow Belt +1",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		right_ear="Sherida Earring",
-		ring1="Niqmaddu Ring",
-		ring2="Gere Ring",
-		back=gear.STRda_back,
-	})
-	sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
-		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",
-		body="Tatena. Harama. +1",hands=gear.herculean_strTA_hands, 
-		back=gear.HF_back,legs="Tatena. Haidate +1",feet=gear.herculean_tp_feet 
-	})
+		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
+		back=gear.STRda_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1", feet=gear.herculean_tp_feet}
+		
+	sets.precast.WS['Howling Fist'] = {ammo="Knobkierrie",
+		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",ear2="Sherida Earring",
+		body="Tatena. Harama. +1",hands=gear.herculean_strTA_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
+		back=gear.HF_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1",feet=gear.herculean_tp_feet }
+	
 	sets.precast.WS['Asuran Fists']    = set_combine(sets.precast.WS, {})
 	sets.precast.WS["Ascetic's Fury"]  = set_combine(sets.precast.WS, {})
-	sets.precast.WS['Victory Smite']   = {
-		ammo="Knobkierrie",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body="Ken. Samue +1",
-		hands=gear.ryuo_hands,
-		legs="Ken. Hakama +1",
-		feet=gear.herculean_crit_feet,
-		neck="Mnk. Nodowa +2",
-		waist="Moonbow Belt +1",
-		left_ear="Sherida Earring",
-		right_ear="Odr Earring",
-		ring2="Gere Ring",
-		ring1="Niqmaddu Ring",
-		back=gear.STRcrit_back,
-	}
-	sets.precast.WS['Shijin Spiral']   = set_combine(sets.precast.WS, { 
-		ammo="Knobkierrie", --aurgelmir
-		head="Ken. Jinpachi +1",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Tatena. Haidate +1", 
-		feet=gear.herculean_tp_feet,
-		neck="Mnk. Nodowa +2",
-		waist="Moonbow Belt +1",
-		left_ear="Mache Earring +1",
-		right_ear="Sherida Earring",
-		ring2="Gere Ring",
-		ring1="Niqmaddu Ring",
-		back=gear.tp_back,
-		})
-	sets.precast.WS['Dragon Kick']     = set_combine(sets.precast.WS, {})
-	sets.precast.WS['Tornado Kick']    = set_combine(sets.precast.WS, {
-		ammo="Knobkierrie",
-		head="Mpaca's Cap",
-		body="Ken. Samue +1",
-		hands=gear.herculean_ta_hands,
-		legs="Tatena. Haidate +1",
-		feet="Anch. Gaiters +3",
-		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
-		waist="Moonbow Belt +1",
-		left_ear="Sherida Earring",
-		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		ring2="Gere Ring",
-		ring1="Niqmaddu Ring",
-		back=gear.HF_back,
-		})
-	sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
-		ammo="Knobkierrie",
-		head="Ken. Jinpachi +1",
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-		hands="Adhemar Wrist. +1",
-		legs="Ken. Hakama +1",
-		feet={ name="Herculean Boots", augments={'Accuracy+23','"Triple Atk."+3','STR+5','Attack+8',}},
-		neck="Fotia Gorget",
-		waist="Moonbow Belt +1",
-		left_ear="Sherida Earring",
-		right_ear="Brutal Earring",
-		ring2="Gere Ring",
-		ring1="Niqmaddu Ring",
-		back=gear.STRda_back,
-	})
+	
+	sets.precast.WS['Victory Smite'] = {ammo="Knobkierrie",
+		head="Adhemar Bonnet +1",neck="Mnk. Nodowa +2",ear1="Odr Earring",ear2="Sherida Earring",
+		body="Ken. Samue +1",hands=gear.ryuo_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
+		back=gear.STRcrit_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet=gear.herculean_crit_feet}
+		
+	sets.precast.WS['Shijin Spiral'] = {ammo="Knobkierrie", --aurgelmir
+		head="Ken. Jinpachi +1",neck="Mnk. Nodowa +2",ear1="Mache Earring +1",ear2="Sherida Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
+		back=gear.tp_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1",feet=gear.herculean_tp_feet}
+		
+	sets.precast.WS['Dragon Kick'] = {}
+	sets.precast.WS['Tornado Kick'] = {ammo="Knobkierrie",
+		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",ear2="Sherida Earring",
+		body="Ken. Samue +1",hands=gear.herculean_ta_hands,ring1=""Niqmaddu Ring",ring2="Gere Ring",
+		back=gear.HF_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1",feet="Anch. Gaiters +3"}
+	
+	sets.precast.WS['Spinning Attack'] = {ammo="Knobkierrie",
+		head="Ken. Jinpachi +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Sherida Earring",
+		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1=""Niqmaddu Ring",ring2="Gere Ring",
+		back=gear.STRda_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet=gear.herculean_tp_feet}
+		
 
 	sets.precast.WS['Raging Fists'].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
 	sets.precast.WS['Howling Fist'].Acc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
@@ -196,8 +148,7 @@ function init_gear_sets()
 	sets.precast.WS['Cataclysm'] = {ammo="Ghastly Tathlum +1",
 		head="Pixie Hairpin +1",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Moonshade Earring",
 		body="Samnuha Coat",hands=gear.herculean_tp_hands,ring1="Archon Ring",ring2="Metamor. Ring +1",
-		back=gear.HF_back,waist=gear.ElementalObi,legs="Hiza. Hizayoroi +2",feet=gear.herculean_WSD_feet
-	}
+		back=gear.HF_back,waist=gear.ElementalObi,legs="Hiza. Hizayoroi +2",feet=gear.herculean_WSD_feet}
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
@@ -251,21 +202,11 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee sets
-	sets.engaged = {
-		ammo="Ginsen",
-		head="Adhemar bonnet +1",
-		body="Ken. Samue +1",
-		hands="Adhemar wrist. +1",
-		legs={ name="Hes. Hose +3", augments={'Enhances "Hundred Fists" effect',}},
-		feet="Anchorite's Gaiters +3",
-		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
-		waist="Moonbow Belt +1",
-		ear2="Sherida earring",
-		ear1="Telos Earring",
-		ring2="Gere Ring",
-		ring1="Niqmaddu Ring",
-		back=gear.tp_back,
-	}
+	sets.engaged = {ammo="Ginsen",
+		head="Adhemar bonnet +1",neck="Mnk. Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
+		body="Ken. Samue +1",hands="Adhemar wrist. +1",ring1=""Niqmaddu Ring",ring2="Gere Ring",
+		back=gear.tp_back,waist="Moonbow Belt +1",legs="Hes. Hose +3", feet="Anchorite's Gaiters +3"}
+		
 	sets.engaged.Acc = {ammo="Ginsen",
 		head="Ken. Jinpachi +1",neck="Monk's Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
 		body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
