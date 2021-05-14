@@ -125,7 +125,7 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"] = {ammo="Yetshila +1",
 		head="Pill. Bonnet +3",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Sherida Earring",
 		body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
-		waist="Grunfeld Rope",legs="Lustr. Subligar +1",feet="Lustra. Leggings +1",
+		waist="Grunfeld Rope",legs="Lustr. Subligar +1",feet="Lustra. Leggings +1"
 	}
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"], {})
@@ -144,21 +144,11 @@ function init_gear_sets()
     sets.precast.WS["Shark Bite"].TA = set_combine(sets.precast.WS["Shark Bite"], {})
     sets.precast.WS["Shark Bite"].SATA = set_combine(sets.precast.WS["Shark Bite"], {})
 	
-    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body="Meg. Cuirie +2",
-		hands="Adhemar Wrist. +1",
-		legs="Pill. Culottes +2",
-		feet="Lustra. Leggings +1",
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		ear2="Odr Earring",
-		ear1={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		left_ring="Ilabrat Ring",
-		right_ring="Regal Ring",
-		back=gear.evisceration_jse_back,
-	})
+    sets.precast.WS['Evisceration'] = {ammo="Yetshila +1",
+		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
+		body="Meg. Cuirie +2",hands="Adhemar Wrist. +1",ring1="Ilabrat Ring",ring2="Regal Ring",
+		back=gear.evisceration_jse_back,waist="Fotia Belt",legs="Pill. Culottes +2",feet="Lustra. Leggings +1"}
+		
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'], {})
     sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'], {})
@@ -167,21 +157,11 @@ function init_gear_sets()
     sets.precast.WS['Last Stand'] = {}
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Ghastly Tathlum +1",
-		head=gear.herculean_mab_head,
-		body=gear.herculean_mab_body,
-		hands=gear.herculean_tp_hands,
-		legs=gear.herculean_mab_legs,
-		feet=gear.herculean_mab_feet,
-		neck="Baetyl Pendant",
-		waist=gear.ElementalObi,
-		ear2="Friomisi Earring",
-		ear1={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		left_ring="Epaminondas's Ring",
-		right_ring="Dingir Ring",
-		back=gear.aeolian_jse_back,
-	}
-
-    sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
+		head=gear.herculean_mab_head,neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
+		body=gear.herculean_mab_body,hands=gear.herculean_tp_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
+		back=gear.aeolian_jse_back,waist=gear.ElementalObi,legs=gear.herculean_mab_legs,feet=gear.herculean_mab_feet}
+		
+sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Ishvara Earring",ear2="Sherida Earring"}
@@ -250,36 +230,16 @@ function init_gear_sets()
 		
     sets.engaged.Acc = {}
 		
-    sets.engaged.PDT = {
-		ammo="Staunch Tathlum +1",
-		head="Adhemar Bonnet +1",
-		body="Malignance Tabard",
-		hands="Adhemar Wrist. +1",
-		legs="Meg. Chausses +2",
-		feet=gear.herculean_tp_feet,
-		neck="Loricate Torque +1",
-		waist="Reiki Yotai",
-		left_ear="Genmei Earring",
-		right_ear="Odnowa Earring +1",
-		left_ring="Defending Ring",
-		right_ring="Gelatinous Ring +1",
-		back=gear.tp_jse_back
-		}
-	sets.engaged.Crit = {
-		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body="Mummu Jacket +2",
-		hands="Mummu Wrists +2",
-		legs="Mummu Kecks +2",
-		feet="Mummu Gamash. +2",
-		neck="Erudit. Necklace",
-		waist="Reiki Yotai",
-		left_ear="Odr Earring",
-		right_ear="Suppanomimi",
-		left_ring="Hetairoi Ring",
-		right_ring="Mummu Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-	}
+    sets.engaged.PDT = {ammo="Staunch Tathlum +1",
+		head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Odnowa Earring +1",
+		body="Malignance Tabard",hands="Adhemar Wrist. +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Meg. Chausses +2",feet=gear.herculean_tp_feet}
+		
+	sets.engaged.Crit = {ammo="Yetshila +1",
+		head="Adhemar Bonnet +1",neck="Erudit. Necklace",ear1="Suppanomimi",ear2="Odr Earring",
+		body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Hetairoi Ring",ring2="Mummu Ring",
+		back=gear.evisceration_jse_back,waist="Reiki Yotai",legs="Mummu Kecks +2",feet="Mummu Gamash. +2}
+		
 	sets.engaged.Acc.PDT = {}
 
     
