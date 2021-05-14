@@ -73,7 +73,7 @@ function init_gear_sets()
     -- Precast sets
     --------------------------------------
 
-    sets.Enmity = {ammo="Aqreqaq Bomblet",
+    sets.Enmity = {ammo="Sapience Orb",
         head="Malignance Chapeau",neck="Unmoving Collar +1",ear1="Cryptic Earring",ear2="Trux Earring",
         body="Emet Harness +1",hands="Kurys Gloves",ring1="Petrov Ring",ring2="Eihwaz Ring",
         back=gear.enmity_jse_back,waist="Sinew Belt",legs="Zoar Subligar +1",feet="Mochi. Kyahan +3"
@@ -203,7 +203,7 @@ function init_gear_sets()
 
     sets.midcast.NinjutsuBuff = set_combine(sets.midcast.FastRecast, {})
 	
-    sets.midcast.Utsusemi = set_combine(sets.midcast.NinjutsuBuff, {back="Andartia's Mantle",feet="Hattori Kyahan +1"})
+    sets.midcast.Utsusemi = {} 
 
     sets.midcast.RA = {}
 		
