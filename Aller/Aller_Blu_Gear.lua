@@ -80,7 +80,7 @@ function init_gear_sets()
 	sets.precast.FC = {ammo="Sapience Orb",
 		head="Carmine Mask +1",neck="Orunmila's torque",ear1="Enchntr. Earring +1",ear2="Odnowa Earring +1",
 		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2="Gelatinous Ring +1",
-		back="Fi Follet Cape +1",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1"} --ambu cape?
+		back="Fi Follet Cape +1",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1"} 
 		
 		
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {}) --body="Passion Jacket"
@@ -90,8 +90,7 @@ function init_gear_sets()
 	--[[sets.precast.FC['Blue Magic'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
-		})]]--	
+		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"})]]--	
 
 
 	-- Weaponskill sets
@@ -112,8 +111,7 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
 		head=gear.herculean_WSD_head,neck="Mirage Stole +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
 		body="Assim. Jubbah +3",hands="Jhakri Cuffs +2",ring1="Ilabrat Ring", ring2="Epaminondas's Ring",
-		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Jhakri Pigaches +2"
-		}
+		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Jhakri Pigaches +2"}
 		
 	sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
 	
@@ -243,8 +241,7 @@ function init_gear_sets()
 	--[[sets.midcast['Blue Magic']['Entomb'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"
-		})]]--
+		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"})]]--
 	
 	sets.midcast['Blue Magic']['White Wind'] = {}
 					
