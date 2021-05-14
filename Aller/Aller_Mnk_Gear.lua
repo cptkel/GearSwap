@@ -96,14 +96,13 @@ function init_gear_sets()
 
 	-- Specific weaponskill sets.
 
-	sets.precast.WS['Raging Fists']    = set_combine(sets.precast.WS, {
-		ammo="Knobkierrie",
-		head="Mpaca's Cap",
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+	sets.precast.WS['Raging Fists'] = {ammo="Knobkierrie",
+		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",ear2="Sherida Earring",
+		body=
 		hands="Adhemar Wrist. +1",
 		legs="Tatena. Haidate +1", 
 		feet=gear.herculean_tp_feet,
-		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
+		neck="Mnk. Nodowa +2",
 		waist="Moonbow Belt +1",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		right_ear="Sherida Earring",
