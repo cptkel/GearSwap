@@ -81,8 +81,7 @@ function init_gear_sets()
     sets.precast.CorsairShot = {ammo="Hauksbok Bullet",
         head=gear.herculean_mab_head,neck="Comm. Charm +2",ear1="Friomisi Earring",ear2="Crematio Earring",
         body="Lanun Frac +3",hands="Carmine Fin. Ga. +1",ring1="Dingir Ring", --Fenrir Ring +1
-        back=gear.leaden_back,waist="Eschan Stone",legs=gear.herculean_leaden_legs,feet="Lanun Bottes +3"
-	}
+        back=gear.leaden_back,waist="Eschan Stone",legs=gear.herculean_leaden_legs,feet="Lanun Bottes +3"}
 		
 	sets.precast.CorsairShot.Acc= {ammo=gear.QDbullet,
 		head="Laksa. Tricorne +2", neck="Comm. Charm +2",ear1="Digni. Earring",ear2="Gwati Earring", 
@@ -136,24 +135,14 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
 	
 	sets.precast.WS['Savage Blade'] = {ammo=gear.WSbullet,
-        head=gear.herculean_wsd_head,
-		body="Laksa. Frac +3",
-		hands="Meg. Gloves +2",
-		legs=gear.herculean_wsd_legs,
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
-		neck={ name="Comm. Charm +2", augments={'Path: A',}},
-		waist="Sailfi Belt +1",
-		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-		right_ear="Ishvara Earring",
-		left_ring="Regal Ring",
-		right_ring="Epaminondas's Ring",
-		back=gear.sb_back,
-		}
+        head=gear.herculean_wsd_head,neck="Comm. Charm +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
+		body="Laksa. Frac +3",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
+		back=gear.sb_back,waist="Sailfi Belt +1",legs=gear.herculean_wsd_legs,feet="Lanun Bottes +3"}
+		
 
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
 		head="Meghanada Visor +2",neck="Decimus Torque",ear2="Telos Earring", 
-		waist="Grunfeld Rope",
-	})
+		waist="Grunfeld Rope"})
 	
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
         head="Lanun Tricorne +3",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
@@ -174,19 +163,10 @@ function init_gear_sets()
     sets.precast.WS['Split Shot'].Acc = sets.precast.WS['Last Stand'].Acc
 	
     sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
-        head="Pixie Hairpin +1",
-		body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
-		hands=gear.herculean_wsd_hands,
-		legs=gear.herculean_leaden_legs,
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
-		neck={ name="Comm. Charm +2", augments={'Path: A',}},
-		waist="Eschan Stone",
-		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-		right_ear="Friomisi Earring",
-		left_ring="Archon Ring",
-		right_ring="Dingir Ring",
-		back=gear.leaden_back,
-		}
+        head="Pixie Hairpin +1",neck="Comm. Charm +2",ear1="Moonshade Earring",ear2="Friomisi Earring",
+		body="Lanun Frac +3",hands=gear.herculean_wsd_hands,ring1="Archon Ring",ring2="Dingir Ring",
+		back=gear.leaden_back,waist="Eschan Stone",legs=gear.herculean_leaden_legs,feet="Lanun Bottes +3"}
+		
 
     sets.precast.WS['Leaden Salute'].Acc = {}
 
@@ -201,19 +181,10 @@ function init_gear_sets()
     sets.precast.WS['Hot Shot'].Acc = sets.precast.WS['Wildfire'].Acc
 	
 	sets.precast.WS['Aeolian Edge'] = {ammo="Hauksbok Bullet",
-		head=gear.herculean_mab_head,
-		body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
-		hands="Carmine Fin. Ga. +1",
-		legs=gear.herculean_leaden_legs,
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
-		neck={ name="Comm. Charm +2", augments={'Path: A',}},
-		waist="Orpheus's Sash", 
-		left_ear="Friomisi Earring",
-		right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-		left_ring="Dingir Ring",
-		right_ring="Epaminondas's Ring",
-		back=gear.leaden_back,
-		}
+		head=gear.herculean_mab_head,neck="Comm. Charm +2",ear1="Moonshade Earring",ear2="Friomisi Earring",
+		body="Lanun Frac +3",hands="Carmine Fin. Ga. +1",ring1="Dingir Ring",ring2="Epaminondas's Ring",
+		back=gear.leaden_back,waist="Orpheus's Sash", legs=gear.herculean_leaden_legs,feet="Lanun Bottes +3"}
+		
 		--Because omen skillchains.
     sets.precast.WS['Burning Blade'] = {}
 
@@ -236,19 +207,10 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-        head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Iskur Gorget",
-		waist="Yemaya Belt",
-		left_ear="Enervating Earring",
-		right_ear="Telos Earring",
-		left_ring="Ilabrat Ring",
-		right_ring="Dingir Ring",
-		back=gear.shoot_jse_back
-		}
+        head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Dingir Ring",ring2="Ilabrat Ring",
+		back=gear.shoot_jse_back,waist="Yemaya Belt",legs="Malignance Tights",feet="Malignance Boots"}
+		
 
     sets.midcast.RA.Acc = {}
 		
@@ -267,19 +229,10 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Etiolation Earring",
-		right_ear="Odnowa Earring +1",
-		left_ring="Gelatinous Ring +1",
-		right_ring="Defending Ring",
-		back=gear.roll_jse_back,
-		}
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+		back=gear.roll_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
+		
 	sets.idle.PDT = {}	
     sets.idle.Refresh = {}
     
@@ -335,19 +288,10 @@ function init_gear_sets()
 		body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Olseni Belt",legs="Carmine Cuisses +1",feet=gear.herculean_tp_feet}
 	sets.engaged.DW.Crit = {
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body="Mummu Jacket +2",
-		hands="Mummu Wrists +2",
-		legs="Mummu Kecks +2",
-		feet="Mummu Gamash. +2",
-		neck="Iskur Gorget",
-		waist="Reiki Yotai",
-		left_ear="Odr Earring",
-		right_ear="Suppanomimi",
-		left_ring="Begrudging Ring",
-		right_ring="Mummu Ring",
-		back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
-	}
+		head="Adhemar Bonnet +1",neck="Iskur Gorget",ear1="Suppanomimi",ear2="Odr Earring",
+		body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
+		gear.tp_jse_back,waist="Reiki Yotai",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
+		
 	
 	sets.engaged.DW.DT = {
         head="Adhemar Bonnet +1",neck="Loricate torque +1",ear1="Suppanomimi",ear2="Telos Earring",
