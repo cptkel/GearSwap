@@ -16,11 +16,11 @@ function user_job_setup()
 				   }
 
 	DefaultAmmo = {
-		['Bow']  = {['Default'] = "Voluspa Arrow",
-					['WS'] = "Voluspa Arrow",
-					['Acc'] = "Voluspa Arrow",
-					['Magic'] = "Voluspa Arrow",
-					['MagicAcc'] = "Voluspa Arrow",
+		['Bow']  = {['Default'] = "Chrono Arrow",
+					['WS'] = "Chrono Arrow",
+					['Acc'] = "Chrono Arrow",
+					['Magic'] = "Chrono Arrow",
+					['MagicAcc'] = "Chrono Arrow",
 					['Unlimited'] = "Hauksbok Arrow",
 					['MagicUnlimited'] ="Hauksbok Arrow",
 					['MagicAccUnlimited'] ="Hauksbok Arrow"},
@@ -121,8 +121,7 @@ function init_gear_sets()
 	sets.precast.RA = 	{
 		head="Orion Beret +3",neck="Scout's Gorget +2",
 		body="Amini Caban +1",hands="Carmine Fin. Ga. +1",
-		back=gear.snapshot_jse_back,waist="Impulse Belt",legs="Orion Braccae +2",feet="Meg. Jam. +2",
-	}
+		back=gear.snapshot_jse_back,waist="Impulse Belt",legs="Orion Braccae +2",feet="Meg. Jam. +2"}
 		
 	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {legs="Adhemar Kecks +1",feet="Meg. Jam. +2",})
 	sets.precast.RA.Flurry.Gastraphetes = set_combine(sets.precast.RA, {legs="Adhemar Kecks +1",feet="Pursuer's Gaiters",})
@@ -164,23 +163,20 @@ function init_gear_sets()
 	sets.precast.WS['Aeolian Edge'] = {
 		neck="Scout's Gorget +2",ear1="Friomisi Earring",ear2="Moonshade Earring",
 		body="Cohort Cloak +1",hands=gear.herculean_mab_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
-		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet=gear.herculean_wsd_feet,
-	}
+		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet=gear.herculean_wsd_feet}
 		
 	
     sets.precast.WS['Trueflight'] = {
 		neck="Scout's Gorget +2",ear1="Friomisi Earring",ear2="Moonshade Earring",
 		body="Cohort Cloak +1",hands=gear.herculean_mab_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
-		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet=gear.herculean_wsd_feet,
-	}
+		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet=gear.herculean_wsd_feet}
 
     sets.precast.WS['Trueflight'].Acc = {}
 	
 	sets.precast.WS['Savage Blade'] = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
 		hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Karieyh Ring",
-		waist="Sailfi Belt +1",
-	}
+		waist="Sailfi Belt +1"}
 		
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
@@ -202,8 +198,7 @@ function init_gear_sets()
     sets.midcast.RA = {main="Perun +1",sub="Nusku Shield",
 		head="Arcadian Beret +3",neck="Scout's Gorget +2",ear1="Telos Earring",ear2="Dedition Earring",
 		body="Nisroch Jerkin",hands="Malignance Gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
-		back=gear.rngtp_jse_back,waist="K. Kachina Belt +1",legs="Malignance Tights",feet="Malignance Boots",
-	}
+		back=gear.rngtp_jse_back,waist="K. Kachina Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 	
     sets.midcast.RA.Acc = {}
 	
@@ -211,7 +206,7 @@ function init_gear_sets()
 	sets.midcast.RA.Gandiva.AM = {
 		head="Meghanada Visor +2",neck="Scout's Gorget +2",ear1="Telos Earring",ear2="Enervating Earring",
 		body="Nisroch Jerkin",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
-		back=crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1",}
+		back=crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1"}
 		
 	--These sets will overlay based on accuracy level, regardless of other options.
 	sets.buff.Camouflage = {body="Orion Jerkin +3"}
@@ -219,14 +214,12 @@ function init_gear_sets()
 	sets.buff['Double Shot'] = {
 		head="Arcadian Beret +3",
 		body="Arcadian Jerkin +3",
-		back=gear.rngtp_jse_back,legs="Osh. Trousers +1",feet="Osh. Leggings +1"
-	}
+		back=gear.rngtp_jse_back,legs="Osh. Trousers +1",feet="Osh. Leggings +1"}
 	sets.buff['Double Shot'].Acc = {}
 	sets.buff.Barrage = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Enervating Earring",ear2="Telos Earring",
 		body="Orion Jerkin +3",hands="Orion Bracers +3",ring1="Regal Ring",
-		back=gear.crit_jse_back,waist="K. Kachina Belt +1",feet="Orion Socks +2"
-	}
+		back=gear.crit_jse_back,waist="K. Kachina Belt +1",feet="Orion Socks +2"}
 	
 	sets.Self_Healing = {}
 	sets.Cure_Received = {}
@@ -288,8 +281,7 @@ function init_gear_sets()
     sets.engaged.DW = {
 		head="Adhemar Bonnet +1",neck="Scout's Gorget +2",ear1="Sherida Earring",ear2="Suppanomimi",
 		body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
-		back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet
-	}
+		back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet}
 	sets.engaged.DW.DTLite = {}
 	sets.engaged.DW.DT = {
         head="Malignance Chapeau",neck="Loricate torque +1",ear1="Suppanomimi",ear2="Telos Earring",
