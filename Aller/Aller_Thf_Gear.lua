@@ -28,7 +28,7 @@ function user_setup()
 	send_command('bind !backspace input /ja "Hide" <me>')
 	send_command('bind ^\\\\ input /ja "Despoil" <t>')
 	send_command('bind !\\\\ input /ja "Mug" <t>')
-	send_command('bind @k input /item "Skeleton Key" <t>')
+	send_command('bind @k input /item "Living Key" <t>')
 
 	set_lockstyle(6)
 
@@ -238,7 +238,7 @@ sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge']
 	sets.engaged.Crit = {ammo="Yetshila +1",
 		head="Adhemar Bonnet +1",neck="Erudit. Necklace",ear1="Suppanomimi",ear2="Odr Earring",
 		body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Hetairoi Ring",ring2="Mummu Ring",
-		back=gear.evisceration_jse_back,waist="Reiki Yotai",legs="Mummu Kecks +2",feet="Mummu Gamash. +2}
+		back=gear.evisceration_jse_back,waist="Reiki Yotai",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
 		
 	sets.engaged.Acc.PDT = {}
 

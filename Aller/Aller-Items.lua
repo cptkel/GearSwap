@@ -18,7 +18,7 @@ gear.merlinic_fc_hands = {name="Merlinic Dastanas", augments={'Mag. Acc.+8','"Fa
 gear.merlinic_fc_feet = {name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+6','"Fast Cast"+6','MND+4','Mag. Acc.+12',}}
 
 gear.herculean_fc_head = {name="Herculean Helm", augments={'Mag. Acc.+17','"Fast Cast"+5','INT+4','"Mag.Atk.Bns."+9',}}
-gear.herculean_WSD_head = {name="Herculean Helm", augments={'Accuracy+13 Attack+13','Weapon skill damage +4%','DEX+5','Accuracy+7','Attack+12',}}
+gear.herculean_WSD_head = {name="Herculean Helm", augments={'AGI+9','STR+7','Weapon skill damage +6%','Mag. Acc.+3 "Mag.Atk.Bns."+3',}}
 gear.herculean_strTA_head = {name="Herculean Helm", augments={'Rng.Acc.+13','"Triple Atk."+3','DEX+3','Accuracy+13',}}
 gear.herculean_petmagic_head = {name="Herculean Helm", augments={'Pet: "Mag.Atk.Bns."+30','"Repair" potency +1%','Pet: INT+9',}}
 gear.herculean_mab_head = {name="Herculean Helm", augments={'"Mag.Atk.Bns."+19','Sklchn.dmg.+2%','Accuracy+18 Attack+18','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
