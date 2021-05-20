@@ -13,10 +13,10 @@ function user_setup()
 	
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None','DW20','DWMax'}
 	
-	gear.fc_jse_back = {name="Andartia's Mantle", augments={'"Fast Cast"+10',}}
+	gear.fc_jse_back = {name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Spell interruption rate down-10%',}}
 	gear.da_jse_back = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.mab_jse_back = {name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
-	gear.enmity_jse_back = {name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10',}}
+	gear.enmity_jse_back = {name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Parrying rate+5%',}}
 	
 	send_command('bind ^` input /ja "Innin" <me>')
     send_command('bind !` input /ja "Yonin" <me>')
@@ -30,6 +30,51 @@ function user_setup()
 	set_lockstyle(4)
 	
     select_default_macro_book()
+end
+
+function job_setup()
+
+	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
+    state.Buff.Migawari = buffactive.Migawari or false
+    state.Buff.Yonin = buffactive.Yonin or false
+    state.Buff.Innin = buffactive.Innin or false
+    state.Buff.Futae = buffactive.Futae or false
+	state.Buff.Issekigan = buffactive.Issekigan or false
+	
+	state.Stance = M{['description']='Stance','Innin','Yonin','None'}
+
+	autows = "Blade: Shun"
+	autofood = 'Soy Ramen'
+	
+	utsusemi_ni_cancel_delay = .1
+	
+	state.ElementalMode = M{['description'] = 'Elemental Mode','Fire','Water','Lightning','Earth','Wind','Ice','Light','Dark',}
+	
+	update_melee_groups()
+	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoNukeMode","AutoStunMode","AutoDefenseMode","ElementalWheel",},{"AutoBuffMode","AutoSambaMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","ElementalMode","CastingMode","TreasureMode",})
+end
+
+function job_customize_melee_set(meleeSet)
+
+	if state.Buff.Yonin then 
+		if state.DefenseMode.value == 'None' or state.DefenseMode.value == 'Evasion' then
+			meleeSet = set_combine(meleeSet, sets.buff.Yonin)
+		end
+	elseif state.Buff.Innin then
+		if (state.OffenseMode.value == 'Normal' or state.OffenseMode.value == 'Fodder') and state.DefenseMode.value == 'None' then
+			meleeSet = set_combine(meleeSet, sets.buff.Innin)
+		end
+    end
+	
+	if state.Buff.Migawari then
+        meleeSet = set_combine(meleeSet, sets.buff.Migawari)
+    end
+
+	if state.Buff.Issekigan then
+        meleeSet = set_combine(meleeSet, sets.buff.Issekigan)
+    end
+	
+    return meleeSet
 end
 
 --[[function update_melee_groups()
@@ -84,6 +129,11 @@ function init_gear_sets()
     sets.precast.JA['Sange'] = {} --legs="Mochizuki Chainmail"
 	sets.precast.JA['Provoke'] = sets.Enmity
 	sets.precast.JA['Warcry'] = sets.Enmity
+	sets.precast.JA['Vallation'] = sets.Enmity
+    sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
+    sets.precast.JA['Pflug'] = sets.Enmity
+	sets.precast.JA['Swordplay'] = sets.Enmity
+	sets.precast.JA['Last Resort'] = sets.Enmity
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {}
@@ -98,12 +148,12 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {ammo="Impatiens",
+    sets.precast.FC = {ammo="Sapience Orb",
 		head=gear.herculean_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
 		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Prolix Ring",ring2="Kishar Ring",
 		back=gear.fc_jse_back,legs=gear.herculean_refresh_legs,feet=gear.herculean_fc_feet}
 		
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",feet="Hattori Kyahan +1"}) --body="Mochi. Chainmail +3",
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Mochi. Chainmail +3"}) 
 	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {})
 
     -- Snapshot for ranged
@@ -169,7 +219,10 @@ function init_gear_sets()
     -- Midcast sets
     --------------------------------------
 
-    sets.midcast.FastRecast = {}
+    sets.midcast.FastRecast = {ammo="Sapience Orb",
+		head=gear.herculean_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
+		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Prolix Ring",ring2="Kishar Ring",
+		back=gear.fc_jse_back,legs=gear.herculean_refresh_legs,feet=gear.herculean_fc_feet}
 
     sets.midcast.ElementalNinjutsu = {ammo="Ghastly Tathlum +1",
 		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi earring",ear2="Regal Earring",
@@ -191,9 +244,10 @@ function init_gear_sets()
 
     sets.midcast.NinjutsuBuff = set_combine(sets.midcast.FastRecast, {})
 	
-    sets.midcast.Utsusemi = {} 
+    sets.midcast.Utsusemi = set_combine(sets.midcast.NinjutsuBuff, {back="Andartia's Mantle",feet="Hattori Kyahan +1"})
 
-	sets.midcast.Utsusemi.Tank = {} 
+	sets.midcast.Utsusemi.Tank = set_combine(sets.Enmity, {feet="Hattori Kyahan +1"})
+	sets.midcast.Flash = set_combine(sets.Enmity, {})
 	
     sets.midcast.RA = {}
 		
@@ -267,6 +321,7 @@ function init_gear_sets()
     sets.buff.Doom = set_combine(sets.buff.Doom, {})
     sets.buff.Yonin = {} --legs="Hattori Hakama +1"
     sets.buff.Innin = {} --head="Hattori Zukin +1"
+	sets.buff.Issekigan = set_combine(sets.Enmity, {hands="Hizamaru Kote +2",legs="Rawhide Trousers",feet="Hattori Kyahan +1"})
 	
     -- Extra Melee sets.  Apply these on top of melee sets.
     sets.Knockback = {}
@@ -279,7 +334,7 @@ function init_gear_sets()
 	sets.weapons.HeishiTernion = {main="Heishi Shorinken",sub="Ternion Dagger +1"}
 	sets.weapons.HeishiGoko = {main="Heishi Shorinken",sub="Gokotai"}
 	sets.weapons.KikokuTernion = {main="Kikoku",sub="Ternion Dagger +1"}
-	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Ternion Dagger +1"}
+	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Uzura +2"}
 	sets.weapons.Aeolian = {main="Tauret",sub="Ternion Dagger +1"}
 	sets.weapons.ProcDagger = {main="Qutrub Knife",sub=empty}
 	sets.weapons.ProcSword = {main="Onion Sword",sub=empty}

@@ -225,7 +225,7 @@ function init_gear_sets()
 
 	-- Other Specific Spells --
 
-	sets.midcast['Blue Magic']['Dream Flower'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {head="Wh. Rarab Cap +1",legs={ name="Herculean Trousers", augments={'Accuracy+17','CHR+2','"Treasure Hunter"+2',}},waist="Chaac Belt"})
+	sets.midcast['Blue Magic']['Dream Flower'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {})
 	
 	sets.midcast['Blue Magic']['Dream Flower'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
@@ -309,7 +309,7 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
-	sets.weapons.MagicWeapons = {main="Maxentius",sub="Kaja Rod"}
+	sets.weapons.MagicWeapons = {main="Maxentius",sub="Bunzi's Rod"}
 	sets.weapons.Tizbron = {main="Tizona",sub="Thibron"}
 	sets.weapons.Sanguine = {main="Naegling",sub="Maxentius"}
 	sets.weapons.TizMACC = {main="Tizona",sub="Naegling"}
@@ -333,7 +333,7 @@ function init_gear_sets()
 
 	sets.engaged.DT = {ammo="Ginsen",
 		head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Epona's Ring",ring2="Defending Ring",
 		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 
 	sets.engaged.DT.AM = {ammo="Ginsen",

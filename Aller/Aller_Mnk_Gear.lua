@@ -122,12 +122,12 @@ function init_gear_sets()
 	sets.precast.WS['Dragon Kick'] = {}
 	sets.precast.WS['Tornado Kick'] = {ammo="Knobkierrie",
 		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",ear2="Sherida Earring",
-		body="Ken. Samue +1",hands=gear.herculean_ta_hands,ring1=""Niqmaddu Ring",ring2="Gere Ring",
+		body="Ken. Samue +1",hands=gear.herculean_ta_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.HF_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1",feet="Anch. Gaiters +3"}
 	
 	sets.precast.WS['Spinning Attack'] = {ammo="Knobkierrie",
 		head="Ken. Jinpachi +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Sherida Earring",
-		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1=""Niqmaddu Ring",ring2="Gere Ring",
+		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.STRda_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet=gear.herculean_tp_feet}
 		
 
@@ -204,7 +204,7 @@ function init_gear_sets()
 	-- Normal melee sets
 	sets.engaged = {ammo="Ginsen",
 		head="Adhemar bonnet +1",neck="Mnk. Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
-		body="Ken. Samue +1",hands="Adhemar wrist. +1",ring1=""Niqmaddu Ring",ring2="Gere Ring",
+		body="Ken. Samue +1",hands="Adhemar wrist. +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Hes. Hose +3", feet="Anchorite's Gaiters +3"}
 		
 	sets.engaged.Acc = {ammo="Ginsen",

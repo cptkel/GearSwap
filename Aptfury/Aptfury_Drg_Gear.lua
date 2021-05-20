@@ -16,6 +16,7 @@ function user_job_setup()
 	
 	gear.tp_back = {name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.stardiver_back = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
+	gear.wsd_back = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
@@ -97,6 +98,10 @@ function init_gear_sets()
 	
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS.Acc, {})
 	
+	sets.precast.WS['Sonic Thrust'] = {ammo="Knobkierrie",
+		neck="Dgn. Collar +2",ear1="Moonshade Earring",ear2="Thrud Earring",
+		body="Valorous Mail",ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back=gear.wsd_back,waist="Fotia Belt",legs="Vishap Brais +3",feet="Sulev. Leggings +2"}
 
 	
 	-- Sets to return to when not performing an action.
@@ -106,7 +111,7 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {ammo="Staunch Tathlum +1",
-		head="Hjarrandi Helm",neck="Dgn. Collar +2",ear1="Genmei Earring",ear2="Ethereal Earring",
+		head="Hjarrandi Helm",neck="Dgn. Collar +2",ear1="Brutal Earring",ear2="Sherida Earring",
 		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
 		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +2",feet="Flam. Gambieras +2"}
 		
@@ -128,7 +133,7 @@ function init_gear_sets()
 	sets.defense.MEVA = {}
 
 	sets.Kiting = {legs="Carmine Cuisses +1"}
-	sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+	sets.Reraise = {}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	

@@ -4,7 +4,7 @@ sets.Sheltered = {}
 sets.Capacity = {}
 
 sets.buff.Doom = {}
-sets.TreasureHunter = {head="Wh. Rarab Cap +1",legs={ name="Herculean Trousers", augments={'Accuracy+17','CHR+2','"Treasure Hunter"+2',}},waist="Chaac Belt"}
+sets.TreasureHunter = {body="Volte Jupon",legs={ name="Herculean Trousers", augments={'Accuracy+17','CHR+2','"Treasure Hunter"+2',}}}
 
 sets.precast.Item['Hallowed Water'] = {}
 sets.precast.Item['Holy Water'] = {}
