@@ -248,6 +248,7 @@ function init_gear_sets()
 
 	sets.midcast.Utsusemi.Tank = set_combine(sets.Enmity, {feet="Hattori Kyahan +1"})
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
+	sets.midcast.Stun = set_combine(sets.Enmity, {})
 	
     sets.midcast.RA = {}
 		

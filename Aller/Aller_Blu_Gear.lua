@@ -166,8 +166,8 @@ function init_gear_sets()
 	-- Magical Spells --
 
 	sets.midcast['Blue Magic'].Magical = {main="Maxentius",sub="Kaja Rod",ammo="Ghastly Tathlum +1",
-		 head="Jhakri Coronal +2",neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
-		 body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
+		 neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
+		 body="Cohort Cloak +1",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
 		 back=gear.nuking_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
 					 
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {})
