@@ -278,7 +278,10 @@ function init_gear_sets()
 
     sets.defense.MDT = {}
 		
-	sets.defense.MEVA = {}
+	sets.defense.MEVA = {ammo="Yamarang", --date shuriken
+		head="Malignance Chapeau,neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Sanare Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Vengeful Ring",ring2="Purity Ring",
+		back=gear.enmity_jse_back,waist="Engraved Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
 
     sets.Kiting = {feet="Hachiya Kyahan +2"}
