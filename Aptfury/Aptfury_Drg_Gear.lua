@@ -163,11 +163,11 @@ function init_gear_sets()
 	-- Normal melee group
 
 	sets.engaged = {ammo="Coiste Bodhar",
-		head="Flam. Zucchetto +2",neck="Vim Torque +1",ear1="Telos Earring",ear2="Sherida Earring",
+		head="Flam. Zucchetto +2",neck="Dgn. Collar +2",ear1="Telos Earring",ear2="Sherida Earring",
 		body="Hjarrandi Breastplate",hands="Acro Gauntlets",ring1="Petrov Ring",ring2="Niqmaddu Ring",
 		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
    
-	sets.engaged.Acc = {}
+	sets.engaged.Acc = set_combine(sets.engaged, {hands="Sulev. Gauntlets +2",ring1="Flamma Ring"})
     
 
     sets.engaged.AM = {}
