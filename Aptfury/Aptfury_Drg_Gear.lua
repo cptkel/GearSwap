@@ -2,14 +2,14 @@
 function user_job_setup()
 	-- Options: Override default values
     state.OffenseMode:options('Normal','Acc')
-    state.WeaponskillMode:options('Match','Normal','Acc')
-    state.HybridMode:options('Normal')
+    state.WeaponskillMode:options('Match','Normal','AttCap')
+    state.HybridMode:options('Normal','PDT')
     state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'PDT','Refresh')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
-	state.Weapons:options('Trishula')
+	state.Weapons:options('Trishula','ShiningOne','Sword')
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 
     select_default_macro_book()
@@ -24,6 +24,11 @@ function user_job_setup()
 	send_command('bind ^f11 gs c cycle MagicalDefenseMode')
 	send_command('bind @f7 gs c toggle AutoJumpMode')
 	send_command('bind @` gs c cycle SkillchainMode')
+	send_command('bind !s gs c weapons Sword;gs c set stance none;gs c autows Savage Blade')
+	send_command('bind !t gs c weapons Trishula;gs c set stance Hasso;gs c autows Stardiver')
+	send_command('bind !i gs c weapons ShiningOne;gs c set stance Hasso;gs c autows Impulse Drive')
+	send_command('alias swing gs c showset SteadyWing;wait 4.5;input /pet "Steady Wing" <me>;wait 2;gs c showset')
+	
 end
 
 -- Define sets and vars used by this job file.
@@ -34,18 +39,21 @@ function init_gear_sets()
 	
 	-- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Angon = {ammo="Angon"} --hands="Ptero. Fin. G. +1"
-	sets.precast.JA.Jump = {}
-	sets.precast.JA['Ancient Circle'] = {} --legs="Vishap Brais"
-	sets.precast.JA['High Jump'] = {}
+	sets.precast.JA.Angon = {ammo="Angon",hands="Ptero. Fin. G. +3"}
+	sets.precast.JA.Jump = {
+		head="Flam. Zucchetto +2",neck="Vim Torque +1",ear1="Telos Earring",ear2="Sherida Earring",
+		body="Ptero. Mail +3",hands="Vis. Fng. Gaunt. +3",ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		waist="Ioskeha Belt +1",legs="Ptero. Brais +3"}
+	sets.precast.JA['Ancient Circle'] = {legs="Vishap Brais +3"}
+	sets.precast.JA['High Jump'] = sets.precast.JA.Jump
 	sets.precast.JA['Soul Jump'] = {}
 	sets.precast.JA['Spirit Jump'] = {}
 	sets.precast.JA['Super Jump'] = {}
 	sets.precast.JA['Spirit Link'] = {head="Vishap Armet +1"} --head="Vishap Armet",hands="Lnc. Vmbrc. +2"
-	sets.precast.JA['Call Wyvern'] = {} --body="Ptero. Mail +1"
+	sets.precast.JA['Call Wyvern'] = {body="Ptero. Mail +3"}
 	sets.precast.JA['Deep Breathing'] = {} --hands="Ptero. Armet +1"
 	sets.precast.JA['Spirit Surge'] = {} --body="Ptero. Mail +1"
-	sets.precast.JA['Steady Wing'] = {}
+	sets.precast.JA['Steady Wing'] = {legs="Vishap Brais +3",feet="Ptero. Greaves +3"}
 	
 	-- Breath sets
 	sets.precast.JA['Restoring Breath'] = {back="Brigantia's Mantle"}
@@ -86,12 +94,12 @@ function init_gear_sets()
 	
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Stardiver'] ={ammo="Coiste Bodhar",
-		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
-		body="Valorous Mail",hands="Sulev. Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
-		back=gear.stardiver_back,waist="Fotia Belt",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+	sets.precast.WS['Stardiver'] ={ammo="Knobkierrie",
+		head="Ptero. Armet +3",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
+		body="Dagon Breastplate",hands="Sulev. Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back=gear.stardiver_back,waist="Fotia Belt",legs="Sulev. Cuisses +2",feet="Sulev. Leggings +2"}
 	
-	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS['Stardiver'], {feet="Ptero. Greaves +3"})
 	
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {})
@@ -99,11 +107,30 @@ function init_gear_sets()
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS.Acc, {})
 	
 	sets.precast.WS['Sonic Thrust'] = {ammo="Knobkierrie",
-		neck="Dgn. Collar +2",ear1="Moonshade Earring",ear2="Thrud Earring",
-		body="Valorous Mail",ring1="Regal Ring",ring2="Niqmaddu Ring",
+		head="Ptero. Armet +3",neck="Dgn. Collar +2",ear1="Moonshade Earring",ear2="Thrud Earring",
+		body="Dagon Breastplate",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Niqmaddu Ring",
 		back=gear.wsd_back,waist="Fotia Belt",legs="Vishap Brais +3",feet="Sulev. Leggings +2"}
 
+	sets.precast.WS['Impulse Drive'] = {ammo="Knobkierrie",
+		head="Ptero. Armet +3",neck="Dgn. Collar +2",ear1="Moonshade Earring",ear2="Sherida Earring",
+		body="Dagon Breastplate",hands="Ptero. Fin. G. +3",ring1="Epaminondas's Ring",ring2="Niqmaddu Ring",
+		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Sulev. Cuisses +2",feet="Sulev. Leggings +2"}
+		
+	sets.precast.WS['Impulse Drive'].AttCap = {ammo="Knobkierrie",
+		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Moonshade Earring",ear2="Sherida Earring",
+		body="Gleti's cuirass",hands="Gleti's gauntlets",ring1="Epaminondas's Ring",ring2="Niqmaddu Ring",
+		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Gleti's breeches",feet="Gleti's boots"}
 	
+	sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
+		head="Valorous Mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
+		body="Valorous Mail",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
+		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Sulev. Leggings +2"}
+		
+	sets.precast.WS['Savage Blade'].AttCap = {ammo="Knobkierrie",
+		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
+		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
+		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Gleti's boots"}
+		
 	-- Sets to return to when not performing an action.
 	
 	-- Resting sets
@@ -113,7 +140,7 @@ function init_gear_sets()
 	sets.idle = {ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Dgn. Collar +2",ear1="Brutal Earring",ear2="Sherida Earring",
 		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
-		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +2",feet="Flam. Gambieras +2"}
+		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flam. Gambieras +2"}
 		
 	sets.idle.Refresh = {}
 
@@ -144,6 +171,8 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Trishula = {main="Trishula",sub="Utu Grip"}
+	sets.weapons.ShiningOne ={main="Shining One",sub="Utu Grip"}
+	sets.weapons.Sword ={main="Naegling",sub=none}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Lugra Earring +1",ear2="Sherida Earring",}
@@ -163,19 +192,23 @@ function init_gear_sets()
 	-- Normal melee group
 
 	sets.engaged = {ammo="Coiste Bodhar",
-		head="Flam. Zucchetto +2",neck="Dgn. Collar +2",ear1="Telos Earring",ear2="Sherida Earring",
+		head="Flam. Zucchetto +2",neck="Vim Torque +1",ear1="Telos Earring",ear2="Sherida Earring",
 		body="Hjarrandi Breastplate",hands="Acro Gauntlets",ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flam. Gambieras +2"}
    
 	sets.engaged.Acc = set_combine(sets.engaged, {hands="Sulev. Gauntlets +2",ring1="Flamma Ring"})
     
-
+	sets.engaged.Sword = {ammo="Coiste Bodhar",
+		head="Ptero. Armet +3",neck="Dgn. Collar +2",ear1="Dedition Earring",ear2="Sherida Earring",
+		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Petrov Ring",ring2="Niqmaddu Ring",
+		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flamma Gambieras +2"}
+		
     sets.engaged.AM = {}
     
 	sets.engaged.AM.Acc = {}
    
 	
-    sets.engaged.PDT = {}
+    sets.engaged.PDT = sets.idle 
     
 	sets.engaged.Acc.PDT = {}
     

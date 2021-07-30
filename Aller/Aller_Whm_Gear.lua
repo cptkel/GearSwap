@@ -17,6 +17,7 @@ function user_setup()
 	
 	gear.vanya_fc = {name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}}
 	gear.vanya_healing = {name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+	
 		-- Additional local binds
 	send_command('bind ^` input /ma "Arise" <t>')
 	send_command('bind !` input /ja "Penury" <me>')
@@ -54,7 +55,7 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap",ammo="Impatiens",
-		head={ name=gear.vanya_fc, augments={'MP+50','"Fast Cast"+10','Haste+2%',}},neck="Cleric's Torque +1",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
+		head=gear.vanya_fc,neck="Cleric's Torque +1",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",hands="Fanatic Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
 		back=gear.fc_jse_back,waist="Witful Belt",legs="Aya. Cosciales +2",feet="Regal Pumps +1"}
 		
@@ -329,14 +330,14 @@ function init_gear_sets()
     sets.engaged = {ammo="Amar Cluster",
 	head="Aya. Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Telos Earring",
 	body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Hetairoi Ring",
-	back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2}
+	back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2"}
 		
     sets.engaged.Acc = {}
 
 	sets.engaged.DW = {ammo="Amar Cluster",
 	head="Aya. Zucchetto +2",neck="Lissome Necklace",ear1="Eabani Earring",ear2="Suppanomimi",
 	body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Hetairoi Ring",
-	back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2}
+	back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2"}
 			
 
     sets.engaged.DW.Acc = {}

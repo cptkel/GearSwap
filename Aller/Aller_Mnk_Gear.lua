@@ -6,8 +6,8 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT', 'HP')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.IdleMode:options('Normal')
-	state.Weapons:options('None','Godhands','ShellCrusher','Cataclysm','ProcStaff','ProcClub','Barehanded','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana')
+	state.IdleMode:options('Normal','Evasion')
+	state.Weapons:options('None','Godhands','Verethragna','ShellCrusher','Cataclysm','ProcStaff','ProcClub','Barehanded','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None'}
 
@@ -31,6 +31,10 @@ function user_setup()
 	send_command('bind !` input /ja "Perfect Counter" <me>')
 	send_command('bind ^backspace input /ja "Mantra" <me>')
 	send_command('bind @` gs c cycle SkillchainMode')
+	
+	send_command('bind !c gs c weapons ShellCrusher;gs c update')
+	send_command('bind !g gs c weapons Godhands;gs c update')
+	send_command('bind !v gs c weapons Verethragna;gs c update')
 	
 	select_default_macro_book()
 end
@@ -170,17 +174,17 @@ function init_gear_sets()
 	
 
 	-- Idle sets
-	sets.idle = {ammo="Staunch Tathlum +1",
-		head=gear.rao_head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-		body="Hiza. Haramaki +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.tp_back,waist="Moonbow Belt +1",legs="Malignance Tights",feet="Rao Sune-Ate +1"}
-
-	sets.idle.Weak = {ammo="Staunch Tathlum +1",
-		head=gear.rao_head,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-		body="Hiza. Haramaki +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.tp_back,waist="Moonbow Belt +1",legs="Malignance Tights",feet="Rao Sune-Ate +1"}
+	sets.idle = {ammo="Amar Cluster",
+		head="Mpaca's cap",neck="Bathy Choker +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+		body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Ilabrat Ring",ring2="Gelatinous Ring +1",
+		back=gear.tp_back,waist="Moonbow Belt +1",legs="Mpaca's hose",feet="Mpaca's boots"}
 
 	sets.idle.PDT = {}		
+	
+	sets.idle.Evasion = {ammo="Sapience Orb",
+		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.tp_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
 	-- Defense sets
 	sets.defense.PDT = {}
@@ -250,6 +254,7 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Godhands = {main="Godhands"}
+	sets.weapons.Verethragna = {main="Verethragna"}
 	sets.weapons.ShellCrusher = {main="Xoanon", sub="Flanged Grip"}
 	sets.weapons.Cataclysm = {main="Xoanon", sub="Alber Strap"}
 	sets.weapons.Barehanded = {main=empty}

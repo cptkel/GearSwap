@@ -100,7 +100,7 @@ function init_gear_sets()
 
 	sets.midcast.Geomancy = {main="Idris",sub="Genmei Shield",range="Dunna",
 		head="Azimuth Hood +1",neck="Bagua Charm +1",ear1="Calamitous Earring",ear2="Mendi. Earring",
-		body="Vedic Coat",hands="Azimuth Gloves +1",ring1="Stikini Ring +1",ring2="Mephitas's Ring",
+		body="Vedic Coat",hands="Azimuth Gloves +1",ring1="Stikini Ring +1",ring2="Mephitas's Ring +1",
 		back="Lifestream Cape",legs="Vanya Slops",feet="Azimuth Gaiters +1"}--waist="Shinjutsu-no-obi +1",
 		
 	--Extra Indi duration as long as you can keep your 900 skill cap.
@@ -198,10 +198,10 @@ sets.midcast.LightWeatherCure = {}
 
 	-- Idle sets
 
-	sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.idle = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Odnowa Earring +1",
 		body="Mallquis Saio +2",hands="Bagua Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.idle_jse_back,waist="Fucho-no-Obi",,legs="Assid. Pants +1",feet="Geo. Sandals +3}
+		back=gear.idle_jse_back,waist="Fucho-no-Obi",legs="Assid. Pants +1",feet="Geo. Sandals +3"}
 	
 	sets.idle.PDT = {}
 		

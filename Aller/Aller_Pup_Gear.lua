@@ -25,9 +25,9 @@ function user_setup()
 		},
 		HybridRanged = {
 			{Name='Wind Maneuver', 	  Amount=0},
-			{Name='Fire Maneuver',	  Amount=2},
+			{Name='Fire Maneuver',	  Amount=1},
 			{Name='Light Maneuver',	  Amount=1},
-			{Name='Thunder Maneuver', Amount=0},
+			{Name='Thunder Maneuver', Amount=1},
 			{Name='Water Maneuver',	  Amount=0},
 			{Name='Earth Maneuver',	  Amount=0},
 		},

@@ -50,7 +50,7 @@ function init_gear_sets()
 	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3",feet="Hashi. Basmak +1"}
 	sets.buff['Chain Affinity'] = {feet="Assim. Charuqs +2"}
 	sets.buff.Convergence = {}
-	sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
+	sets.buff.Diffusion = {feet="Luhlaza Charuqs +2"}
 	sets.buff.Enchainment = {}
 	sets.buff.Efflux = {}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
@@ -123,7 +123,7 @@ function init_gear_sets()
 	sets.precast.WS['Expiacion'].Acc = set_combine(sets.precast.WS['Expiacion'], {})
 	sets.precast.WS['Expiacion'].DT = set_combine(sets.precast.WS.DT, {})
 	
-	sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo Tathlum",
+	sets.precast.WS['Sanguine Blade'] = {ammo="Ghastly Tathlum +1",
 		head="Pixie Hairpin +1",neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
 		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
 		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
@@ -165,7 +165,7 @@ function init_gear_sets()
 	
 	-- Magical Spells --
 
-	sets.midcast['Blue Magic'].Magical = {main="Maxentius",sub="Kaja Rod",ammo="Ghastly Tathlum +1",
+	sets.midcast['Blue Magic'].Magical = {ammo="Ghastly Tathlum +1",
 		 neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
 		 body="Cohort Cloak +1",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
 		 back=gear.nuking_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
@@ -176,8 +176,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
 	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
-		neck="Mirage Stole +1",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Cohort Cloak +1",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
+		head="Assim. Keffiyeh +3",neck="Mirage Stole +1",ear1="Regal Earring",ear2="Digni. Earring",
+		body="Jhakri Robe +2",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
 		back=gear.nuking_back,waist="Luminary Sash",legs="Assim. Shalwar +3",feet="Malignance Boots"}
    
 	sets.midcast['Enfeebling Magic'] = {}
@@ -221,7 +221,7 @@ function init_gear_sets()
 
 	-- Physical Added Effect Spells most notably "Stun" spells --
 
-	sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {})
+	sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {ring1="Stikini Ring +1"})
 
 	-- Other Specific Spells --
 
@@ -274,8 +274,8 @@ function init_gear_sets()
 	sets.resting = {}
 
 	-- Idle sets
-	sets.idle = {main="Bolelabunga",sub=gear.colada_refresh,ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Etiolation Earring", ear2="Odnowa Earring +1",
+	sets.idle = {ammo="Staunch Tathlum +1",
+		head=gear.herculean_refresh_head,neck="Bathy Choker +1",ear1="Etiolation Earring", ear2="Odnowa Earring +1",
 		body="Jhakri Robe +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet}
 

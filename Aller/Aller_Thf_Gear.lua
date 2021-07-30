@@ -61,7 +61,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Aeneas = {main="Aeneas",sub="Ternion Dagger +1"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife"}
-	sets.weapons.MagicWeapons = {main="Aeneas",sub="Malevolence"}
+	sets.weapons.MagicWeapons = {main="Aeneas",sub="Tauret"}
 	
 	
     -- Actions we want to use to tag TH.
@@ -158,7 +158,7 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Ghastly Tathlum +1",
 		head=gear.herculean_mab_head,neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
-		body=gear.herculean_mab_body,hands=gear.herculean_tp_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
+		body=gear.herculean_wsd_body,hands=gear.herculean_tp_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
 		back=gear.aeolian_jse_back,waist=gear.ElementalObi,legs=gear.herculean_mab_legs,feet=gear.herculean_mab_feet}
 		
 sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)

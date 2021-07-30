@@ -3,7 +3,7 @@ function user_setup()
     state.OffenseMode:options('Normal','Acc','Crit')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Match','Normal','Acc','Proc')
-    state.CastingMode:options('Normal','Resistant')
+    state.CastingMode:options('Normal','Proc')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal','DT','DTRostam')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
@@ -27,6 +27,10 @@ function user_setup()
 	set_lockstyle(1)
 	ammostock = 98
 	-- Additional local binds
+	send_command('bind numpad0 input /ra <t>')
+	send_command('bind numpad3 input /ws Leaden Salute <t>')
+	send_command('bind numpad1 input /ja "Triple Shot" <me>')
+	
 	send_command('bind ^` gs c cycle ElementalMode')
 	send_command('bind !` gs c elemental quickdraw')
 	
@@ -114,12 +118,12 @@ function init_gear_sets()
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 
     sets.precast.RA = {ammo=gear.RAbullet,
-        head="Taeon Chapeau",
-        hands="Carmine Fin. Ga. +1", --Oshosi +1
+       head="Chass. Tricorne +1",neck="Comm. Charm +2",
+       body="Oshosi Vest +1",hands="Lanun Gants +3", 
         back=gear.roll_jse_back,waist="Yemaya Belt",legs="Adhemar Kecks +1",feet="Meg. Jam. +2"} 
 		
 	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {body="Laksa. Frac +3"})
-	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA, {head="Chass. Tricorne +1",waist="Impulse Belt",feet="Pursuer's Gaiters"})
+	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, {hands="Carmine Fin. Ga. +1",waist="Impulse Belt",feet="Pursuer's Gaiters"})
 
        
     -- Weaponskill sets
@@ -214,7 +218,7 @@ function init_gear_sets()
 
     sets.midcast.RA.Acc = {}
 		
-	sets.buff['Triple Shot'] = {body="Chasseur's Frac +1",hands="Lanun Gants +3",legs="Osh. Trousers +1",feet="Osh. Leggings +1"}
+	sets.buff['Triple Shot'] = {head="Oshosi Mask +1",body="Chasseur's Frac +1",hands="Lanun Gants +3",back=gear.shoot_jse_back,legs="Osh. Trousers +1",feet="Osh. Leggings +1"}
     
     -- Sets to return to when not performing an action.
 	
