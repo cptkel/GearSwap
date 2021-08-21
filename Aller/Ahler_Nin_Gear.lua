@@ -4,12 +4,12 @@ function user_setup()
     state.HybridMode:options('Normal','Evasion','PDT')
     state.RangedMode:options('Normal','Acc')
     state.WeaponskillMode:options('Match','Normal','AttCap','Acc')
-    state.CastingMode:options('Normal','Tank','Resistant')
-    state.IdleMode:options('Normal','Sphere')
+    state.CastingMode:options('Normal','Tank')
+    state.IdleMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','HeishiTernion','HeishiGoko','KikokuTernion','DualSavageWeapons','Aeolian','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
+	state.Weapons:options('None','HeishiGleti','HeishiGoko','KikokuTernion','NagiGleti','DualSavageWeapons','Aeolian','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
 	
 	state.Stance = M{['description']='Stance','Yonin','Innin','None'}
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None','DW20','DWMax'}
@@ -18,12 +18,14 @@ function user_setup()
 	gear.da_jse_back = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.mab_jse_back = {name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.enmity_jse_back = {name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Parrying rate+5%',}}
+	gear.hybrid_jse_back = {name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	
 	send_command('bind ^` input /ja "Innin" <me>')
     send_command('bind !` input /ja "Yonin" <me>')
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind ^r gs c set WeaponskillMode Normal;gs c set CastingMode Normal;gs c update')
 	send_command('bind @a gs c weapons Aeolian')
+	send_command('bind @h gs c weapons HeishiGleti')
 	
 	utsusemi_cancel_delay = .3
 	utsusemi_ni_cancel_delay = .06
@@ -173,8 +175,11 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Chi'] = {ammo="Seeth. Bomblet +1",
 		head="Mochi. Hatsuburi +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Moonshade Earring",
 		body=gear.herculean_wsd_body,hands="Leyline Gloves",ring1="Gere Ring",ring2="Epaminondas's Ring",
-		waist="Orpheus's Sash",legs="Mochi. Hakama +3",feet=gear.herculean_WSD_feet}--back=andartia str magacc/magdmg/wsd
+		back=gear.hybrid_jse_back,waist="Orpheus's Sash",legs="Mochi. Hakama +3",feet=gear.herculean_WSD_feet}
 		
+	sets.precast.WS['Blade: Teki'] = sets.precast.WS['Blade: Chi']
+	sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
+	
 	sets.precast.WS['Blade: Shun'] = {
 		head="Mpaca's Cap",neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Moonshade Earring",
 		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Regal Ring",
@@ -201,8 +206,8 @@ function init_gear_sets()
 		back=gear.da_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet="Mochi. Kyahan +3"}
 	
 	sets.precast.WS['Blade: Kamu'] = {ammo="Seething Bomblet +1",
-		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Balder Earring +1",
-		body="Tatena. Harama. +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona Ring",
+		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Brutal Earring",
+		body="Tatena. Harama. +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
 		back=gear.da_jse_back,waist="Sailfi Belt +1",legs="Tatena. Haidate +1",feet="Tatena. Sune. +1"}
     
 	
@@ -311,7 +316,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Seki Shuriken",
 		head="Adhemar Bonnet +1",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Brutal Earring",
-		body="Ken. Samue +1",hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Gere Ring",
+		body="Ken. Samue +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
 		back=gear.da_jse_back,waist="Windbuffet belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet}
 		
     sets.engaged.Acc = {}
@@ -343,20 +348,21 @@ function init_gear_sets()
 	sets.Skillchain = {}
 	
 	-- Weapons sets
-	sets.weapons.HeishiTernion = {main="Heishi Shorinken",sub="Ternion Dagger +1"}
+	sets.weapons.HeishiGleti = {main="Heishi Shorinken",sub="Gleti's Knife"}
 	sets.weapons.HeishiGoko = {main="Heishi Shorinken",sub="Gokotai"}
 	sets.weapons.KikokuTernion = {main="Kikoku",sub="Ternion Dagger +1"}
+	sets.weapons.NagiGleti = {main="Nagi",sub="Gleti's Knife"}
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Uzura +2"}
 	sets.weapons.Aeolian = {main="Tauret",sub="Ternion Dagger +1"}
 	sets.weapons.ProcDagger = {main="Qutrub Knife",sub=empty}
-	sets.weapons.ProcSword = {main="Onion Sword",sub=empty}
+	sets.weapons.ProcSword = {main="Excalipoor",sub=empty}
 	sets.weapons.ProcGreatSword = {main="Ophidian Sword",sub=empty}
 	sets.weapons.ProcScythe = {main="Hoe",sub=empty}
 	sets.weapons.ProcPolearm = {main="Tzee Xicu's Blade",sub=empty}
-	sets.weapons.ProcGreatKatana = {main="Uchigatana",sub=empty}
+	sets.weapons.ProcGreatKatana = {main="Zanmato",sub=empty}
 	sets.weapons.ProcKatana = {main="Ochu",sub=empty}
 	sets.weapons.ProcClub = {main="Soulflayer's Wand",sub=empty}
-	sets.weapons.ProcStaff = {main="Ram Staff",sub=empty}
+	sets.weapons.ProcStaff = {main="Ranine Staff",sub=empty}
 	
 end
 

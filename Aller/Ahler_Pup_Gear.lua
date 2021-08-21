@@ -286,7 +286,7 @@ function init_gear_sets()
 		body="Rao Togi +1",hands="Rao Kote +1",ring1="Thurandaut Ring",ring2="Overbearing Ring",
 		back=gear.idle_jse_back,waist="Isa Belt",legs="Rao Haidate +1",feet="Rao Sune-Ate +1"}
 		
-	sets.idle.Pet.Engaged.LightTank = {main="Ohtas",ranged="Animator P +1",
+	sets.idle.Pet.Engaged.LightTank = {main="Xiucoatl",range="Animator P +1", --Ohtas (BiS but will drop 150HP when swapping)
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
 		body=gear.taeon_body,hands=gear.taeon_hands,ring1="Thurandaut Ring",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet=gear.taeon_feet}

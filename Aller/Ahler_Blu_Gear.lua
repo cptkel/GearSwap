@@ -123,10 +123,10 @@ function init_gear_sets()
 	sets.precast.WS['Expiacion'].Acc = set_combine(sets.precast.WS['Expiacion'], {})
 	sets.precast.WS['Expiacion'].DT = set_combine(sets.precast.WS.DT, {})
 	
-	sets.precast.WS['Sanguine Blade'] = {ammo="Ghastly Tathlum +1",
+	--[[sets.precast.WS['Sanguine Blade'] = {ammo="Ghastly Tathlum +1",
 		head="Pixie Hairpin +1",neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
 		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
-		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
+		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}]]--
 					 
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {ear2="Regal Earring",ring1="Metamor. Ring +1",waist="Luminary Sash"})
 
@@ -177,8 +177,8 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
 		head="Assim. Keffiyeh +3",neck="Mirage Stole +1",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Jhakri Robe +2",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
-		back=gear.nuking_back,waist="Luminary Sash",legs="Assim. Shalwar +3",feet="Malignance Boots"}
+		body="Malignance Tabard",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
+		back="Aurist's Cape +1",waist="Acuity Belt +1",legs="Assim. Shalwar +3",feet="Malignance Boots"}
    
 	sets.midcast['Enfeebling Magic'] = {}
 
@@ -221,7 +221,7 @@ function init_gear_sets()
 
 	-- Physical Added Effect Spells most notably "Stun" spells --
 
-	sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {ring1="Stikini Ring +1"})
+	sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {head="Carmine Mask +1",ear1="Njordr Earring",ring1="Stikini Ring +1",waist="Eschan Stone",legs="Malignance Tights"})
 
 	-- Other Specific Spells --
 
@@ -333,7 +333,7 @@ function init_gear_sets()
 
 	sets.engaged.DT = {ammo="Ginsen",
 		head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Epona's Ring",ring2="Defending Ring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
 		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 
 	sets.engaged.DT.AM = {ammo="Ginsen",

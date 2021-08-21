@@ -228,10 +228,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].SIRD = set_combine(sets.Enmity.SIRD, {})
 	sets.midcast.Cocoon = set_combine(sets.Enmity.DT, {})
 
-    sets.midcast.Cure = {ammo="Staunch Tathlum +1",
-        head="Fu. Bandeau +3",ear1="Mendi. Earring",ear2="Tuisto Earring", --neck="Sacro Gorget"
-        body="Vrikodara Jupon",ring1="Defending Ring",ring2="Moonlight Ring",
-        waist=gear.ElementalObi,legs="Eri. Leg Guards +1"}
+    sets.midcast.Cure = {}
 		
 	sets.midcast['Wild Carrot'] = set_combine(sets.midcast.Cure, {})
 		

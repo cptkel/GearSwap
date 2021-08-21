@@ -258,7 +258,7 @@ function init_gear_sets()
 	sets.weapons.ShellCrusher = {main="Xoanon", sub="Flanged Grip"}
 	sets.weapons.Cataclysm = {main="Xoanon", sub="Alber Strap"}
 	sets.weapons.Barehanded = {main=empty}
-	sets.weapons.ProcStaff = {main="Ram Staff"}
+	sets.weapons.ProcStaff = {main="Ranine Staff"}
 	sets.weapons.ProcClub = {main="Soulflayer's Wand"}
 	sets.weapons.ProcSword = {main="",sub=empty}
 	sets.weapons.ProcGreatSword = {main="Ophidian Sword",sub=empty}
