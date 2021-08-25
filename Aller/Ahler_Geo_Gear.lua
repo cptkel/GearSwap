@@ -16,9 +16,9 @@ function user_setup()
 	--gear.obi_low_nuke_waist = "Sacro Cord"
 	--gear.obi_high_nuke_waist = "Sacro Cord"
 	
-	autoindi = "Acumen"
-	autogeo = "Malaise"
-	autoentrust = 'AGI'
+	autoindi = "Precision"
+	autogeo = "Frailty"
+	autoentrust = 'Haste'
 	autoentrustee = '<p2>'
 	
 	set_lockstyle(7)

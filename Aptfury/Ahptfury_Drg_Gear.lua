@@ -203,7 +203,8 @@ function init_gear_sets()
 		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Petrov Ring",ring2="Niqmaddu Ring",
 		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flamma Gambieras +2"}
 		
-    sets.engaged.AM = {}
+    sets.engaged.Sword.Acc = set_combine(sets.engaged.Sword, {ear1="Digni. Earring",ring1="Regal Ring"})
+	sets.engaged.AM = {}
     
 	sets.engaged.AM.Acc = {}
    

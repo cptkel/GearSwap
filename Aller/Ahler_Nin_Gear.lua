@@ -259,7 +259,7 @@ function init_gear_sets()
 	
     sets.midcast.Utsusemi = set_combine(sets.midcast.NinjutsuBuff, {back="Andartia's Mantle",feet="Hattori Kyahan +1"})
 
-	sets.midcast.Utsusemi.Tank = set_combine(sets.Enmity, {feet="Hattori Kyahan +1"})
+	sets.midcast.Utsusemi.Tank = set_combine(sets.Enmity, {ammo="Staunch Tathlum +1",ring1="Defending Ring",waist="Flume Belt +1",feet="Hattori Kyahan +1"})
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
 	sets.midcast.Stun = set_combine(sets.Enmity, {})
 	
@@ -315,18 +315,23 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Seki Shuriken",
-		head="Adhemar Bonnet +1",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Brutal Earring",
+		head="Adhemar Bonnet +1",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Cessance Earring",
 		body="Ken. Samue +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
 		back=gear.da_jse_back,waist="Windbuffet belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet}
 		
     sets.engaged.Acc = {}
 	sets.engaged.Crit = set_combine(sets.engaged, {ammo="Happo Shuriken",head="Blistering Sallet +1",ear1="Odr Earring",body="Mummu jacket +2",hands="Mummu wrists +2",legs="Mummu Kecks +2",feet="Mummu gamashes +2"})
-    sets.engaged.Evasion = {}
+    
+	sets.engaged.Evasion = {ammo="Seki Shuriken",
+		head="Malignance Chapeau",neck="Ninja Nodowa +2",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Mpaca's Doublet",hands="Malignance Gloves",ring1="Ilabrat RIng",ring2="Vengeful Ring",
+		back=gear.enmity_jse_back,waist="Sailfi Belt +1",legs="Mpaca's Hose",feet="Malignance Boots"}
+		
 	sets.engaged.Acc.Evasion = {}
 	sets.engaged.PDT = set_combine(sets.engaged,{
         head="Malignance Chapeau",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",
-        legs="Malignance Tights",feet="Malignance Boots"})
+        body="Mpaca's Doublet",hands="Malignance Gloves",ring1="Defending Ring",
+        waist="Engraved Belt",legs="Mpaca's Hose",feet="Malignance Boots"})
 	sets.engaged.Acc.PDT = {}
 	
 		

@@ -13,7 +13,7 @@ function user_job_setup()
 
 	-- Set up Jug Pet cycling and keybind Ctrl+F7
 	-- INPUT PREFERRED JUG PETS HERE
-	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin','BlackbeardRandy','AttentiveIbuki','DroopyDortwin','WarlikePatrick','AcuexFamiliar'}
+	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin','BlackbeardRandy','GenerousArthur','AttentiveIbuki','DroopyDortwin','WarlikePatrick','AcuexFamiliar'}
 	send_command('bind ^f7 gs c cycle JugMode')
 
 	-- Set up Monster Correlation Modes and keybind Alt+F7
@@ -32,7 +32,7 @@ function user_job_setup()
 	send_command('bind !` gs c ready default')
 
 	--Example of how to change default ready moves.
-	ready_moves.default.ScissorlegXerin = 'Tegmine Buffet'
+	ready_moves.default.ScissorlegXerin = 'Tegmina Buffet'
 
 	select_default_macro_book()
 end
@@ -129,6 +129,10 @@ function init_gear_sets()
 		back="Letalis Mantle",waist="Olseni Belt",legs="Meg. Chausses +2",feet="Nukumi Ocreae +1"}
 
 	-- Specific weaponskill sets.
+	sets.precast.WS['Decimation'] = {ammo="Coiste Bodhar",
+		head="Gleti's Mask",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Brutal Earring",
+		body="Gleti's Cuirass",hands="Gleti's Gauntlets",ring1="Gere Ring",ring2="Epona's Ring",
+		waist="Fotia Belt",legs="Gleti's Breeches",feet="Gleti's Boots"}
 	sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS, {})
 	sets.precast.WS['Ruinator'].Mekira = set_combine(sets.precast.WS['Ruinator'], {head="Gavialis Helm"})
 	sets.precast.WS['Ruinator'].WSMidAcc = set_combine(sets.precast.WS.WSMidAcc, {})
