@@ -33,6 +33,7 @@ function user_job_setup()
 
 	--Example of how to change default ready moves.
 	ready_moves.default.ScissorlegXerin = 'Tegmina Buffet'
+	ready_moves.default.GenerousArthur = 'Corrosive Ooze'
 
 	select_default_macro_book()
 end
@@ -279,7 +280,7 @@ function init_gear_sets()
 
 	-- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB
 	sets.engaged.DW = {ammo="Coiste Bodhar",
-		head="Malignance Chapeau",neck="Combatant's Torque",ear1="Sherida Earring",ear2="Eabani Earring",
+		head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Eabani Earring",
 		body="Gleti's Cuirass",hands="Malignance Gloves",ring1="Epona's Ring",ring2="Petrov Ring",
 		back="Ground. Mantle +1",waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 

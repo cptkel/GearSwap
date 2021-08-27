@@ -9,8 +9,8 @@ function user_setup()
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('None','Idris','DualWeapons')
 	
-	gear.nuke_jse_back = {name="Nantosuelta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
-	gear.idle_jse_back = {name="Nantosuelta's Cape",augments={'HP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10'}}
+	gear.nuke_jse_back = {name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
+	gear.idle_jse_back = {name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	
 	
 	--gear.obi_low_nuke_waist = "Sacro Cord"
@@ -61,16 +61,16 @@ function init_gear_sets()
 	
 	-- Fast cast sets for spells
 
-	sets.precast.FC = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap",range="Dunna",
-		head="Amalric Coif +1",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Zendik Robe",ring1="Kishar Ring",ring2="Prolix Ring", --volte gloves 6
-		back="Fi Follet Cape +1",waist="Witful Belt",legs="Geomancy Pants +3",feet="Regal Pumps +1"}
+	sets.precast.FC = {range="Dunna", --3
+		head="Merlinic Hood",neck="Orunmila's Torque", --14,-5
+		body="Zendik Robe",hands="Merlinic Dastanas", --13,-6
+		back="Fi Follet Cape +1",waist="Embla Sash",legs="Geomancy Pants +3",feet="Merlinic Crackows"} --10,5,15,11
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC,{})
 	
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ear1="Barkaro. Earring",hands="Bagua Mitaines +3"})
 
-	sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Serenity",sub="Clerisy Strap"})
+	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 		
 	sets.precast.FC.Curaga = sets.precast.FC.Cure
 	
@@ -93,21 +93,21 @@ function init_gear_sets()
 	-- Midcast sets
 	--------------------------------------
 
-    sets.midcast.FastRecast = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap",range="Dunna",
-		head="Amalric Coif +1",neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Zendik Robe",ring1="Kishar Ring",ring2="Prolix Ring", --volte gloves 6
-		back=gear.fc_jse_back,waist="Witful Belt",legs="Geomancy Pants +3",feet="Regal Pumps +1"}
+    sets.midcast.FastRecast = {range="Dunna", --3
+		head="Merlinic Hood",neck="Orunmila's Torque", --14,-5
+		body="Zendik Robe",hands="Merlinic Dastanas", --13,-6
+		back="Fi Follet Cape +1",waist="Embla Sash",legs="Geomancy Pants +3",feet="Merlinic Crackows"}
 
 	sets.midcast.Geomancy = {main="Idris",sub="Genmei Shield",range="Dunna",
 		head="Azimuth Hood +1",neck="Bagua Charm +1",ear1="Calamitous Earring",ear2="Mendi. Earring",
 		body="Vedic Coat",hands="Azimuth Gloves +1",ring1="Stikini Ring +1",ring2="Mephitas's Ring +1",
-		back="Lifestream Cape",legs="Vanya Slops",feet="Azimuth Gaiters +1"}--waist="Shinjutsu-no-obi +1",
+		back="Lifestream Cape",waist="Shinjutsu-no-obi +1",legs="Vanya Slops",feet="Azimuth Gaiters +1"}
 		
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {head={name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},neck="Incanter's Torque",legs="Bagua Pants +3"})
 		
-    sets.midcast.Cure = {main="Gada",sub="Sors Shield",ammo="Hasty Pinion +1",
-		head="Vanya Hood",neck="Incanter's Torque",ear1="Meili Earring",ear2="Mendi. Earring",
+    sets.midcast.Cure = {main="Gada",sub="Sors Shield",
+		head="Vanya Hood",neck="Incanter's Torque",ear1="Mendi. Earring",ear2="Meili Earring",
 		body="Vanya Robe",hands="Vanya Cuffs",ring1="Stikini Ring +1",ring2="Haoma's Ring",
 		back="Tempered Cape +1",waist="Bishop's Sash",legs="Vanya Slops",feet="Vanya Clogs"}
 		
@@ -122,8 +122,8 @@ sets.midcast.LightWeatherCure = {}
 	
 	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {}) --main="Oranyan",sub="Clemency Grip"
 	
-    sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head="Bagua Galero +3",neck="Sanctity Necklace",ear1="Regal Earring",ear2="Malignance Earring",
+    sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
+		head="Bagua Galero +3",neck="Baetyl Pendant",ear1="Regal Earring",ear2="Malignance Earring",
 		body="Geomancy Tunic +3",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamor. Ring +1",
 		gear.nuke_jse_back,waist=gear.ElementalObi,legs="Bagua Pants +3", feet="Bagua Sandals +3"} --sacro cord
 		
@@ -166,7 +166,7 @@ sets.midcast.LightWeatherCure = {}
 	
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {})
 		
-	sets.midcast['Enhancing Magic'] = {main=gear.gada_enhancing_club,sub="Ammurapi Shield",ammo="Hasty Pinion +1",
+	sets.midcast['Enhancing Magic'] = {main=gear.gada_enhancing_club,sub="Ammurapi Shield",
 		head="Telchine Cap",neck="Incanter's Torque",ear1="Andoaa Earring",ear2="Mimir Earring",
 		body="Telchine Chas.",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Merciful Cape",waist="Olympus Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
@@ -199,7 +199,7 @@ sets.midcast.LightWeatherCure = {}
 	-- Idle sets
 
 	sets.idle = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Odnowa Earring +1",
+		head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
 		body="Mallquis Saio +2",hands="Bagua Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.idle_jse_back,waist="Fucho-no-Obi",legs="Assid. Pants +1",feet="Geo. Sandals +3"}
 	
@@ -209,14 +209,14 @@ sets.midcast.LightWeatherCure = {}
 
 	-- .Pet sets are for when Luopan is present.
 	sets.idle.Pet = {main="Idris",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Azimuth Hood +1",neck="Bagua Charm +1",ear2="Genmei Earring",ear1="Lugalbanda Earring",
+		head="Azimuth Hood +1",neck="Bagua Charm +1",ear1="Etiolation Earring",ear2="Lugalbanda Earring",
 		body="Geomancy Tunic +3",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.idle_jse_back,waist="Isa Belt",legs="Gyve Trousers",feet="Bagua Sandals +3"}
 
 	sets.idle.PDT.Pet = {main="Idris",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Azimuth Hood +1",neck="Bagua Charm +1",ear1="Genmei Earring",ear2="Lugalbanda Earring",
+		head="Bagua Galero +3",neck="Bagua Charm +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
 		body="Mallquis Saio +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.idle_jse_back,waist="Isa Belt",legs="Miasmic Pants",feet="Bagua Sandals +3"}
+		back=gear.idle_jse_back,waist="Slipor Sash",legs="Geomancy Pants +3",feet="Bagua Sandals +3"}
 		
 
 	-- .Indi sets are for when an Indi-spell is active.
