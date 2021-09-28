@@ -13,7 +13,7 @@ function user_job_setup()
 
 	-- Set up Jug Pet cycling and keybind Ctrl+F7
 	-- INPUT PREFERRED JUG PETS HERE
-	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin','BlackbeardRandy','GenerousArthur','AttentiveIbuki','DroopyDortwin','WarlikePatrick','AcuexFamiliar'}
+	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin','CaringKiyomaro','BlackbeardRandy','GenerousArthur','WarlikePatrick'}
 	send_command('bind ^f7 gs c cycle JugMode')
 
 	-- Set up Monster Correlation Modes and keybind Alt+F7
@@ -34,7 +34,11 @@ function user_job_setup()
 	--Example of how to change default ready moves.
 	ready_moves.default.ScissorlegXerin = 'Tegmina Buffet'
 	ready_moves.default.GenerousArthur = 'Corrosive Ooze'
-
+	ready_moves.default.CaringKiyomaro = 'Zealous Snort'
+	
+	gear.tp_jse_back = {name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+	gear.strda_back = {name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+	
 	select_default_macro_book()
 end
 
@@ -42,7 +46,7 @@ end
 function init_gear_sets()
 	-- PRECAST SETS
 	sets.precast.JA['Killer Instinct'] = {} --head="Ankusa Helm +1"
-	sets.precast.JA['Bestial Loyalty'] = {body="Mirke Wardecors",hands="Ankusa Gloves +1"}
+	sets.precast.JA['Bestial Loyalty'] = {hands="Ankusa Gloves +1"}
 	sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
 	sets.precast.JA.Familiar = {legs="Ankusa Trousers +1"}
 	sets.precast.JA.Tame = {head="Totemic Helm +1"}
@@ -133,7 +137,7 @@ function init_gear_sets()
 	sets.precast.WS['Decimation'] = {ammo="Coiste Bodhar",
 		head="Gleti's Mask",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Brutal Earring",
 		body="Gleti's Cuirass",hands="Gleti's Gauntlets",ring1="Gere Ring",ring2="Epona's Ring",
-		waist="Fotia Belt",legs="Gleti's Breeches",feet="Gleti's Boots"}
+		back=gear.strda_back,waist="Fotia Belt",legs="Gleti's Breeches",feet="Gleti's Boots"}
 	sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS, {})
 	sets.precast.WS['Ruinator'].Mekira = set_combine(sets.precast.WS['Ruinator'], {head="Gavialis Helm"})
 	sets.precast.WS['Ruinator'].WSMidAcc = set_combine(sets.precast.WS.WSMidAcc, {})
@@ -156,9 +160,9 @@ function init_gear_sets()
 
 				-- PET SIC & READY MOVES
 	sets.midcast.Pet.WS = {main=gear.PHYKumbha1,sub=gear.PHYKumbha2,ammo="Voluspa Tathlum",
-		head="Totemic Helm +1",neck="Shulmanu Collar",ear1="Enmerkar Earring",ear2="Domesticator's Earring",
+		head="Totemic Helm +1",neck="Shulmanu Collar",ear1="Domesticator's Earring",ear2="Hija Earring",
 		body="Taeon Tabard",hands="Nukumi Manoplas +1",ring1="Varar Ring +1",ring2="C. Palug Ring",
-		back="Artio's Mantle",waist="Incarnation Sash",legs=gear.valorous_physical_pet_legs,feet="Totemic Gaiters +1"}
+		back="Artio's Mantle",waist="Incarnation Sash",legs=gear.valorous_physical_pet_legs,feet="Gleti's Boots"}
 
 	
 	sets.midcast.Pet.Acc = set_combine(sets.midcast.Pet.WS, {main="Kerehcatl",sub="Hunahpu",head="Totemic Helm +1",hands="Regimen Mittens"})
@@ -179,8 +183,8 @@ function init_gear_sets()
 		body=gear.valorous_pet_body,hands="Nukumi Manoplas +1",ring1="Varar Ring +1",ring2="Varar Ring +1",
 		back="Artio's Mantle",waist="Incarnation Sash",legs=gear.valorous_magical_pet_legs,feet=gear.valorous_magical_pet_feet}
 
-	sets.midcast.Pet.ReadyRecast = {legs="Desultor Tassets"}
-	sets.midcast.Pet.ReadyRecastDW = {sub="Charmer's Merlin",legs="Desultor Tassets"}
+	sets.midcast.Pet.ReadyRecast = {legs="Gleti's Breeches"}
+	sets.midcast.Pet.ReadyRecastDW = {legs="Gleti's Breeches"}
 	sets.midcast.Pet.Neutral = {head="Totemic Helm +1"}
 	sets.midcast.Pet.Favorable = {head="Nukumi Cabasset"}
 	sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas +1"}
@@ -282,7 +286,7 @@ function init_gear_sets()
 	sets.engaged.DW = {ammo="Coiste Bodhar",
 		head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Eabani Earring",
 		body="Gleti's Cuirass",hands="Malignance Gloves",ring1="Epona's Ring",ring2="Petrov Ring",
-		back="Ground. Mantle +1",waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 
 	sets.engaged.DW.Acc = {ammo="Falcon Eye",
 		head="Meghanada Visor +2",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Brutal Earring",
@@ -324,7 +328,7 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.PetPDTAxe = {main ="Izizoeksi"}
-	sets.weapons.DualWeapons = {main ="Izizoeksi",sub="Hunahpu"}
+	sets.weapons.DualWeapons = {main ="Dolichenus",sub="Ternion Dagger +1"}
 
 
 -------------------------------------------------------------------------------------------------------------------

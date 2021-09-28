@@ -9,7 +9,7 @@ function user_job_setup()
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'PDT','Refresh')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
-	state.Weapons:options('Trishula','ShiningOne','Sword')
+	state.Weapons:options('Trishula','ShiningOne','Sword','Staff')
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 
     select_default_macro_book()
@@ -130,7 +130,12 @@ function init_gear_sets()
 		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
 		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
 		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Gleti's boots"}
-		
+	
+	sets.precast.WS['Retribution'] = {ammo="Knobkierrie",
+		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
+		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Sulev. Leggings +2"}
+	
 	-- Sets to return to when not performing an action.
 	
 	-- Resting sets
@@ -171,8 +176,9 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Trishula = {main="Trishula",sub="Utu Grip"}
-	sets.weapons.ShiningOne ={main="Shining One",sub="Utu Grip"}
-	sets.weapons.Sword ={main="Naegling",sub=none}
+	sets.weapons.ShiningOne = {main="Shining One",sub="Utu Grip"}
+	sets.weapons.Sword = {main="Naegling",sub=none}
+	sets.weapons.Staff = {main="Malignance Pole",sub="Utu Grip"}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Lugra Earring +1",ear2="Sherida Earring",}

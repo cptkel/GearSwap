@@ -3,11 +3,11 @@ function user_setup()
     state.OffenseMode:options('Normal','Acc','Crit')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Match','Normal','Acc','Proc')
-    state.CastingMode:options('Normal','Proc')
+    state.CastingMode:options('Normal','Proc','Fodder')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal','DT','DTRostam')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','LastStand','LastStandACC','SBLS')
+	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','Evisceration','LastStand','LastStandACC','SBLS')
 	state.CompensatorMode:options('300','1000','Never','Always')
 
     autows = 'Savage Blade'
@@ -53,6 +53,27 @@ function user_setup()
     select_default_macro_book()
 end
 
+ function user_job_post_precast(spell, spellMap, eventArgs)
+  if spell.type == "CorsairShot" then
+
+    if state.CastingMode.value == 'Fodder' and spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot' then
+      local orpheus_avail = item_available("Orpheus's Sash")
+      local hachirin_avail = item_available('Hachirin-no-Obi')
+                
+      if hachirin_avail and spell.element and spell.element == world.weather_element and world.weather_intensity == 2 then
+        equip({waist="Hachirin-no-Obi"})
+      elseif orpheus_avail and spell.target.distance < 3 then
+        equip({waist="Orpheus's Sash"})
+      elseif hachirin_avail and spell.element and spell.element == world.weather_element and spell.element == world.day_element then
+        equip({waist="Hachirin-no-Obi"})
+      elseif orpheus_avail and spell.target.distance < 8 then
+        equip({waist="Orpheus's Sash"})
+      elseif hachirin_avail and spell.element and (spell.element == world.weather_element or spell.element == world.day_element) then
+        equip({waist="Hachirin-no-Obi"})
+      end
+    end
+  end
+end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
@@ -82,7 +103,12 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {}) --hands="Chasseur's Gants +1"
     
-    sets.precast.CorsairShot = {ammo="Hauksbok Bullet",
+	sets.precast.CorsairShot = {ammo=gear.RAbullet,
+        head="Malignance Chapeau",neck="Iskur Gorget",ear1="Dedition Earring",ear2="Telos Earring",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+        back=gear.shoot_jse_back,waist="Yemaya Belt",legs="Malignance Tights",feet="Malignance Tights"}
+	
+    sets.precast.CorsairShot.Damage = {ammo="Hauksbok Bullet",
         head=gear.herculean_mab_head,neck="Comm. Charm +2",ear1="Friomisi Earring",ear2="Crematio Earring",
         body="Lanun Frac +3",hands="Carmine Fin. Ga. +1",ring1="Dingir Ring", --Fenrir Ring +1
         back=gear.leaden_back,waist="Eschan Stone",legs=gear.herculean_leaden_legs,feet="Lanun Bottes +3"}
@@ -92,7 +118,7 @@ function init_gear_sets()
 		body="Malignance Tabard",hands="Laksa. Gants +2",ring1="Stikini Ring +1",ring2="Regal Ring",
 		back=gear.shoot_jse_back,legs="Malignance Tights",feet="Laksa. Bottes  +2"} --k.kachina belt +1
 		
-	sets.precast.CorsairShot.Proc = set_combine(sets.precast.CorsairShot, {feet="Chass. Bottes +1"})
+	sets.precast.CorsairShot.Proc = set_combine(sets.precast.CorsairShot.Damage, {feet="Chass. Bottes +1"})
 
     sets.precast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head="Laksa. Tricorne +2",neck="Comm. Charm +2",ear1="Digni. Earring",ear2="Gwati Earring", 
@@ -188,7 +214,12 @@ function init_gear_sets()
 		head=gear.herculean_mab_head,neck="Comm. Charm +2",ear1="Moonshade Earring",ear2="Friomisi Earring",
 		body="Lanun Frac +3",hands="Carmine Fin. Ga. +1",ring1="Dingir Ring",ring2="Epaminondas's Ring",
 		back=gear.leaden_back,waist="Orpheus's Sash", legs=gear.herculean_leaden_legs,feet="Lanun Bottes +3"}
-		
+	
+	sets.precast.WS['Evisceration'] = {
+		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
+		body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Regal Ring",ring2="Mummu Ring",
+		back=gear.tp_jse_back,waist="Fotia Belt",legs="Samnuha Tights",feet="Mummu Gamash. +2"}
+	
 		--Because omen skillchains.
     sets.precast.WS['Burning Blade'] = {}
 
@@ -260,6 +291,7 @@ function init_gear_sets()
 	sets.weapons.DualLeadenMelee = {main={name="Rostam",bag="inventory"},sub="Gleti's Knife",range="Death Penalty"} --pathB,Tauret
 	sets.weapons.DualLeadenMeleeACC = {main={name="Rostam",bag="inventory"},sub="Demers. Degen +1",range="Death Penalty"}
 	sets.weapons.Aeolian = {main={name="Rostam",bag="inventory"},sub="Tauret",range="Anarchy +2"}
+	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife",range="Anarchy +2"}
 	sets.weapons.LastStand = {main={name="Rostam",bag="inventory"},sub="Gleti's Knife",range="Fomalhaut"}
 	sets.weapons.LastStandACC = {main={name="Rostam",bag="inventory"},sub="Kustawi +1",range="Fomalhaut"}
 	sets.weapons.SBLS = {main="Naegling",sub="Gleti's Knife",range="Death Penalty"}

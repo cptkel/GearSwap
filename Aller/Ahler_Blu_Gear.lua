@@ -8,7 +8,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('MagicWeapons','Tizbron','Sanguine','TizMACC','None')
+	state.Weapons:options('MagicWeapons','Tizbron','Sanguine','TizMACC','Tank','Savage','None')
 	state.AutoBuffMode:options('Off','Auto','Default','Cleave')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','MP','SuppaBrutal','DWEarrings','DWMax'}
@@ -90,7 +90,7 @@ function init_gear_sets()
 	--[[sets.precast.FC['Blue Magic'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"})]]--	
+		back=gear.evasion_jse_back,waist="Flume Belt +1",legs="Malignance Tights",feet="Malignance Boots"})]]--	
 
 
 	-- Weaponskill sets
@@ -186,11 +186,11 @@ function init_gear_sets()
 
 	sets.midcast['Enhancing Magic'] = {}
 		
-	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'],{})
+	sets.midcast['Phalanx'] = {}
 
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {})
 
-	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {})
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {head="Amalric Coif +1"})
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {})
 
@@ -230,7 +230,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic']['Dream Flower'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"})
+		back=gear.evasion_jse_back,waist="Flume Belt +1",legs="Malignance Tights",feet="Malignance Boots"})
 	
 	sets.midcast['Blue Magic']['Dream Flower'].Ody = sets.midcast['Blue Magic']['Dream Flower'].Evasion
 	
@@ -241,7 +241,7 @@ function init_gear_sets()
 	--[[sets.midcast['Blue Magic']['Entomb'].Evasion = set_combine(sets.precast.FC, {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.evasion_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"})]]--
+		back=gear.evasion_jse_back,waist="Flume Belt +1",legs="Malignance Tights",feet="Malignance Boots"})]]--
 	
 	sets.midcast['Blue Magic']['White Wind'] = {}
 					
@@ -252,14 +252,18 @@ function init_gear_sets()
 	--Overwrite certain spells with these peices even if the day matches, because of resource inconsistancies.
 	sets.NonElementalCure = {}
 
-	sets.midcast['Blue Magic'].SkillBasedBuff = {}
+	sets.midcast['Blue Magic'].SkillBasedBuff = {
+		head="Luh. Keffiyeh +3",neck="Mirage Stole +1",ear1="Njordr Earring",
+		body="Assim. Jubbah +3",hands="Rawhide Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		back="Cornflower Cape",legs="Hashishin Tayt +1",feet="Luhlaza Charuqs +2"}
 
 	sets.midcast['Blue Magic'].Buff = {}
 
 	sets.midcast['Blue Magic']['Battery Charge'] = set_combine(sets.midcast['Blue Magic'].Buff, {})
 
 	sets.midcast['Blue Magic']['Carcharian Verve'] = set_combine(sets.midcast['Blue Magic'].Buff, {})
-
+	
+	
 	-- Sets to return to when not performing an action.
 
 	sets.latent_refresh = {waist="Fucho-no-obi"}
@@ -276,7 +280,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {ammo="Staunch Tathlum +1",
 		head=gear.herculean_refresh_head,neck="Bathy Choker +1",ear1="Etiolation Earring", ear2="Odnowa Earring +1",
-		body="Jhakri Robe +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		body="Jhakri Robe +2",hands=gear.herculean_refresh_hands,ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet}
 
 	sets.idle.Evasion = {ammo="Staunch Tathlum +1",
@@ -313,6 +317,8 @@ function init_gear_sets()
 	sets.weapons.Tizbron = {main="Tizona",sub="Thibron"}
 	sets.weapons.Sanguine = {main="Naegling",sub="Maxentius"}
 	sets.weapons.TizMACC = {main="Tizona",sub="Naegling"}
+	sets.weapons.Tank = {main="Tizona",sub="Sakpata's Sword"}
+	sets.weapons.Savage = {main="Naegling",sub="Thibron"}
 	
 
 	-- Engaged sets

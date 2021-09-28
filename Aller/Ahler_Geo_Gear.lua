@@ -143,7 +143,7 @@ sets.midcast.LightWeatherCure = {}
 		
 	sets.midcast.Stun.Resistant = {}
 
-	sets.midcast.Impact = {}
+	sets.midcast.Impact = {head=empty,body="Twilight Cloak"}
 		
 	sets.midcast['Enfeebling Magic'] = {}
 		
@@ -199,9 +199,9 @@ sets.midcast.LightWeatherCure = {}
 	-- Idle sets
 
 	sets.idle = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+		head="Bagua Galero +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
 		body="Mallquis Saio +2",hands="Bagua Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.idle_jse_back,waist="Fucho-no-Obi",legs="Assid. Pants +1",feet="Geo. Sandals +3"}
+		back=gear.idle_jse_back,waist="Fucho-no-Obi",legs="Bagua Pants +3",feet="Geo. Sandals +3"}
 	
 	sets.idle.PDT = {}
 		

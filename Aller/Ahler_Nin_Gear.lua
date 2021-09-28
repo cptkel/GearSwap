@@ -1,6 +1,6 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal','Acc','Crit')
+    state.OffenseMode:options('Normal','Acc','Crit','SB')
     state.HybridMode:options('Normal','Evasion','PDT')
     state.RangedMode:options('Normal','Acc')
     state.WeaponskillMode:options('Match','Normal','AttCap','Acc')
@@ -217,7 +217,7 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = {ammo="Seething Bomblet +1",
 		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Moonshade Earring",
 		body=gear.herculean_wsd_body,hands="Mpaca's Gloves",ring1="Regal Ring",ring2="Epaminondas's Ring",
-		waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet=gear.herculean_WSD_feet}
+		back=gear.hybrid_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet=gear.herculean_WSD_feet}
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
@@ -321,17 +321,19 @@ function init_gear_sets()
 		
     sets.engaged.Acc = {}
 	sets.engaged.Crit = set_combine(sets.engaged, {ammo="Happo Shuriken",head="Blistering Sallet +1",ear1="Odr Earring",body="Mummu jacket +2",hands="Mummu wrists +2",legs="Mummu Kecks +2",feet="Mummu gamashes +2"})
-    
+    sets.engaged.SB = {ring2="Chirich Ring +1"}
 	sets.engaged.Evasion = {ammo="Seki Shuriken",
 		head="Malignance Chapeau",neck="Ninja Nodowa +2",ear1="Brutal Earring",ear2="Cessance Earring",
 		body="Mpaca's Doublet",hands="Malignance Gloves",ring1="Ilabrat RIng",ring2="Vengeful Ring",
 		back=gear.enmity_jse_back,waist="Sailfi Belt +1",legs="Mpaca's Hose",feet="Malignance Boots"}
 		
 	sets.engaged.Acc.Evasion = {}
+	
 	sets.engaged.PDT = set_combine(sets.engaged,{
         head="Malignance Chapeau",
         body="Mpaca's Doublet",hands="Malignance Gloves",ring1="Defending Ring",
         waist="Engraved Belt",legs="Mpaca's Hose",feet="Malignance Boots"})
+	sets.engaged.SB.PDT = set_combine(sets.engaged.PDT,{ring2="Chirich Ring +1"})
 	sets.engaged.Acc.PDT = {}
 	
 		

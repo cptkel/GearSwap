@@ -18,8 +18,8 @@ function user_setup()
 			{Name='Water Maneuver',	  Amount=0},
 		},
 		Ranged = {
-			{Name='Wind Maneuver', 	  Amount=0},
-			{Name='Fire Maneuver',	  Amount=2},
+			{Name='Wind Maneuver', 	  Amount=1},
+			{Name='Fire Maneuver',	  Amount=1},
 			{Name='Light Maneuver',	  Amount=1},
 			{Name='Thunder Maneuver', Amount=0},
 		},
@@ -41,13 +41,14 @@ function user_setup()
 			{Name='Thunder Maneuver', Amount=0},
 		},
 		--Bruiser
+		--frogambu: fire,light,water
 		LightTank = { 
 			{Name='Earth Maneuver',	  Amount=0},
-			{Name='Fire Maneuver',	  Amount=2},
+			{Name='Fire Maneuver',	  Amount=1},
 			{Name='Light Maneuver',	  Amount=1},
 			{Name='Dark Maneuver',	  Amount=0},
 			{Name='Wind Maneuver',	  Amount=0},
-			{Name='Water Maneuver',	  Amount=0},
+			{Name='Water Maneuver',	  Amount=1},
 		},
 		Magic = {
 			{Name='Light Maneuver',	  Amount=1},
@@ -77,7 +78,7 @@ function user_setup()
 	gear.idle_jse_back={name="Visucius's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
 	gear.strDA_jse_back={name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.strCRIT_jse_back={name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
-	gear.pethybrid_jse_back={name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}}
+	gear.pethybrid_jse_back={name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1247 Val: 4',}}
 	gear.aeolian_jse_back={name="Visucius's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	
 	gear.taeon_head={name="Taeon Chapeau", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
@@ -146,7 +147,8 @@ function init_gear_sets()
 
     
     -- Precast sets to enhance JAs
-    sets.precast.JA['Tactical Switch'] = {feet="Karagoz Scarpe +1"}
+    sets.precast.JA['Overdrive'] = {body="Pitre Tobe +3"}
+	sets.precast.JA['Tactical Switch'] = {feet="Karagoz Scarpe +1"}
     sets.precast.JA['Repair'] = {ammo="Automat. Oil +3",feet="Foire Babouches +3"}
 	sets.precast.JA['Maintenance'] = {ammo="Automat. Oil +3"}
 
@@ -311,8 +313,11 @@ function init_gear_sets()
 		body=gear.taeon_body,hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet="Mpaca's Boots"}
 	
-		
-    sets.defense.MEVA = {}
+	--frog ambu	
+    sets.defense.MEVA = {main="Xiucoatl",
+		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
+		body=gear.taeon_body,hands=gear.taeon_hands,ring1="Thurandaut Ring",ring2="C. Palug Ring",
+		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet=gear.taeon_feet}
 
     sets.Kiting = {feet="Hermes' Sandals"}
 
@@ -327,7 +332,7 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {
-        head="Ryuo Somen +1",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Brutal Earring", --Schere Earring
+        head="Ryuo Somen +1",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Schere Earring",
 		body="Mpaca's Doublet",hands=gear.herculean_tp_hands,ring1="Gere Ring",ring2="Niqmaddu Ring",
 		back=gear.strDA_jse_back,waist="Moonbow Belt +1",legs="Ryuo Hakama +1",feet=gear.herculean_tp_feet}
 		

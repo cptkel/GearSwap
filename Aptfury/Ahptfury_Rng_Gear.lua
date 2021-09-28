@@ -11,6 +11,7 @@ function user_job_setup()
                    ['Fomalhaut'] = "Gun",
 				   ['Anarchy +2'] = "Gun",
                    ['Annihilator'] = "Gun",
+				   ['Armageddon'] = "Gun",
 				   ['Gastraphetes'] = "Crossbow",
 				   ['Gandiva'] = "Bow",
 				   }

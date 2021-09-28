@@ -13,8 +13,8 @@ sets.precast.Item['Holy Water'] = {}
 gear.gada_enhancing_club = {name="Gada", augments={'Enh. Mag. eff. dur. +6','STR+1','Mag. Acc.+16','"Mag.Atk.Bns."+17','DMG:+9',}}
 gear.colada_refresh = {name="Colada", augments={'"Refresh"+2','INT+3','Mag. Acc.+4','"Mag.Atk.Bns."+13','DMG:+17',}}
 
-gear.merlinic_fc_head = {name="Merlinic Hood", augments={'Mag. Acc.+11','"Fast Cast"+5',}}
-gear.merlinic_fc_hands = {name="Merlinic Dastanas", augments={'Mag. Acc.+8','"Fast Cast"+5','STR+7',}}
+gear.merlinic_fc_head = {name="Merlinic Hood", augments={'Mag. Acc.+6','"Fast Cast"+6','CHR+10',}}
+gear.merlinic_fc_hands = {name="Merlinic Dastanas", augments={'Mag. Acc.+22','"Fast Cast"+7','"Mag.Atk.Bns."+5',}}
 gear.merlinic_fc_feet = {name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+6','"Fast Cast"+6','MND+4','Mag. Acc.+12',}}
 
 gear.herculean_refresh_head = {name="Herculean Helm", augments={'Accuracy+25','"Cure" potency +2%','"Refresh"+2','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
@@ -31,6 +31,7 @@ gear.herculean_tp_hands = {name="Herculean Gloves", augments={'DEX+9','"Mag.Atk.
 gear.herculean_ta_hands = {name="Herculean Gloves", augments={'Accuracy+13 Attack+13','"Triple Atk."+4',}}
 gear.herculean_strTA_hands = {name="Herculean Gloves", augments={'Rng.Atk.+7','"Triple Atk."+3','STR+7','Attack+1',}}
 gear.herculean_petmagic_hands = {name="Herculean Gloves", augments={'Pet: "Mag.Atk.Bns."+22','Pet: Phys. dmg. taken -4%','Pet: INT+5',}}
+gear.herculean_refresh_hands = {name="Herculean Gloves", augments={'Accuracy+1','Pet: Accuracy+18 Pet: Rng. Acc.+18','"Refresh"+2','Accuracy+17 Attack+17','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 
 gear.herculean_refresh_legs= {name="Herculean Trousers", augments={'INT+2','"Fast Cast"+2','"Refresh"+2','Accuracy+2 Attack+2','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
 gear.herculean_phalanx_legs = {name="Herculean Trousers", augments={'"Store TP"+1','Enmity-1','Phalanx +4','Accuracy+14 Attack+14','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}

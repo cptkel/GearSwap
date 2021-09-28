@@ -321,7 +321,7 @@ function init_gear_sets()
             back=gear.stp_jse_back,waist="Kentarch Belt +1",legs="Aya. Cosciales +2",feet="Turms Leggings +1"}
 			
 	sets.engaged.DT = {ammo="Coiste Bodhar",
-		head="Nyame Helm",neck="Anu Torque",ear1="Brutal Earring",ear2="Sherida Earring +1",
+		head="Nyame Helm",neck="Anu Torque",ear1="Brutal Earring",ear2="Sherida Earring",
 		body="Futhark Coat +3",hands="Nyame Gauntlets",ring1="Niqmaddu Ring",ring2="Moonlight Ring",
 		back=gear.stp_jse_back,waist="Ioskeha Belt +1",legs="Nyame flanchard",feet="Nyame Sollerets"}
 		
