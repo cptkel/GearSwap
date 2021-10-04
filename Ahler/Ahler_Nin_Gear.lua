@@ -1,7 +1,7 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal','Acc','Crit','SB')
-    state.HybridMode:options('Normal','Evasion','PDT')
+    state.OffenseMode:options('Normal','Acc','Crit')
+    state.HybridMode:options('Normal','Evasion','PDT','SBPDT')
     state.RangedMode:options('Normal','Acc')
     state.WeaponskillMode:options('Match','Normal','AttCap','Acc')
     state.CastingMode:options('Normal','Tank')
@@ -321,7 +321,7 @@ function init_gear_sets()
 		
     sets.engaged.Acc = {}
 	sets.engaged.Crit = set_combine(sets.engaged, {ammo="Happo Shuriken",head="Blistering Sallet +1",ear1="Odr Earring",body="Mummu jacket +2",hands="Mummu wrists +2",legs="Mummu Kecks +2",feet="Mummu gamashes +2"})
-    sets.engaged.SB = {ring2="Chirich Ring +1"}
+    
 	sets.engaged.Evasion = {ammo="Seki Shuriken",
 		head="Malignance Chapeau",neck="Ninja Nodowa +2",ear1="Brutal Earring",ear2="Cessance Earring",
 		body="Mpaca's Doublet",hands="Malignance Gloves",ring1="Ilabrat RIng",ring2="Vengeful Ring",
@@ -333,7 +333,7 @@ function init_gear_sets()
         head="Malignance Chapeau",
         body="Mpaca's Doublet",hands="Malignance Gloves",ring1="Defending Ring",
         waist="Engraved Belt",legs="Mpaca's Hose",feet="Malignance Boots"})
-	sets.engaged.SB.PDT = set_combine(sets.engaged.PDT,{ring2="Chirich Ring +1"})
+	sets.engaged.SBPDT = set_combine(sets.engaged.PDT,{head="Ken. Jinpachi +1"}) --32 native; assumes 10 auspice; 8 to cap
 	sets.engaged.Acc.PDT = {}
 	
 		
