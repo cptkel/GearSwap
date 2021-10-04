@@ -247,7 +247,7 @@ function init_gear_sets()
 	-- Gear that converts elemental damage done to recover MP.	
 	sets.RecoverMP = {body="Spaekona's Coat +3"}
 	-- Gear for Magic Burst mode.
-    sets.MagicBurst = {head="Ea Hat +1",ring2="Mujin Band"}
+    sets.MagicBurst = {head="Ea Hat +1",neck="Mizu. Kubikazari",hands="Spae. Gloves +2",ring2="Mujin Band"}
 	sets.ResistantMagicBurst = {}
 	
 	-- Gear for specific elemental nukes.
