@@ -245,7 +245,7 @@ function init_gear_sets()
     sets.buff['Mana Wall'] = {back=gear.nuke_jse_back,feet="Wicce Sabots +1"}
 	
 	-- Gear that converts elemental damage done to recover MP.	
-	sets.RecoverMP = {body="Spaekona's Coat +3"}
+	sets.RecoverMP = {body="Spae. Coat +1"}
 	-- Gear for Magic Burst mode.
     sets.MagicBurst = {head="Ea Hat +1",neck="Mizu. Kubikazari",hands="Spae. Gloves +2",ring2="Mujin Band"}
 	sets.ResistantMagicBurst = {}

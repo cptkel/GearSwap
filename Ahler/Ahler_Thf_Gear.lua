@@ -147,7 +147,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = {ammo="Yetshila +1",
 		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
 		body="Meg. Cuirie +2",hands="Adhemar Wrist. +1",ring1="Ilabrat Ring",ring2="Regal Ring",
-		back=gear.evisceration_jse_back,waist="Fotia Belt",legs="Pill. Culottes +2",feet="Lustra. Leggings +1"}
+		back=gear.evisceration_jse_back,waist="Fotia Belt",legs="Pill. Culottes +3",feet="Lustra. Leggings +1"}
 		
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'], {})
@@ -231,7 +231,7 @@ sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge']
     sets.engaged.Acc = {}
 		
     sets.engaged.PDT = {ammo="Staunch Tathlum +1",
-		head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Odnowa Earring +1",
+		head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Sherida Earring",ear2="Odnowa Earring +1",
 		body="Malignance Tabard",hands="Adhemar Wrist. +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Meg. Chausses +2",feet=gear.herculean_tp_feet}
 		

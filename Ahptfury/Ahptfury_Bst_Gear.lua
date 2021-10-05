@@ -8,7 +8,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PetPDT','PDT','Reraise','PKiller')
 	state.MagicalDefenseMode:options('PetMDT','MDT', 'MKiller')
 	state.ResistDefenseMode:options('PetMEVA', 'MEVA')
-	state.Weapons:options('None','PetPDTAxe','DualWeapons')
+	state.Weapons:options('None','PetPDTAxe','DualWeapons','DualReady')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Knockback','Suppa','DWEarrings'}
 
 	-- Set up Jug Pet cycling and keybind Ctrl+F7
@@ -160,7 +160,7 @@ function init_gear_sets()
 
 				-- PET SIC & READY MOVES
 	sets.midcast.Pet.WS = {ammo="Voluspa Tathlum",
-		head="Nyame Helm",neck="Shulmanu Collar",ear1="Domesticator's Earring",ear2="Hija Earring",
+		head="Emicho Coronet +1",neck="Shulmanu Collar",ear1="Domesticator's Earring",ear2="Hija Earring",
 		body="Nyame Mail",hands="Nukumi Manoplas +1",ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back=gear.ready_back,waist="Incarnation Sash",legs="Nyame Flanchard",feet="Gleti's Boots"}
 
@@ -278,6 +278,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.PetPDTAxe = {}
 	sets.weapons.DualWeapons = {main ="Dolichenus",sub="Ternion Dagger +1"}
+	sets.weapons.DualReady = {main="Agwu's Axe",sub="Arktoi"}
 
 
 -------------------------------------------------------------------------------------------------------------------
