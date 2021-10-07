@@ -253,7 +253,7 @@ function init_gear_sets()
 	sets.NonElementalCure = {}
 
 	sets.midcast['Blue Magic'].SkillBasedBuff = {
-		head="Luh. Keffiyeh +3",neck="Mirage Stole +1",ear1="Njordr Earring",
+		head="Luhlaza Keffiyeh +3",neck="Mirage Stole +1",ear1="Njordr Earring",
 		body="Assim. Jubbah +3",hands="Rawhide Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Cornflower Cape",legs="Hashishin Tayt +1",feet="Luhlaza Charuqs +2"}
 

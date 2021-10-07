@@ -5,19 +5,18 @@ function user_job_setup()
 	state.IdleMode:options('Normal','PDT','DTHippo')
 	state.Weapons:options('None','Nuke','BurstWeapons')
 
-	gear.obi_cure_waist = "Witful Belt"
-	gear.obi_low_nuke_waist = "Eschan Stone"
-	gear.obi_high_nuke_waist = "Eschan Stone"
+	--gear.obi_cure_waist = "Witful Belt"
+	gear.obi_low_nuke_waist = "Sacro Cord"
+	gear.obi_high_nuke_waist = "Sacro Cord"
 	
 	gear.nuke_jse_back = {name="Taranus's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
-	gear.stp_jse_back = {name="Taranus's Cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+	
 
 		-- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode') 
 	send_command('bind ~^` gs c cycleback ElementalMode') --Robbiewobbie's idea
-	send_command('bind ^q gs c weapons Khatvanga;gs c set CastingMode OccultAcumen')
-	send_command('bind !q gs c weapons Default;gs c reset CastingMode;gs c reset DeathMode;gs c reset MagicBurstMode')
-	send_command('bind !r gs c set DeathMode Single;gs c set MagicBurstMode Single')
+	
+	
 	send_command('bind !\\\\ input /ja "Manawell" <me>')
 	send_command('bind !` input /ma "Aspir III" <t>')
 	send_command('bind @` gs c cycle MagicBurstMode')
@@ -156,7 +155,10 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {}
 
-    sets.midcast.Drain = {}
+    sets.midcast.Drain = {ammo="Pemphredo Tathlum",
+		head="Pixie hairpin +1",neck="Incanter's Torque",ear1="Barkaro. Earring",
+		ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		back=gear.nuke_jse_back,waist="Fucho-no-obi"}
     
     sets.midcast.Aspir = sets.midcast.Drain
 	
@@ -230,7 +232,7 @@ function init_gear_sets()
 
 	sets.Kiting = {feet="Herald's Gaiters"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
-	sets.latent_refresh_grip = {sub="Oneiros Grip"}
+	sets.latent_refresh_grip = {}
 	sets.TPEat = {}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
@@ -245,7 +247,7 @@ function init_gear_sets()
     sets.buff['Mana Wall'] = {back=gear.nuke_jse_back,feet="Wicce Sabots +1"}
 	
 	-- Gear that converts elemental damage done to recover MP.	
-	sets.RecoverMP = {body="Spae. Coat +1"}
+	sets.RecoverMP = {head="Mall. Chapeau +2",body="Spae. Coat +1"}
 	-- Gear for Magic Burst mode.
     sets.MagicBurst = {head="Ea Hat +1",neck="Mizu. Kubikazari",hands="Spae. Gloves +2",ring2="Mujin Band"}
 	sets.ResistantMagicBurst = {}

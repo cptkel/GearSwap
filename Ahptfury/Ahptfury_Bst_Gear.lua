@@ -42,6 +42,31 @@ function user_job_setup()
 	select_default_macro_book()
 end
 
+function get_ready_charge_timer()
+    local charge_timer = base_chargetimer
+    if state.Weapons.Value == 'None' then
+        if can_dual_wield and sets.midcast.Pet.ReadyRecastDW.sub and sets.midcast.Pet.ReadyRecastDW.sub == "Charmer's Merlin" then
+                charge_timer = charge_timer - 5
+        elseif sets.midcast.Pet.ReadyRecast.main and sets.midcast.Pet.ReadyRecast.main == "Charmer's Merlin" then
+            charge_timer = charge_timer - 5
+        end
+    elseif sets.weapons[state.Weapons.Value].main == "Charmer's Merlin" or sets.weapons[state.Weapons.Value].main == "Charmer's Merlin" then
+        charge_timer = charge_timer - 5
+    end
+    
+    if can_dual_wield and sets.midcast.Pet.ReadyRecastDW.legs and (sets.midcast.Pet.ReadyRecastDW.legs == "Desultor Tassets" or sets.midcast.Pet.ReadyRecastDW.legs == "Gleti's Breeches") then
+            charge_timer = charge_timer - 5
+    elseif sets.midcast.Pet.ReadyRecast.legs and (sets.midcast.Pet.ReadyRecast.legs == "Desultor Tassets" or sets.midcast.Pet.ReadyRecast.legs == "Gleti's Breeches") then
+            charge_timer = charge_timer - 5
+    end
+    
+    if charge_timer < 10 then
+        return 10
+    else
+        return charge_timer
+    end
+end
+
 -- BST gearsets
 function init_gear_sets()
 	-- PRECAST SETS

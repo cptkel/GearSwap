@@ -147,7 +147,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = {ammo="Yetshila +1",
 		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
 		body="Meg. Cuirie +2",hands="Adhemar Wrist. +1",ring1="Ilabrat Ring",ring2="Regal Ring",
-		back=gear.evisceration_jse_back,waist="Fotia Belt",legs="Pill. Culottes +3",feet="Lustra. Leggings +1"}
+		back=gear.evisceration_jse_back,waist="Fotia Belt",legs="Pill. Culottes +3",feet=gear.herculean_crit_feet}
 		
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'], {})

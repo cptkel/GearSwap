@@ -218,7 +218,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] = {
 		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
 		body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Regal Ring",ring2="Mummu Ring",
-		back=gear.tp_jse_back,waist="Fotia Belt",legs="Samnuha Tights",feet="Mummu Gamash. +2"}
+		back=gear.tp_jse_back,waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
 	
 		--Because omen skillchains.
     sets.precast.WS['Burning Blade'] = {}
