@@ -3,7 +3,7 @@ function user_job_setup()
 	state.CastingMode:options('Normal','Resistant','Fodder','Proc','OccultAcumen')
 	state.OffenseMode:options('Normal')
 	state.IdleMode:options('Normal','PDT','DTHippo')
-	state.Weapons:options('None','Nuke','BurstWeapons')
+	state.Weapons:options('None','Nuke','BurstWeapons','Staff')
 
 	--gear.obi_cure_waist = "Witful Belt"
 	gear.obi_low_nuke_waist = "Sacro Cord"
@@ -45,7 +45,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Nuke = {main="Bunzi's Rod",sub="Ammurapi Shield"}
 	sets.weapons.BurstWeapons = {}
-	--sets.weapons.Khatvanga = {main="Khatvanga",sub="Bloodrain Strap"}
+	sets.weapons.Staff = {main="Mpaca's Staff",sub="Kaja Grip"}
 	
     sets.buff.Sublimation = {waist="Embla Sash"}
     sets.buff.DTSublimation = {waist="Embla Sash"}	
@@ -92,9 +92,15 @@ function init_gear_sets()
     sets.precast.WS = {}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Vidohunir'] = {}
+    sets.precast.WS['Shattersoul'] = {ammo="Ghastly Tathlum +1",
+		head="Jhakri Coronal +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Regal Earring",
+		body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Metamor. Ring +1",ring2="Freke Ring",
+		back=gear.nuke_jse_back,waist="Fotia Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2",}
 
-    sets.precast.WS['Myrkr'] = {}
+    sets.precast.WS['Myrkr'] = {ammo="Ghastly Tathlum +1",
+		head="Pixie Hairpin +1",neck="Saevus pendant +1",ear1="Moonshade Earring",ear2="Etiolation Earring",
+		body="Amalric Doublet +1",hands="Spae. Gloves +2",ring1="Mephitas's Ring +1",ring2="Metamor. Ring +1",
+		back="Aurist's Cape +1",waist="Luminary Sash",legs="Spae. Tonban +2",feet="Amalric Nails +1"}
 		
 	sets.MaxTPMyrkr = {}
     
@@ -131,7 +137,7 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = {ammo="Pemphredo Tathlum",
         head="Spae. Petasos +2",neck="Incanter's Torque",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spae. Coat +1",hands="Spae. Gloves +2",ring1="Kishar Ring",ring2="Metamor. Ring +1",
+        body="Spaekona's Coat +2",hands="Spae. Gloves +2",ring1="Kishar Ring",ring2="Metamor. Ring +1",
         back="Aurist's Cape +1",waist="Acuity Belt +1",legs="Spae. Tonban +2",feet="Spae. Sabots +2"}
 		
     sets.midcast['Enfeebling Magic'].Resistant = {}
@@ -178,7 +184,7 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'] = {ammo="Ghastly Tathlum +1",
         head="Mall. Chapeau +2",neck="Saevus Pendant +1",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spae. Coat +1",hands="Mallquis Cuffs +2",ring1="Freke Ring",ring2="Metamor. Ring +1",
+        body="Spaekona's Coat +2",hands="Mallquis Cuffs +2",ring1="Freke Ring",ring2="Metamor. Ring +1",
         back=gear.nuke_jse_back,waist=gear.ElementalObi,legs="Arch. Tonban +2",feet="Arch. Sabots +2"}
 		
     sets.midcast['Elemental Magic'].Resistant = {}
@@ -247,9 +253,9 @@ function init_gear_sets()
     sets.buff['Mana Wall'] = {back=gear.nuke_jse_back,feet="Wicce Sabots +1"}
 	
 	-- Gear that converts elemental damage done to recover MP.	
-	sets.RecoverMP = {head="Mall. Chapeau +2",body="Spae. Coat +1"}
+	sets.RecoverMP = {head="Mall. Chapeau +2",body="Spaekona's Coat +2"}
 	-- Gear for Magic Burst mode.
-    sets.MagicBurst = {head="Ea Hat +1",neck="Mizu. Kubikazari",hands="Spae. Gloves +2",ring2="Mujin Band"}
+    sets.MagicBurst = {head="Ea Hat +1",neck="Mizu. Kubikazari",hands="Arch. Gloves +2",ring1="Locus Ring",ring2="Mujin Band"}
 	sets.ResistantMagicBurst = {}
 	
 	-- Gear for specific elemental nukes.

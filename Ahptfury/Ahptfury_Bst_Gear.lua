@@ -13,7 +13,7 @@ function user_job_setup()
 
 	-- Set up Jug Pet cycling and keybind Ctrl+F7
 	-- INPUT PREFERRED JUG PETS HERE
-	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin','CaringKiyomaro','BlackbeardRandy','GenerousArthur','WarlikePatrick','RhymingShizuna'}
+	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin','CaringKiyomaro','BlackbeardRandy','GenerousArthur','WarlikePatrick','RhymingShizuna','SharpwitHermes','SpiderFamiliar'}
 	send_command('bind ^f7 gs c cycle JugMode')
 
 	-- Set up Monster Correlation Modes and keybind Alt+F7
@@ -32,9 +32,9 @@ function user_job_setup()
 	send_command('bind !` gs c ready default')
 
 	--Example of how to change default ready moves.
-	ready_moves.default.ScissorlegXerin = 'Tegmina Buffet'
+	--[[ready_moves.default.ScissorlegXerin = 'Sensilla Blades'
 	ready_moves.default.GenerousArthur = 'Corrosive Ooze'
-	ready_moves.default.CaringKiyomaro = 'Zealous Snort'
+	ready_moves.default.CaringKiyomaro = 'Zealous Snort']]--
 	
 	gear.tp_jse_back = {name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.strda_back = {name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
@@ -42,35 +42,11 @@ function user_job_setup()
 	select_default_macro_book()
 end
 
-function get_ready_charge_timer()
-    local charge_timer = base_chargetimer
-    if state.Weapons.Value == 'None' then
-        if can_dual_wield and sets.midcast.Pet.ReadyRecastDW.sub and sets.midcast.Pet.ReadyRecastDW.sub == "Charmer's Merlin" then
-                charge_timer = charge_timer - 5
-        elseif sets.midcast.Pet.ReadyRecast.main and sets.midcast.Pet.ReadyRecast.main == "Charmer's Merlin" then
-            charge_timer = charge_timer - 5
-        end
-    elseif sets.weapons[state.Weapons.Value].main == "Charmer's Merlin" or sets.weapons[state.Weapons.Value].main == "Charmer's Merlin" then
-        charge_timer = charge_timer - 5
-    end
-    
-    if can_dual_wield and sets.midcast.Pet.ReadyRecastDW.legs and (sets.midcast.Pet.ReadyRecastDW.legs == "Desultor Tassets" or sets.midcast.Pet.ReadyRecastDW.legs == "Gleti's Breeches") then
-            charge_timer = charge_timer - 5
-    elseif sets.midcast.Pet.ReadyRecast.legs and (sets.midcast.Pet.ReadyRecast.legs == "Desultor Tassets" or sets.midcast.Pet.ReadyRecast.legs == "Gleti's Breeches") then
-            charge_timer = charge_timer - 5
-    end
-    
-    if charge_timer < 10 then
-        return 10
-    else
-        return charge_timer
-    end
-end
 
 -- BST gearsets
 function init_gear_sets()
 	-- PRECAST SETS
-	sets.precast.JA['Killer Instinct'] = {} --head="Ankusa Helm +1"
+	sets.precast.JA['Killer Instinct'] = {head="Ankusa Helm +3"}
 	sets.precast.JA['Bestial Loyalty'] = {hands="Ankusa Gloves +1"}
 	sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
 	sets.precast.JA.Familiar = {}
@@ -193,9 +169,15 @@ function init_gear_sets()
 	
 	sets.midcast.Pet.MultiHitReady = {}
 				
-	sets.midcast.Pet.MagicReady = {}
+	sets.midcast.Pet.MagicReady = {ammo="Voluspa Tathlum",
+		head="Nyame helm",neck="Adad Amulet",ear1="Hija Earring",ear2="Enmerkar Earring",
+		body="Nyame Mail",hands="Nukumi Manoplas +1",ring1="Tali'ah Ring",ring2="C. Palug Ring",
+		back=gear.ready_back,waist="Incarnation Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
-	sets.midcast.Pet.DebuffReady = {}
+	sets.midcast.Pet.DebuffReady = {ammo="Voluspa Tathlum",
+		head="Nyame helm",neck="Adad Amulet",ear1="Handler's Earring",ear2="Enmerkar Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Tali'ah Ring",ring2="C. Palug Ring",
+		back=gear.ready_back,waist="Incarnation Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
 	sets.midcast.Pet.PhysicalDebuffReady = {}
 

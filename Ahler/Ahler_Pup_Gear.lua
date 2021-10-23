@@ -12,9 +12,9 @@ function user_setup()
 		Melee = {
 			{Name='Fire Maneuver', 	  Amount=1},
 			{Name='Thunder Maneuver', Amount=0},
-			{Name='Wind Maneuver', 	  Amount=1},
+			{Name='Wind Maneuver', 	  Amount=0},
 			{Name='Dark Maneuver',	  Amount=0},
-			{Name='Light Maneuver',	  Amount=1},
+			{Name='Light Maneuver',	  Amount=2},
 			{Name='Water Maneuver',	  Amount=0},
 		},
 		Ranged = {
@@ -47,8 +47,8 @@ function user_setup()
 			{Name='Fire Maneuver',	  Amount=1},
 			{Name='Light Maneuver',	  Amount=1},
 			{Name='Dark Maneuver',	  Amount=0},
-			{Name='Wind Maneuver',	  Amount=0},
-			{Name='Water Maneuver',	  Amount=1},
+			{Name='Wind Maneuver',	  Amount=1},
+			{Name='Water Maneuver',	  Amount=0},
 		},
 		Magic = {
 			{Name='Light Maneuver',	  Amount=1},
@@ -167,7 +167,7 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Victory Smite'] = {
 		head="Blistering Sallet +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Mpaca's Doublet",hands="Ryuo Tekko +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
+		body="Mpaca's Doublet",hands="Ryuo Tekko +1",ring1="Gere Ring",ring2="Niqmaddu Ring",
 		back=gear.strCRIT_jse_back,waist="Moonbow Belt +1",legs="Mpaca's Hose",feet="Mpaca's Boots"}
   
 	sets.precast.WS['Stringing Pummel'] = {

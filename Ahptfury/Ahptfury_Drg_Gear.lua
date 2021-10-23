@@ -205,7 +205,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, {hands="Sulev. Gauntlets +2",ring1="Flamma Ring"})
     
 	sets.engaged.Sword = {ammo="Coiste Bodhar",
-		head="Ptero. Armet +3",neck="Dgn. Collar +2",ear1="Dedition Earring",ear2="Sherida Earring",
+		head="Flam. Zucchetto +2",neck="Dgn. Collar +2",ear1="Dedition Earring",ear2="Sherida Earring",
 		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Petrov Ring",ring2="Niqmaddu Ring",
 		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flamma Gambieras +2"}
 		

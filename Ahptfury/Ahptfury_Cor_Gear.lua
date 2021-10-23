@@ -116,14 +116,14 @@ function init_gear_sets()
 	sets.precast.CorsairShot.Acc= {ammo=gear.QDbullet,
 		head="Laksa. Tricorne +2", neck="Comm. Charm +2",ear1="Digni. Earring",ear2="Gwati Earring", 
 		body="Malignance Tabard",hands="Laksa. Gants +2",ring1="Stikini Ring +1",ring2="Regal Ring",
-		back=gear.shoot_jse_back,legs="Malignance Tights",feet="Laksa. Bottes  +2"} --k.kachina belt +1
+		back=gear.shoot_jse_back,waist="K. Kachina Belt +1",legs="Malignance Tights",feet="Laksa. Bottes  +2"} 
 		
 	sets.precast.CorsairShot.Proc = set_combine(sets.precast.CorsairShot.Damage, {feet="Chass. Bottes +1"})
 
     sets.precast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head="Laksa. Tricorne +2",neck="Comm. Charm +2",ear1="Digni. Earring",ear2="Gwati Earring", 
         body="Malignance Tabard",hands="Laksa. Gants +2",ring1="Stikini Ring +1",ring2="Regal Ring",
-        back=gear.shoot_jse_back,legs="Malignance Tights",feet="Laksa. Bottes  +2"} --k.kachina belt +1
+        back=gear.shoot_jse_back,waist="K. Kachina Belt +1",legs="Malignance Tights",feet="Laksa. Bottes  +2"} 
 
     sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
 
@@ -149,7 +149,7 @@ function init_gear_sets()
         back=gear.roll_jse_back,waist="Yemaya Belt",legs="Adhemar Kecks +1",feet="Meg. Jam. +2"} 
 		
 	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {body="Laksa. Frac +3"})
-	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, {hands="Carmine Fin. Ga. +1",waist="Impulse Belt",feet="Pursuer's Gaiters"})
+	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, {hands="Carmine Fin. Ga. +1",feet="Pursuer's Gaiters"})
 
        
     -- Weaponskill sets

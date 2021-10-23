@@ -4,8 +4,8 @@ function user_job_setup()
 	state.HybridMode:options('Normal','DT')
     state.WeaponskillMode:options('Match','Normal','Acc')
     state.CastingMode:options('Normal','Evasion','Ody')
-    state.IdleMode:options('Normal','Evasion','PDT','DTHippo')
-	state.PhysicalDefenseMode:options('PDT')
+    state.IdleMode:options('Normal','Evasion','Tank','DTHippo')
+	state.PhysicalDefenseMode:options('Tank')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('MagicWeapons','Tizbron','Sanguine','TizMACC','Tank','Savage','None')
@@ -176,8 +176,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
 	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
-		head="Assim. Keffiyeh +3",neck="Mirage Stole +1",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
+		head="Assim. Keffiyeh +3",neck="Mirage Stole +1",ear1="Regal Earring",ear2="Njordr Earring",
+		body="Amalric Doublet +1",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
 		back="Aurist's Cape +1",waist="Acuity Belt +1",legs="Assim. Shalwar +3",feet="Malignance Boots"}
    
 	sets.midcast['Enfeebling Magic'] = {}
@@ -221,7 +221,7 @@ function init_gear_sets()
 
 	-- Physical Added Effect Spells most notably "Stun" spells --
 
-	sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {head="Carmine Mask +1",ear1="Njordr Earring",ring1="Stikini Ring +1",waist="Eschan Stone",legs="Malignance Tights"})
+	sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {head="Carmine Mask +1",ring1="Stikini Ring +1",waist="Eschan Stone",legs="Malignance Tights"})
 
 	-- Other Specific Spells --
 
@@ -243,10 +243,18 @@ function init_gear_sets()
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.evasion_jse_back,waist="Flume Belt +1",legs="Malignance Tights",feet="Malignance Boots"})]]--
 	
-	sets.midcast['Blue Magic']['White Wind'] = {}
+	sets.midcast['Blue Magic']['White Wind'] = {ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Bathy Choker +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Eihwaz Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 					
 	sets.midcast['Blue Magic']['Healing Breeze'] = sets.midcast['Blue Magic']['White Wind']
 
+	sets.midcast['Blue Magic']['Fantod'] = {ammo="Sapience Orb",
+		neck="Unmoving Collar +1",ear1="Cryptic Earring",ear2="Trux Earring",
+		body="Emet Harness +1",hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",feet="Nyame Sollerets"}
+	
 	sets.midcast['Blue Magic'].Healing = {}
 
 	--Overwrite certain spells with these peices even if the day matches, because of resource inconsistancies.
@@ -283,17 +291,23 @@ function init_gear_sets()
 		body="Jhakri Robe +2",hands=gear.herculean_refresh_hands,ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.tp_jse_back,waist="Fucho-no-obi",legs=gear.herculean_refresh_legs,feet=gear.herculean_refresh_feet}
 
-	sets.idle.Evasion = {ammo="Staunch Tathlum +1",
+	sets.idle.Evasion = {ammo="Amar Cluster",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Vengeful Ring",ring2="Gelatinous Ring +1",
 		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Malignance Tights",feet="Malignance Boots"}
-
-	sets.idle.PDT = {}
+		
+	sets.idle.Tank = {ammo="Amar Cluster",
+		head="Nyame Helm",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Vengeful Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Nyame flanchard",feet="Nyame Sollerets"}
 	
-	sets.idle.DTHippo = set_combine(sets.idle.Evasion, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
+	sets.idle.DTHippo = set_combine(sets.idle.Evasion, {ear1="Odnowa Earring +1",legs="Carmine Cuisses +1",feet="Nyame Sollerets"})
 
 	-- Defense sets
-	sets.defense.PDT = {}
+	sets.defense.Tank = {ammo="Amar Cluster",
+		head="Nyame Helm",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Vengeful Ring",ring2="Gelatinous Ring +1",
+		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Nyame flanchard",feet="Nyame Sollerets"}
 
 	sets.defense.MDT = {}
 

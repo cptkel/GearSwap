@@ -3,7 +3,7 @@ function user_setup()
     state.OffenseMode:options('Normal','Acc','SB')
     state.WeaponskillMode:options('Match','Normal','Acc')
     state.HybridMode:options('Normal', 'PDT','PDTOnly')
-    state.PhysicalDefenseMode:options('PDT', 'HP')
+    state.PhysicalDefenseMode:options('PDT', 'SB')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal','Evasion')
@@ -126,7 +126,7 @@ function init_gear_sets()
 	sets.precast.WS['Dragon Kick'] = {}
 	sets.precast.WS['Tornado Kick'] = {ammo="Knobkierrie",
 		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",ear2="Sherida Earring",
-		body="Ken. Samue +1",hands=gear.herculean_ta_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
+		body="Tatena. Harama. +1",hands=gear.herculean_ta_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.HF_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1",feet="Anch. Gaiters +3"}
 	
 	sets.precast.WS['Spinning Attack'] = {ammo="Knobkierrie",
@@ -190,7 +190,10 @@ function init_gear_sets()
 	sets.defense.PDT = {}
 		
 	-- Defense sets
-	sets.defense.HP = {}
+	sets.defense.SB = {ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",neck="Monk's Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Niqmaddu Ring",ring2="Defending Ring",
+		back=gear.tp_back,waist="Moonblow Belt +1",legs="Hes. Hose +3",feet="Malignance Boots"}
 
 	sets.defense.MDT = {}
 		
@@ -223,7 +226,7 @@ function init_gear_sets()
 		
 	-- Defensive melee hybrid sets
 	sets.engaged.PDT = {ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",neck="Monk's Nodowa +2",ear1="Brutal Earring",ear2="Sherida Earring",
+		head="Malignance Chapeau",neck="Monk's Nodowa +2",ear1="Schere Earring",ear2="Sherida Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring2="Gere Ring",ring1="Niqmaddu Ring",
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 	sets.engaged.Acc.PDT = {ammo="Ginsen",
@@ -236,8 +239,14 @@ function init_gear_sets()
 
 	-- Hundred Fists/Impetus melee set mods
 	
-	sets.engaged.HF = set_combine(sets.engaged, {})
+	sets.engaged.HF = {ammo="Coiste Bodhar",
+		head="Adhemar Bonnet +1",neck="Mnk. Nodowa +2",ear1="Sherida Earring",ear2="Odr Earring",
+		body="Anch. Cyclas +3",hands="Ryuo Tekko +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
+		back=gear.STRcrit_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1"}
+    
+	sets.engaged.PDT.HF = sets.engaged.HF
 	sets.engaged.Acc.HF = set_combine(sets.engaged.Acc, {})
+	
 	
 
 

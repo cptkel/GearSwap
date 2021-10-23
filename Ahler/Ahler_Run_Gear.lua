@@ -1,7 +1,7 @@
 function user_setup()
 
 	state.OffenseMode:options('Normal','Acc')
-	state.HybridMode:options('DT','Normal')
+	state.HybridMode:options('DT','Parry','Normal')
 	state.WeaponskillMode:options('Match','Normal','Acc','DT')
 	state.CastingMode:options('DT','Normal','SIRD')
 	state.PhysicalDefenseMode:options('PDT')
@@ -17,7 +17,7 @@ function user_setup()
 	gear.herculean_phalanx_legs = {name="Herculean Trousers", augments={'"Store TP"+1','Enmity-1','Phalanx +4','Accuracy+14 Attack+14','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
 	gear.herculean_phalanx_feet = {name="Herculean Boots", augments={'Mag. Acc.+2','Rng.Atk.+6','Phalanx +5','Accuracy+11 Attack+11',}}
 	
-	gear.enmity_jse_back = {name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}}
+	gear.enmity_jse_back = {name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Parrying rate+5%',}}
 	gear.stp_jse_back = {name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.da_jse_back = {name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
 	gear.dimi_jse_back = {name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
@@ -49,59 +49,6 @@ function user_setup()
 	
 	set_lockstyle(2)
 end
-
---[[function check_rune()
- 
-	if state.AutoRuneMode.value and (player.main_job == 'RUN' or player.sub_job == 'RUN') then
-		local abil_recasts = windower.ffxi.get_ability_recasts()
- 
-		if player.main_job == 'RUN' and (not buffactive[state.RuneElement.value] or buffactive[state.RuneElement.value] < 3) then
-			if abil_recasts[92] > 0 then return false end		
-			windower.chat.input('/ja "'..state.RuneElement.value..'" <me>')
-			tickdelay = os.clock() + 1.8
-			return true
- 
-		elseif not buffactive[state.RuneElement.value] or buffactive[state.RuneElement.value] < 2 then
-			if abil_recasts[92] > 0 then return false end		
-			windower.chat.input('/ja "'..state.RuneElement.value..'" <me>')
-			tickdelay = os.clock() + 1.8
-			return true
- 
-		elseif player.main_job == 'RUN' and abil_recasts[242] < latency and (player.hpp < 50 or (state.RuneElement.Value == 'Tenebrae' and player.mpp < 75)) then
-			windower.chat.input('/ja "Vivacious Pulse" <me>')
-			tickdelay = os.clock() + 1.8
-			return true  
- 
-		elseif not player.in_combat then
-			return false
- 
-		elseif not buffactive['Pflug'] and abil_recasts[59] < latency then
-			windower.chat.input('/ja "Pflug" <me>')
-			tickdelay = os.clock() + 1.8
-			return true
-		elseif player.main_job == 'RUN' then
-			if not (state.Buff['Vallation'] or state.Buff['Valiance']) then
-				if abil_recasts[113] < latency then
-					windower.chat.input('/ja "Valiance" <me>')
-					tickdelay = os.clock() + 2.5
-					return true
-				elseif abil_recasts[23] < latency then
-					windower.chat.input('/ja "Vallation" <me>')
-					tickdelay = os.clock() + 2.5
-					return true
-				end
-			end
-		elseif not (buffactive['Vallation'] or buffactive['Valiance']) then
-			if abil_recasts[23] < latency then
-				windower.chat.input('/ja "Vallation" <me>')
-				tickdelay = os.clock() + 2.5
-				return true
-			end 
-		end 
-	end 
- 
-	return false
-end]]--
 
 
 function init_gear_sets()
@@ -325,7 +272,7 @@ function init_gear_sets()
 
     -- Extra defense sets.  Apply these on top of melee or defense sets.
     sets.Knockback = {}
-    sets.MP = {waist="Flume Belt"}
+    sets.MP = {waist="Flume Belt +1"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
@@ -378,6 +325,11 @@ function init_gear_sets()
 		head="Nyame Helm",neck="Anu Torque",ear1="Brutal Earring",ear2="Sherida Earring",
 		body="Futhark Coat +3",hands="Nyame Gauntlets",ring1="Niqmaddu Ring",ring2="Moonlight Ring",
 		back=gear.stp_jse_back,waist="Ioskeha Belt +1",legs="Nyame flanchard",feet="Nyame Sollerets"}
+		
+   sets.engaged.Parry = {ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Futhark Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+		body="Nyame mail",hands="Turms Mittens +1",ring1="Moonlight Ring",ring2={name="Gelatinous Ring +1", priority=15},
+		back="",waist="Engraved Belt",legs="Nyame flanchard",feet="Turms Leggings +1"}
 		
    sets.engaged.AM = set_combine(sets.engaged, {ear1="Dedition Earring",body="Ayanmo Corazza +2",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",waist="Windbuffet Belt +1"})
 	
