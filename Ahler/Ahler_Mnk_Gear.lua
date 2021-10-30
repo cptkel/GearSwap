@@ -193,7 +193,7 @@ function init_gear_sets()
 	sets.defense.SB = {ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",neck="Monk's Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Niqmaddu Ring",ring2="Defending Ring",
-		back=gear.tp_back,waist="Moonblow Belt +1",legs="Hes. Hose +3",feet="Malignance Boots"}
+		back=gear.tp_back,waist="Moonbow Belt +1",legs="Hes. Hose +3",feet="Malignance Boots"}
 
 	sets.defense.MDT = {}
 		
@@ -222,7 +222,7 @@ function init_gear_sets()
 	sets.engaged.SB = {ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",neck="Monk's Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Niqmaddu Ring",ring2="Defending Ring",
-		back=gear.tp_back,waist="Moonblow Belt +1",legs="Hes. Hose +3",feet="Malignance Boots"}
+		back=gear.tp_back,waist="Moonbow Belt +1",legs="Hes. Hose +3",feet="Malignance Boots"}
 		
 	-- Defensive melee hybrid sets
 	sets.engaged.PDT = {ammo="Staunch Tathlum +1",

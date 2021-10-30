@@ -7,7 +7,7 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal','DT','DTRostam')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','Evisceration','LastStand','LastStandACC','SBLS')
+	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','Evisceration','LastStand','LastStandACC','SBLS','Wildfire')
 	state.CompensatorMode:options('300','1000','Never','Always')
 
     autows = 'Savage Blade'
@@ -295,6 +295,7 @@ function init_gear_sets()
 	sets.weapons.LastStand = {main={name="Rostam",bag="inventory"},sub="Gleti's Knife",range="Fomalhaut"}
 	sets.weapons.LastStandACC = {main={name="Rostam",bag="inventory"},sub="Kustawi +1",range="Fomalhaut"}
 	sets.weapons.SBLS = {main="Naegling",sub="Gleti's Knife",range="Death Penalty"}
+	sets.weapons.Wildfire = {main="Naegling",sub="Tauret",range="Armageddon"}
 	
     -- Engaged sets
 

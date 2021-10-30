@@ -266,7 +266,10 @@ function init_gear_sets()
 
 	sets.midcast.Stun.Resistant = {}
 
-	sets.midcast['Enfeebling Magic'] = {}
+	sets.midcast['Enfeebling Magic'] = {main="Yagrush",sub="Ammurapi Shield",
+		head="Inyanga Tiara +2",neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
+		body="Theo. Bliaut +2",hands="Theophany Mitts +2",ring1="Kishar Ring",ring2="Stikini Ring +1",
+		back="Aurist's Cape +1",waist="Luminary Sash",legs="Inyanga Shalwar +2",feet="Theo. Duckbills +3"}
 
 	sets.midcast['Enfeebling Magic'].Resistant = {}
 		

@@ -3,12 +3,12 @@ function user_setup()
 	state.OffenseMode:options('Normal','Acc')
 	state.HybridMode:options('DT','Parry','Normal')
 	state.WeaponskillMode:options('Match','Normal','Acc','DT')
-	state.CastingMode:options('DT','Normal','SIRD')
+	state.CastingMode:options('DT','Evasion','Normal')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Tank','Evasion','Normal')
-	state.Weapons:options('Epeolatry','EpeoTank','Evasion','Aettir','Lionheart','FellCleave','DualWeapons')
+	state.Weapons:options('Epeolatry','EpeoTank','Aettir','Lionheart','FellCleave','DualWeapons')
 	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
@@ -51,6 +51,7 @@ function user_setup()
 end
 
 
+
 function init_gear_sets()
 
     sets.Enmity = {ammo="Sapience Orb",
@@ -58,7 +59,11 @@ function init_gear_sets()
 		body="Emet Harness +1",hands="Kurys Gloves",ring1="Vengeful Ring",ring2="Petrov Ring",
 		back=gear.enmity_jse_back,waist="Kasiri Belt",legs="Eri. Leg Guards +1",feet="Ahosi Leggings"}
 	 
-    sets.Enmity.SIRD = {}
+    sets.Enmity.Evasion = {ammo="Yamarang",
+		head="Nyame helm",neck="Futhark Torque +1",ear1="Cryptic Earring",ear2="Trux Earring",
+		body="Emet Harness +1",hands="Nyame gauntlets",ring1="Eihwaz Ring",ring2="Vengeful Ring",
+		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Nyame flanchard",feet="Nyame Sollerets"}
+		
 	
     sets.Enmity.DT = {ammo="Staunch Tathlum +1",
 		head="Halitus Helm",neck="Futhark Torque +1",ear1={name="Cryptic Earring", priority=15},ear2={name="Odnowa Earring +1", priority=15},
@@ -109,6 +114,25 @@ function init_gear_sets()
 	sets.precast.JA['Last Resort'].DT = set_combine(sets.Enmity.DT, {})
 	sets.precast.JA['Aggressor'].DT = set_combine(sets.Enmity.DT, {})
 	sets.precast.JA['Animated Flourish'].DT = set_combine(sets.Enmity.DT, {})
+	
+	sets.precast.JA['Vallation'].Evasion = set_combine(sets.Enmity.Evasion,{body="Runeist's Coat +3", legs="Futhark Trousers +3"})
+    sets.precast.JA['Valiance'].Evasion = sets.precast.JA['Vallation'].Evasion
+    sets.precast.JA['Pflug'].Evasion= set_combine(sets.Enmity.Evasion,{feet="Runeist Bottes +1"})
+    sets.precast.JA['Battuta'].Evasion = set_combine(sets.Enmity.Evasion,{head="Futhark Bandeau +3"})
+    sets.precast.JA['Liement'].Evasion = set_combine(sets.Enmity.Evasion,{body="Futhark Coat +3"})
+    sets.precast.JA['Gambit'].Evasion = set_combine(sets.Enmity.Evasion,{hands="Runeist's Mitons +2"})
+    sets.precast.JA['Rayke'].Evasion = set_combine(sets.Enmity.Evasion,{feet="Futhark Boots +1"})
+    sets.precast.JA['Elemental Sforzo'].Evasion = set_combine(sets.Enmity.Evasion,{body="Futhark Coat +3"})
+    sets.precast.JA['Swordplay'].Evasion = set_combine(sets.Enmity.Evasion,{hands="Futhark Mitons +1"})
+    sets.precast.JA['Embolden'].Evasion = set_combine(sets.Enmity.Evasion,{})
+    sets.precast.JA['One For All'].Evasion = set_combine(sets.Enmity.Evasion,{})
+    sets.precast.JA['Provoke'].Evasion = set_combine(sets.Enmity.Evasion, {})
+	sets.precast.JA['Warcry'].Evasion = set_combine(sets.Enmity.Evasion, {})
+	sets.precast.JA['Defender'].Evasion = set_combine(sets.Enmity.Evasion, {})
+	sets.precast.JA['Berserk'].Evasion = set_combine(sets.Enmity.Evasion, {})
+	sets.precast.JA['Last Resort'].Evasion = set_combine(sets.Enmity.Evasion, {})
+	sets.precast.JA['Aggressor'].Evasion = set_combine(sets.Enmity.Evasion, {})
+	sets.precast.JA['Animated Flourish'].Evasion = set_combine(sets.Enmity.Evasion, {})
 
     sets.precast.JA['Lunge'] = {}
 
@@ -145,7 +169,8 @@ function init_gear_sets()
             back=gear.fc_jse_back,waist="Kasiri Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1"}
 			
 	sets.precast.FC.DT = set_combine(sets.precast.FC, {ammo="Staunch Tathlum +1",body="Futhark Coat +3",ring1="Defending Ring",waist="Audumbla Sash"})
-			
+	sets.precast.FC.Evasion = sets.precast.FC.DT
+	
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {legs="Futhark Trousers +3"})
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck='Magoraga beads'})
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
@@ -213,20 +238,25 @@ function init_gear_sets()
 		body="Futhark Coat +3",hands="Turms Mittens +1",ring1={name="Moonlight Ring", priority =15},ring2="Defending Ring",
 		back=gear.enmity_jse_back,waist="Engraved Belt",legs="Futhark Trousers +3",feet="Erilaz Greaves +1"}
 		
-    sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Rune. Bandeau +3",legs="Futhark Trousers +3"}) --sacro,gauntlets,
-	sets.midcast['Regen'].DT = set_combine(sets.midcast['Enhancing Magic'].DT,{head="Rune. Bandeau +3",legs="Futhark Trousers +3"}) --sacro,gauntlets,
+    sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Rune. Bandeau +3",neck="Sacro Gorget",legs="Futhark Trousers +3"}) --gauntlets,
+	sets.midcast['Regen'].DT = set_combine(sets.midcast['Enhancing Magic'].DT,{head="Rune. Bandeau +3",neck="Sacro Gorget",legs="Futhark Trousers +3"}) --gauntlets,
 	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'],{head="Erilaz Galea +1",legs="Futhark Trousers +3"}) --gauntlets
     sets.midcast['Refresh'].DT = set_combine(sets.midcast['Enhancing Magic'].DT,{head="Erilaz Galea +1",legs="Futhark Trousers +3"})
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {})
 	sets.midcast.Stoneskin.DT = set_combine(sets.midcast['Enhancing Magic'].DT, {})
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
 	sets.midcast.Flash.DT = set_combine(sets.Enmity.DT, {})
+	sets.midcast.Flash.Evasion = set_combine(sets.Enmity.Evasion, {})
 	sets.midcast.Foil = set_combine(sets.Enmity, {})
 	sets.midcast.Foil.DT = set_combine(sets.Enmity.DT, {})
-    sets.midcast.Stun = set_combine(sets.Enmity, {})
+	sets.midcast.Foil.Evasion = set_combine(sets.Enmity.Evasion, {})
+    sets.midcast['Poisonga'] = set_combine(sets.Enmity, {})
+	sets.midcast['Poisonga'].DT = set_combine(sets.Enmity.DT, {})
+	sets.midcast['Poisonga'].Evasion = set_combine(sets.Enmity.Evasion, {})
+	sets.midcast.Stun = set_combine(sets.Enmity, {})
 	sets.midcast['Blue Magic'] = set_combine(sets.Enmity, {})
 	sets.midcast['Blue Magic'].DT = set_combine(sets.Enmity.DT, {})
-	sets.midcast['Blue Magic'].SIRD = set_combine(sets.Enmity.SIRD, {})
+	sets.midcast['Blue Magic'].Evasion = set_combine(sets.Enmity.Evasion, {})
 	sets.midcast.Cocoon = set_combine(sets.Enmity.DT, {})
 
     sets.midcast.Cure = {}
@@ -259,7 +289,7 @@ function init_gear_sets()
 	
 	sets.idle.Evasion = {ammo="Yamarang",
 		head="Nyame helm",neck="Bathy Choker +1",ear1="Eabani Earring",ear2="Infused Earring",
-		body="Nyame mail",hands="Nyame gauntlets",ring1="Ilabrat Ring",ring2="Vengeful Ring",
+		body="Nyame mail",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.evasion_jse_back,waist="Kasiri Belt",legs="Nyame flanchard",feet="Nyame Sollerets"}
 	
 	sets.idle.Weak = set_combine(sets.idle.Tank, {})
@@ -281,7 +311,7 @@ function init_gear_sets()
 	sets.weapons.Epeolatry = {main="Epeolatry",sub="Utu Grip"}
 	sets.weapons.EpeoTank = {main="Epeolatry",sub="Refined Grip +1"}
 	sets.weapons.FellCleave = {main="Kaja Chopper",sub="Utu Grip"}
-	sets.weapons.Evasion = {main="Soulcleaver",sub="Kupayopl"}
+	
 	
 	-- Defense Sets
 	

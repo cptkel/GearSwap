@@ -3,11 +3,11 @@
 sets.Sheltered = {}
 sets.Capacity = {}
 
-sets.buff.Doom = {}
+sets.buff.Doom = {neck="Nicander's Necklace",ring1="Defending Ring",ring2="Purity Ring"}
 sets.TreasureHunter = {body="Volte Jupon",legs={ name="Herculean Trousers", augments={'Accuracy+17','CHR+2','"Treasure Hunter"+2',}}}
 
 sets.precast.Item['Hallowed Water'] = {}
-sets.precast.Item['Holy Water'] = {}
+sets.precast.Item['Holy Water'] = {neck="Nicander's Necklace",ring1="Defending Ring",ring2="Purity Ring"}
 
 --Augmented items that you'll use among multiple jobs.
 gear.gada_enhancing_club = {name="Gada", augments={'Enh. Mag. eff. dur. +6','STR+1','Mag. Acc.+16','"Mag.Atk.Bns."+17','DMG:+9',}}
