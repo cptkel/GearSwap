@@ -161,7 +161,14 @@ function init_gear_sets()
 		body=gear.herculean_wsd_body,hands=gear.herculean_tp_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
 		back=gear.aeolian_jse_back,waist=gear.ElementalObi,legs=gear.herculean_mab_legs,feet=gear.herculean_mab_feet}
 		
-sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
+	sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
+	
+	sets.precast.WS['Savage Blade'] = {ammo="Seeth. Bomblet +1",
+		head="Pill. Bonnet +3",neck="Anu Torque",ear1="Moonshade Earring",ear2="Ishvara Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Regal Ring",
+		back=gear.evisceration_jse_back,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+
+
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Ishvara Earring",ear2="Sherida Earring"}
