@@ -124,10 +124,10 @@ function init_gear_sets()
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1",feet=gear.herculean_tp_feet}
 		
 	sets.precast.WS['Dragon Kick'] = {}
-	sets.precast.WS['Tornado Kick'] = {ammo="Knobkierrie",
-		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",ear2="Sherida Earring",
+	sets.precast.WS['Tornado Kick'] = {ammo="Coiste Bodhar",
+		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Schere Earring",ear2="Sherida Earring",
 		body="Tatena. Harama. +1",hands=gear.herculean_ta_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
-		back=gear.HF_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1",feet="Anch. Gaiters +3"}
+		back=gear.HF_back,waist="Moonbow Belt +1",legs="Mpaca's Hose",feet="Anch. Gaiters +3"}
 	
 	sets.precast.WS['Spinning Attack'] = {ammo="Knobkierrie",
 		head="Ken. Jinpachi +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Sherida Earring",
@@ -225,12 +225,12 @@ function init_gear_sets()
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Hes. Hose +3",feet="Malignance Boots"}
 		
 	-- Defensive melee hybrid sets
-	sets.engaged.PDT = {ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",neck="Monk's Nodowa +2",ear1="Schere Earring",ear2="Sherida Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring2="Gere Ring",ring1="Niqmaddu Ring",
-		back=gear.tp_back,waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
+	sets.engaged.PDT = {ammo="Coiste Bodhar",
+		head="Ken. Jinpachi +1",neck="Monk's Nodowa +2",ear1="Schere Earring",ear2="Sherida Earring",
+		body="Mpaca's Doublet",hands="Mpaca's Gloves",ring2="Gere Ring",ring1="Niqmaddu Ring",
+		back=gear.tp_back,waist="Moonbow Belt +1",legs="Mpaca's Hose",feet="Malignance Boots"}
 	sets.engaged.Acc.PDT = {ammo="Ginsen",
-		head="Ken. Jinpachi +1",neck="Monk's Nodowa +2",ear1="Brutal Earring",ear2="Sherida Earring",
+		head="Ken. Jinpachi +1",neck="Monk's Nodowa +2",ear1="Schere Earring",ear2="Sherida Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring2="Defending Ring",ring1="Niqmaddu Ring",
 		back=gear.tp_back,waist,waist="Moonbow Belt +1",legs="Malignance Tights",feet="Ken. Sune-Ate +1"}
 	sets.engaged.PDTOnly = {}

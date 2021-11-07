@@ -102,6 +102,11 @@ function init_gear_sets()
 		body="Amalric Doublet +1",hands="Spae. Gloves +2",ring1="Mephitas's Ring +1",ring2="Metamor. Ring +1",
 		back="Aurist's Cape +1",waist="Luminary Sash",legs="Spae. Tonban +2",feet="Amalric Nails +1"}
 		
+	sets.precast.WS['Cataclysm'] = {ammo="Ghastly Tathlum +1",
+		head="Pixie Hairpin +1",neck="Sorcerer's Stole +2",ear1="Moonshade Earring",ear2="Malignance Earring",
+		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
+		back=gear.nuke_jse_back,waist=gear.ElementalObi,legs="Arch. Tonban +3",feet="Amalric Nails +1"}
+	
 	sets.MaxTPMyrkr = {}
     
     
@@ -142,7 +147,7 @@ function init_gear_sets()
 		
     sets.midcast['Enfeebling Magic'].Resistant = {}
 		
-    sets.midcast.ElementalEnfeeble = set_combine(sets.midcast['Enfeebling Magic'], {legs="Arch. Tonban +2",feet="Arch. Sabots +2"})
+    sets.midcast.ElementalEnfeeble = set_combine(sets.midcast['Enfeebling Magic'], {legs="Arch. Tonban +3",feet="Arch. Sabots +3"})
     sets.midcast.ElementalEnfeeble.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
 	
 	sets.midcast.IntEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
@@ -183,15 +188,15 @@ function init_gear_sets()
     -- Elemental Magic sets
     
     sets.midcast['Elemental Magic'] = {ammo="Ghastly Tathlum +1",
-        head="Mall. Chapeau +2",neck="Saevus Pendant +1",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +2",hands="Mallquis Cuffs +2",ring1="Freke Ring",ring2="Metamor. Ring +1",
-        back=gear.nuke_jse_back,waist=gear.ElementalObi,legs="Arch. Tonban +2",feet="Arch. Sabots +2"}
+        head="Arch. Petasos +3",neck="Sorcerer's Stole +2",ear1="Malignance Earring",ear2="Regal Earring",
+        body="Arch. Coat +3",hands="Arch. Gloves +3",ring1="Freke Ring",ring2="Metamor. Ring +1",
+        back=gear.nuke_jse_back,waist=gear.ElementalObi,legs="Arch. Tonban +3",feet="Arch. Sabots +3"}
 		
     sets.midcast['Elemental Magic'].Resistant = {}
 		
     sets.midcast['Elemental Magic'].Fodder = {}
 
-	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Cohort Cloak +1",hands="Amalric Gages +1",feet="Amalric Nails +1"})
+	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {}) --head=empty,body="Cohort Cloak +1",hands="Amalric Gages +1",feet="Amalric Nails +1"
 	sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 	sets.midcast['Elemental Magic'].HighTierNuke.Fodder = set_combine(sets.midcast['Elemental Magic'].Fodder, {})
 	
@@ -253,9 +258,9 @@ function init_gear_sets()
     sets.buff['Mana Wall'] = {back=gear.nuke_jse_back,feet="Wicce Sabots +1"}
 	
 	-- Gear that converts elemental damage done to recover MP.	
-	sets.RecoverMP = {head="Mall. Chapeau +2",body="Spaekona's Coat +2"}
+	sets.RecoverMP = {body="Spaekona's Coat +2"}
 	-- Gear for Magic Burst mode.
-    sets.MagicBurst = {head="Ea Hat +1",neck="Mizu. Kubikazari",hands="Arch. Gloves +2",ring1="Locus Ring",ring2="Mujin Band"}
+    sets.MagicBurst = {head="Ea Hat +1",neck="Mizu. Kubikazari",hands="Arch. Gloves +3",ring1="Locus Ring",ring2="Mujin Band"}
 	sets.ResistantMagicBurst = {}
 	
 	-- Gear for specific elemental nukes.

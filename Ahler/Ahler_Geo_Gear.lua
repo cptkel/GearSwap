@@ -13,8 +13,8 @@ function user_setup()
 	gear.idle_jse_back = {name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	
 	
-	--gear.obi_low_nuke_waist = "Sacro Cord"
-	--gear.obi_high_nuke_waist = "Sacro Cord"
+	gear.obi_low_nuke_waist = "Sacro Cord"
+	gear.obi_high_nuke_waist = "Sacro Cord"
 	
 	autoindi = "Precision"
 	autogeo = "Frailty"
@@ -124,8 +124,8 @@ sets.midcast.LightWeatherCure = {}
 	
     sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
 		head="Bagua Galero +3",neck="Baetyl Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-		body="Geomancy Tunic +3",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamor. Ring +1",
-		gear.nuke_jse_back,waist=gear.ElementalObi,legs="Bagua Pants +3", feet="Bagua Sandals +3"} --sacro cord
+		body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamor. Ring +1",
+		gear.nuke_jse_back,waist=gear.ElementalObi,legs="Bagua Pants +3", feet="Amalric Nails +1"} 
 		
 
     sets.midcast['Elemental Magic'].Resistant = {}
