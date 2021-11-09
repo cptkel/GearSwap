@@ -238,7 +238,7 @@ function init_gear_sets()
 		back=gear.fc_jse_back,legs=gear.herculean_refresh_legs,feet=gear.herculean_fc_feet}
 
     sets.midcast.ElementalNinjutsu = {ammo="Ghastly Tathlum +1",
-		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi earring",ear2="Regal Earring",
+		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi earring",ear2="Crematio Earring",
 		body="Gyve doublet",hands="Leyline Gloves",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
 		back=gear.mab_jse_back,waist=gear.ElementalObi,legs="Gyve Trousers",feet="Mochi. Kyahan +3"}
 		
@@ -247,7 +247,7 @@ function init_gear_sets()
     sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {})
 	
 	sets.MagicBurst = set_combine(sets.midcast.ElementalNinjutsu, {
-		head="Mochi. Hatsuburi +3",
+		head="Mochi. Hatsuburi +3",ear1="Static Earring",
 		body="Samnuha Coat",ring1="Mujin Band",ring2="Locus Ring",
 		feet="Hachiya Kyahan +2"})
 	
