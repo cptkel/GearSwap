@@ -5,7 +5,7 @@ function user_job_setup()
 	state.RangedMode:options('Normal','Acc')
 	state.WeaponskillMode:options('Match','Normal','Acc')
 	state.IdleMode:options('Normal', 'PDT')
-	state.Weapons:options('None','Default','LastStand','DualSavageWeapons','DualEviscerationWeapons','DualMalevolence','Aeolian','Gandiva')
+	state.Weapons:options('None','Default','LastStand','DualSavageWeapons','DualEviscerationWeapons','DualMalevolence','Aeolian','Gandiva','Detonator')
 	
 	WeaponType =  {['Sparrowhawk +2'] = "Bow",
                    ['Fomalhaut'] = "Gun",
@@ -178,6 +178,11 @@ function init_gear_sets()
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
 		hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Karieyh Ring",
 		waist="Sailfi Belt +1"}
+	
+	sets.precast.WS['Detonator'] = {
+		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
+		body="Ikenga's Vest",hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Regal Ring",
+		back=gear.laststand_jse_back,waist="Fotia Belt",legs="Arc. Braccae +3",feet=gear.herculean_wsd_feet}
 		
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
@@ -262,6 +267,7 @@ function init_gear_sets()
 	sets.weapons.DualMalevolence = {main="Malevolence",sub="Malevolence",range="Gastraphetes"}
 	sets.weapons.Aeolian = {main="Tauret",sub="Malevolence",range="Sparrowhawk +2",ammo="Hauksbok Arrow"}
 	sets.weapons.Gandiva = {main="Oneiros Knife",sub="Nusku Shield",range="Gandiva"}
+	sets.weapons.Detonator = {main="Ternion Dagger +1",sub="Nusku Shield",range="Armageddon"}
 
 	--------------------------------------
 	-- Engaged sets

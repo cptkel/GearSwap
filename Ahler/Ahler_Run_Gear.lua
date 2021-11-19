@@ -238,10 +238,10 @@ function init_gear_sets()
 		body="Futhark Coat +3",hands="Turms Mittens +1",ring1={name="Moonlight Ring", priority =15},ring2="Defending Ring",
 		back=gear.enmity_jse_back,waist="Engraved Belt",legs="Futhark Trousers +3",feet="Erilaz Greaves +1"}
 		
-    sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Rune. Bandeau +3",neck="Sacro Gorget",legs="Futhark Trousers +3"}) --gauntlets,
-	sets.midcast['Regen'].DT = set_combine(sets.midcast['Enhancing Magic'].DT,{head="Rune. Bandeau +3",neck="Sacro Gorget",legs="Futhark Trousers +3"}) --gauntlets,
-	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'],{head="Erilaz Galea +1",legs="Futhark Trousers +3"}) --gauntlets
-    sets.midcast['Refresh'].DT = set_combine(sets.midcast['Enhancing Magic'].DT,{head="Erilaz Galea +1",legs="Futhark Trousers +3"})
+    sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Rune. Bandeau +3",neck="Sacro Gorget",hands="Regal Gauntlets",legs="Futhark Trousers +3"})
+	sets.midcast['Regen'].DT = set_combine(sets.midcast['Enhancing Magic'].DT,{head="Rune. Bandeau +3",neck="Sacro Gorget",hands="Regal Gauntlets",legs="Futhark Trousers +3"}) 
+	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'],{head="Erilaz Galea +1",hands="Regal Gauntlets",legs="Futhark Trousers +3"})
+    sets.midcast['Refresh'].DT = set_combine(sets.midcast['Enhancing Magic'].DT,{head="Erilaz Galea +1",hands="Regal Gauntlets",legs="Futhark Trousers +3"})
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {})
 	sets.midcast.Stoneskin.DT = set_combine(sets.midcast['Enhancing Magic'].DT, {})
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
@@ -318,7 +318,10 @@ function init_gear_sets()
 	sets.defense.PDT = {}
 	sets.defense.PDT_HP = {}
 		
-	sets.defense.MDT = {} 
+	sets.defense.MDT = {ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Futhark Torque +1",ear1="Sanare Earring",ear2="Odnowa Earring +1",
+		body="Runeist's Coat +3",hands="Nyame Gauntlets",ring1="Shadow Ring",ring2="Vengeful Ring",
+		back=gear.fc_jse_back,waist="Engraved Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"} 
 	sets.defense.MDT_HP = {}
 	
 	sets.defense.BDT = {}
