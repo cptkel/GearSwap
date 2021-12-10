@@ -105,7 +105,7 @@ function init_gear_sets()
 		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.STRda_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1", feet=gear.herculean_tp_feet}
 		
-	sets.precast.WS['Howling Fist'] = {ammo="Knobkierrie",
+	sets.precast.WS['Howling Fist'] = {ammo="Coiste Bodhar",
 		head="Mpaca's Cap",neck="Mnk. Nodowa +2",ear1="Moonshade Earring",ear2="Sherida Earring",
 		body="Tatena. Harama. +1",hands=gear.herculean_strTA_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.HF_back,waist="Moonbow Belt +1",legs="Tatena. Haidate +1",feet=gear.herculean_tp_feet }
@@ -129,7 +129,7 @@ function init_gear_sets()
 		body="Tatena. Harama. +1",hands=gear.herculean_ta_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.HF_back,waist="Moonbow Belt +1",legs="Mpaca's Hose",feet="Anch. Gaiters +3"}
 	
-	sets.precast.WS['Spinning Attack'] = {ammo="Knobkierrie",
+	sets.precast.WS['Spinning Attack'] = {ammo="Coiste Bodhar",
 		head="Ken. Jinpachi +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Sherida Earring",
 		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.STRda_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet=gear.herculean_tp_feet}

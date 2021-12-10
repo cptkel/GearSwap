@@ -19,10 +19,6 @@ function user_job_setup()
 	gear.expsb_jse_back = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	gear.evasion_jse_back = {name="Rosmerta's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Mag.Atk.Bns."+10','Evasion+15',}}
 	
-	--gear.obi_cure_waist = ""
-	--gear.obi_nuke_waist = ""
-	--gear.obi_cure_back = ""
-
 	-- Additional local binds
 	send_command('bind ^` input /ja "Chain Affinity" <me>')
 	send_command('bind @` input /ja "Efflux" <me>')
@@ -115,18 +111,18 @@ function init_gear_sets()
 		
 	sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
 	
-	sets.precast.WS['Expiacion'] = {ammo="Aurgelmir Orb +1",
+	sets.precast.WS['Expiacion'] = {ammo="Coiste Bodhar",
 		head=gear.herculean_WSD_head,neck="Mirage Stole +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
-		body="Assim. Jubbah +3",hands="Jhakri Cuffs +2",ring1="Ilabrat Ring", ring2="Epaminondas's Ring",
-		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Jhakri Pigaches +2"}
+		body="Assim. Jubbah +3",hands="Nyame Gauntlets",ring1="Ilabrat Ring", ring2="Epaminondas's Ring",
+		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Expiacion'].Acc = set_combine(sets.precast.WS['Expiacion'], {})
 	sets.precast.WS['Expiacion'].DT = set_combine(sets.precast.WS.DT, {})
 	
-	--[[sets.precast.WS['Sanguine Blade'] = {ammo="Ghastly Tathlum +1",
+	sets.precast.WS['Sanguine Blade'] = {ammo="Ghastly Tathlum +1",
 		head="Pixie Hairpin +1",neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
 		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
-		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}]]--
+		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
 					 
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {ear2="Regal Earring",ring1="Metamor. Ring +1",waist="Luminary Sash"})
 
@@ -168,7 +164,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Magical = {ammo="Ghastly Tathlum +1",
 		 neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
 		 body="Cohort Cloak +1",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
-		 back=gear.nuking_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
+		 back=gear.nuking_back,waist="Eschan Stone",legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
 					 
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {})
 	sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical, {})
@@ -186,7 +182,11 @@ function init_gear_sets()
 
 	sets.midcast['Enhancing Magic'] = {}
 		
-	sets.midcast['Phalanx'] = {}
+	sets.midcast['Phalanx'] = {ammo="Staunch Tathlum +1",
+		head="Fu. Bandeau +3",neck="Incanter's Torque",ear1="Mimir Earring",ear2={name="Odnowa Earring +1", priority=15},
+		body=gear.herculean_phalanx_body,hands=gear.herculean_phalanx_hands,ring1="Stikini Ring +1",ring2={name="Gelatinous Ring +1", priority=15},
+		back={name="Moonlight Cape", priority=15},waist="Olympus Sash",legs=gear.herculean_phalanx_legs,feet=gear.herculean_phalanx_feet}
+	
 
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {})
 

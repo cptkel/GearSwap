@@ -5,7 +5,7 @@ function user_job_setup()
 	state.RangedMode:options('Normal','Acc')
 	state.WeaponskillMode:options('Match','Normal','Acc')
 	state.IdleMode:options('Normal', 'PDT')
-	state.Weapons:options('None','Default','LastStand','DualSavageWeapons','DualEviscerationWeapons','DualMalevolence','Aeolian','Gandiva','Detonator')
+	state.Weapons:options('None','Default','LastStand','DualSavageWeapons','DualEviscerationWeapons','DualMalevolence','Aeolian','Gandiva','Detonator','Coronach')
 	
 	WeaponType =  {['Sparrowhawk +2'] = "Bow",
                    ['Fomalhaut'] = "Gun",
@@ -268,7 +268,7 @@ function init_gear_sets()
 	sets.weapons.Aeolian = {main="Tauret",sub="Malevolence",range="Sparrowhawk +2",ammo="Hauksbok Arrow"}
 	sets.weapons.Gandiva = {main="Oneiros Knife",sub="Nusku Shield",range="Gandiva"}
 	sets.weapons.Detonator = {main="Ternion Dagger +1",sub="Nusku Shield",range="Armageddon"}
-
+	sets.weapons.Coronach = {main="Ternion Dagger +1",sub="Perun +1",range="Annihilator"}
 	--------------------------------------
 	-- Engaged sets
 	--------------------------------------

@@ -125,7 +125,7 @@ sets.midcast.LightWeatherCure = {}
     sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
 		head="Bagua Galero +3",neck="Baetyl Pendant",ear1="Regal Earring",ear2="Malignance Earring",
 		body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamor. Ring +1",
-		gear.nuke_jse_back,waist=gear.ElementalObi,legs="Bagua Pants +3", feet="Amalric Nails +1"} 
+		gear.nuke_jse_back,waist="Sacro Cord",legs="Bagua Pants +3", feet="Amalric Nails +1"} 
 		
 
     sets.midcast['Elemental Magic'].Resistant = {}
@@ -215,8 +215,8 @@ sets.midcast.LightWeatherCure = {}
 
 	sets.idle.PDT.Pet = {main="Idris",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Bagua Galero +3",neck="Bagua Charm +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-		body="Mallquis Saio +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-		back=gear.idle_jse_back,waist="Slipor Sash",legs="Geomancy Pants +3",feet="Bagua Sandals +3"}
+		body="Nyame Mail",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back=gear.idle_jse_back,waist="Slipor Sash",legs="Nyame Flanchard",feet="Bagua Sandals +3"}
 		
 
 	-- .Indi sets are for when an Indi-spell is active.

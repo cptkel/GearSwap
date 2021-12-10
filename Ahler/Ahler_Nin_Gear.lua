@@ -9,7 +9,7 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','HeishiGleti','HeishiGoko','KikokuTernion','NagiGleti','DualSavageWeapons','Aeolian','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
+	state.Weapons:options('HeishiGleti','HeishiKuni','GokoGleti','KikokuKuni','NagiGleti','DualSavageWeapons','Aeolian','Evisceration','None','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
 	
 	state.Stance = M{['description']='Stance','Yonin','Innin','None'}
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None','DW20','DWMax'}
@@ -19,6 +19,7 @@ function user_setup()
 	gear.mab_jse_back = {name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.enmity_jse_back = {name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Parrying rate+5%',}}
 	gear.hybrid_jse_back = {name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.agi_jse_back = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Weapon skill damage +10%','Damage taken-5%',}}
 	
 	send_command('bind ^` input /ja "Innin" <me>')
     send_command('bind !` input /ja "Yonin" <me>')
@@ -174,50 +175,62 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Blade: Chi'] = {ammo="Seeth. Bomblet +1",
 		head="Mochi. Hatsuburi +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Moonshade Earring",
-		body=gear.herculean_wsd_body,hands="Leyline Gloves",ring1="Gere Ring",ring2="Epaminondas's Ring",
-		back=gear.hybrid_jse_back,waist="Orpheus's Sash",legs="Mochi. Hakama +3",feet=gear.herculean_WSD_feet}
+		body=gear.herculean_wsd_body,hands="Nyame gauntlets",ring1="Gere Ring",ring2="Epaminondas's Ring",
+		back=gear.hybrid_jse_back,waist="Orpheus's Sash",legs="Mochi. Hakama +3",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Blade: Teki'] = sets.precast.WS['Blade: Chi']
 	sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 	
-	sets.precast.WS['Blade: Shun'] = {
-		head="Mpaca's Cap",neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Moonshade Earring",
-		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Regal Ring",
+	sets.precast.WS['Blade: Hi'] = {ammo="Yetshila +1",
+		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Odr Earring",
+		body="Ken. Samue +1",hands="Mpaca's Gloves",ring1="Gere Ring",ring2="Regal Ring",
+		back=gear.agi_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet="Nyame Sollerets"}
+		
+	sets.precast.WS['Blade: Kamu'] = {ammo="Seething Bomblet +1",
+		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Brutal Earring",
+		body="Tatena. Harama. +1",hands="Malignance Gloves",ring1="Gere Ring",ring2="Epona's Ring",
+		back=gear.hybrid_jse_back,waist="Sailfi Belt +1",legs="Tatena. Haidate +1",feet="Tatena. Sune. +1"}
+		
+	sets.precast.WS['Blade: Ku'] = {ammo="Seething Bomblet +1",
+		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Mache Earring +1",
+		body=gear.adhemar_dd_body,hands="Mochizuki Tekko +3",ring1="Gere Ring",ring2="Regal Ring",
 		back=gear.da_jse_back,waist="Fotia Belt",legs="Tatena. Haidate +1",feet="Mochi. Kyahan +3"}
+		
+	sets.precast.WS['Blade: Metsu'] = {ammo="Coiste Bodhar",
+		head="Adhemar Bonnet +1",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Mache Earring +1",
+		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Regal Ring",
+		back=gear.hybrid_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet="Nyame Sollerets"}
+	
+	sets.precast.WS['Blade: Shun'] = {ammo="Coiste Bodhar",
+		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Moonshade Earring",
+		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Regal Ring",
+		back=gear.da_jse_back,waist="Fotia Belt",legs="Mochi. Hakama +3",feet="Mochi. Kyahan +3"}
 	
 	sets.precast.WS['Blade: Shun'].AttCap = {ammo="C. Palug Stone",
-		head="Ken. Jinpachi +1",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Odr Earring",
+		head="Ken. Jinpachi +1",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Mache Earring +1",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Gere Ring",ring2="Regal Ring",
 		back=gear.da_jse_back,waist="Fotia Belt",legs="Mpaca's Hose",feet="Ken. Sune-ate +1"}
 	
-	sets.precast.WS['Blade: Metsu'] = {
-		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Odr Earring",
-		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Regal Ring",
-		back=gear.da_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet="Mochi. Kyahan +3"}
-	
-    sets.precast.WS['Blade: Ku'] = {ammo="Seething Bomblet +1",
-		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Lugra Earring +1",ear2="Mache Earring +1",
-		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Regal Ring",
-		back=gear.da_jse_back,waist="Fotia Belt",legs="Tatena. Haidate +1",feet="Mochi. Kyahan +3"}
-	
 	sets.precast.WS['Blade: Ten'] = {ammo="Seething Bomblet +1",
-		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Odr Earring",
-		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Regal Ring",
-		back=gear.da_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet="Mochi. Kyahan +3"}
+		head="Mpaca's Cap",neck="Caro Necklace",ear1="Lugra Earring +1",ear2="Moonshade Earring",
+		body=gear.adhemar_dd_body,hands="Nyame Gauntlets",ring1="Gere Ring",ring2="Regal Ring",
+		back=gear.hybrid_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet="Nyame Sollerets"}
 	
-	sets.precast.WS['Blade: Kamu'] = {ammo="Seething Bomblet +1",
-		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Brutal Earring",
-		body="Tatena. Harama. +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
-		back=gear.da_jse_back,waist="Sailfi Belt +1",legs="Tatena. Haidate +1",feet="Tatena. Sune. +1"}
-    
-	
-
-	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Blade: Chi'], {})
-
 	sets.precast.WS['Savage Blade'] = {ammo="Seething Bomblet +1",
-		head="Hachiya Hatsu. +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Moonshade Earring",
-		body=gear.herculean_wsd_body,hands="Mpaca's Gloves",ring1="Regal Ring",ring2="Epaminondas's Ring",
-		back=gear.hybrid_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet=gear.herculean_WSD_feet}
+		head="Mpaca's Cap",neck="Caro Necklace",ear1="Lugra Earring +1",ear2="Moonshade Earring",
+		body=gear.herculean_wsd_body,hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Gere Ring",
+		back=gear.hybrid_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet="Nyame Sollerets"}
+    
+	sets.precast.WS['Evisceration'] = {ammo="Yetshila +1",
+		head="Blistering Sallet +1",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Odr Earring",
+		body="Ken. Samue +1",hands="Ryuo Tekko +1",ring1="Regal Ring",ring2="Gere Ring",
+		back=gear.da_jse_back,waist="Fotia Belt",legs="Jokushu Haidate",feet="Ken. Sune-ate +1"}
+		
+	sets.precast.WS['Aeolian Edge'] = {ammo="Seething Bomblet +1",
+		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Moonshade Earring",
+		body=gear.herculean_wsd_body,hands="Nyame Gauntlets",ring1="Dingir Ring",ring2="Epaminondas's Ring",
+		back=gear.mab_jse_back,waist=gear.ElementalObi,legs=gear.herculean_mab_legs,feet="Nyame Sollerets"}
+		
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
@@ -239,7 +252,7 @@ function init_gear_sets()
 
     sets.midcast.ElementalNinjutsu = {ammo="Ghastly Tathlum +1",
 		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi earring",ear2="Crematio Earring",
-		body="Gyve doublet",hands="Leyline Gloves",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
+		body="Gyve doublet",hands=gear.herculean_tp_hands,ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
 		back=gear.mab_jse_back,waist=gear.ElementalObi,legs="Gyve Trousers",feet="Mochi. Kyahan +3"}
 		
 	sets.midcast.ElementalNinjutsu.Proc = sets.midcast.FastRecast
@@ -247,8 +260,8 @@ function init_gear_sets()
     sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {})
 	
 	sets.MagicBurst = set_combine(sets.midcast.ElementalNinjutsu, {
-		head="Mochi. Hatsuburi +3",ear1="Static Earring",
-		body="Samnuha Coat",ring1="Mujin Band",ring2="Locus Ring",
+		ear1="Static Earring",
+		body="Samnuha Coat",hands=gear.herculean_mbb_hands,ring1="Mujin Band",ring2="Locus Ring",
 		feet="Hachiya Kyahan +2"})
 	
 	sets.element.Earth = {}
@@ -319,13 +332,22 @@ function init_gear_sets()
 		body="Ken. Samue +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
 		back=gear.da_jse_back,waist="Windbuffet belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet}
 		
-    sets.engaged.Acc = {}
+    sets.engaged.Acc = {ammo="Date Shuriken",
+		head="Ken. Jinpachi +1",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Odr earring",
+		body="Tatena. Harama. +1",hands="Ken. Tekko +1",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back=gear.da_jse_back,waist="Kentarch Belt +1",legs="Tatena. Haidate +1",feet="Ken. Sune-ate +1"}
+		
 	sets.engaged.Crit = set_combine(sets.engaged, {ammo="Happo Shuriken",head="Blistering Sallet +1",ear1="Odr Earring",body="Mummu jacket +2",hands="Mummu wrists +2",legs="Mummu Kecks +2",feet="Mummu gamashes +2"})
     
 	sets.engaged.Evasion = {ammo="Seki Shuriken",
 		head="Malignance Chapeau",neck="Ninja Nodowa +2",ear1="Brutal Earring",ear2="Cessance Earring",
 		body="Mpaca's Doublet",hands="Malignance Gloves",ring1="Ilabrat RIng",ring2="Vengeful Ring",
 		back=gear.enmity_jse_back,waist="Sailfi Belt +1",legs="Mpaca's Hose",feet="Malignance Boots"}
+		
+	sets.engaged.AM = {ammo="Seki Shuriken",
+		head="Malignance Chapeau",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Dedition Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back=gear.tp_jse_back,waist="Kentarch Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 		
 	sets.engaged.Acc.Evasion = {}
 	
@@ -356,11 +378,13 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.HeishiGleti = {main="Heishi Shorinken",sub="Gleti's Knife"}
-	sets.weapons.HeishiGoko = {main="Heishi Shorinken",sub="Gokotai"}
-	sets.weapons.KikokuTernion = {main="Kikoku",sub="Ternion Dagger +1"}
+	sets.weapons.HeishiKuni = {main="Heishi Shorinken",sub="Kunimitsu"}
+	sets.weapons.KikokuKuni = {main="Kikoku",sub="Kunimitsu"}
+	sets.weapons.GokoGleti = {main="Gokotai",sub="Gleti's Knife"}
 	sets.weapons.NagiGleti = {main="Nagi",sub="Gleti's Knife"}
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Uzura +2"}
 	sets.weapons.Aeolian = {main="Tauret",sub="Ternion Dagger +1"}
+	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife"}
 	sets.weapons.ProcDagger = {main="Qutrub Knife",sub=empty}
 	sets.weapons.ProcSword = {main="Excalipoor",sub=empty}
 	sets.weapons.ProcGreatSword = {main="Ophidian Sword",sub=empty}

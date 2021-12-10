@@ -134,6 +134,8 @@ function init_gear_sets()
 		body="Gleti's Cuirass",hands="Totemic Gloves +3",ring1="Epaminondas's Ring",ring2="Regal Ring",
 		back=gear.savage_back,waist="Sailfi Belt +1",legs="Gleti's Breeches",feet="Gleti's Boots"}
 		
+	sets.precast.WS['Calamity'] = set_combine(sets.precast.WS['Mistral Axe'], {})
+	
 	sets.precast.WS['Ruinator'] = {}
 	
 	sets.precast.WS['Onslaught'] = {}
@@ -164,7 +166,7 @@ function init_gear_sets()
 		back=gear.ready_back,waist="Incarnation Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
 	sets.midcast.Pet.DebuffReady = {ammo="Voluspa Tathlum",
-		head="Nyame helm",neck="Adad Amulet",ear1="Handler's Earring",ear2="Enmerkar Earring",
+		head="Nyame helm",neck="Adad Amulet",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Tali'ah Ring",ring2="C. Palug Ring",
 		back=gear.macc_back,waist="Incarnation Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
