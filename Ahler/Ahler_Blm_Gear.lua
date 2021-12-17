@@ -5,11 +5,9 @@ function user_job_setup()
 	state.IdleMode:options('Normal','PDT','DTHippo')
 	state.Weapons:options('None','Nuke','BurstWeapons','Staff')
 
-	--gear.obi_cure_waist = "Witful Belt"
-	gear.obi_low_nuke_waist = "Sacro Cord"
-	gear.obi_high_nuke_waist = "Sacro Cord"
 	
-	gear.nuke_jse_back = {name="Taranus's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
+	
+	gear.nuke_jse_back = {name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	
 
 		-- Additional local binds
@@ -190,7 +188,7 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {ammo="Ghastly Tathlum +1",
         head="Arch. Petasos +3",neck="Sorcerer's Stole +2",ear1="Malignance Earring",ear2="Regal Earring",
         body="Arch. Coat +3",hands="Arch. Gloves +3",ring1="Freke Ring",ring2="Metamor. Ring +1",
-        back=gear.nuke_jse_back,waist=gear.ElementalObi,legs="Arch. Tonban +3",feet="Arch. Sabots +3"}
+        back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Arch. Tonban +3",feet="Arch. Sabots +3"}
 		
     sets.midcast['Elemental Magic'].Resistant = {}
 		

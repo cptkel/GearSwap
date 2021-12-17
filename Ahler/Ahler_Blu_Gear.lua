@@ -105,14 +105,14 @@ function init_gear_sets()
 	sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {})
 	
 	sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
-		head=gear.herculean_WSD_head,neck="Mirage Stole +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
-		body="Assim. Jubbah +3",hands="Jhakri Cuffs +2",ring1="Ilabrat Ring", ring2="Epaminondas's Ring",
-		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Jhakri Pigaches +2"}
+		head="Nyame Helm",neck="Mirage Stole +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
+		body="Assim. Jubbah +3",hands="Nyame Gauntlets",ring1="Ilabrat Ring", ring2="Epaminondas's Ring",
+		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
 	
 	sets.precast.WS['Expiacion'] = {ammo="Coiste Bodhar",
-		head=gear.herculean_WSD_head,neck="Mirage Stole +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
+		head="Nyame Helm",neck="Mirage Stole +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
 		body="Assim. Jubbah +3",hands="Nyame Gauntlets",ring1="Ilabrat Ring", ring2="Epaminondas's Ring",
 		back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Luhlaza Shalwar +3",feet="Nyame Sollerets"}
 		
