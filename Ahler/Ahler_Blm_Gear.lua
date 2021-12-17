@@ -264,7 +264,7 @@ function init_gear_sets()
 	sets.ResistantMagicBurst = {}
 	
 	-- Gear for specific elemental nukes.
-	sets.element.Dark = {head="Pixie Hairpin +1",ring2="Archon Ring"}
+	--[[sets.element.Dark = {head="Pixie Hairpin +1",ring2="Archon Ring"}]]--
 
     -- Engaged sets
 

@@ -25,7 +25,7 @@ function user_setup()
 	gear.shoot_jse_back = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10',}}
 	
 	set_lockstyle(1)
-	ammostock = {['Chrono Bullet'] = 300,['Living Bullet'] = 99}
+	ammostock = 98
 	-- Additional local binds
 	send_command('bind numpad0 input /ra <t>')
 	send_command('bind numpad3 input /ws Leaden Salute <t>')
@@ -144,12 +144,12 @@ function init_gear_sets()
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 
     sets.precast.RA = {ammo=gear.RAbullet,
-       head="Chass. Tricorne +1",neck="Comm. Charm +2",
-       body="Oshosi Vest +1",hands="Lanun Gants +3", 
+       head="Taeon Chapeau",neck="Comm. Charm +2",
+       body="Laksa. Frac +3",hands="Lanun Gants +3",ring1="Crepuscular Ring",
         back=gear.roll_jse_back,waist="Yemaya Belt",legs="Adhemar Kecks +1",feet="Meg. Jam. +2"} 
 		
-	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {body="Laksa. Frac +3"})
-	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, {hands="Carmine Fin. Ga. +1",feet="Pursuer's Gaiters"})
+	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {head="Chass. Tricorne +1",hands="Carmine Fin. Ga. +1"})
+	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, {feet="Pursuer's Gaiters"})
 
        
     -- Weaponskill sets

@@ -125,8 +125,8 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"] = {ammo="Yetshila +1",
 		head="Pill. Bonnet +3",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Sherida Earring",
 		body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
-		waist="Grunfeld Rope",legs="Lustr. Subligar +1",feet="Lustra. Leggings +1"
-	}
+		waist="Grunfeld Rope",legs="Lustr. Subligar +1",feet="Lustra. Leggings +1"}
+		
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"], {})

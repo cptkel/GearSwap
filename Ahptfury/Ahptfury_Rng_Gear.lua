@@ -54,7 +54,9 @@ function user_job_setup()
 	gear.dexcrit_jse_back = {name="Belenus's Cape", augments={'DEX+20','Rng.Acc.+20 Rng.Atk.+20','DEX+10','Crit.hit rate+10',}}
 	gear.laststand_jse_back = {name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
 	
-	--ammostock = 98
+	
+	
+	ammostock = 98
 	  
 	  -- Additional local binds
     send_command('bind !` input /ra <t>')
@@ -65,7 +67,7 @@ function user_job_setup()
 	send_command('bind ^q gs c weapons SingleWeapon;gs c update')
 	
 	set_lockstyle(2)
-	ammostock = 98
+	
 	
 	select_default_macro_book()
 
