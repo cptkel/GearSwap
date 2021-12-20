@@ -82,7 +82,7 @@ function init_gear_sets()
 
     sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 
-	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
+	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Crepuscular Cloak"})
 		
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -143,7 +143,7 @@ sets.midcast.LightWeatherCure = {}
 		
 	sets.midcast.Stun.Resistant = {}
 
-	sets.midcast.Impact = {head=empty,body="Twilight Cloak"}
+	sets.midcast.Impact = {head=empty,body="Crepuscular Cloak"}
 		
 	sets.midcast['Enfeebling Magic'] = {}
 		

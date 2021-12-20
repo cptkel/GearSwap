@@ -245,7 +245,11 @@ function init_gear_sets()
         head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Dingir Ring",ring2="Ilabrat Ring",
 		back=gear.shoot_jse_back,waist="Yemaya Belt",legs="Malignance Tights",feet="Malignance Boots"}
-		
+			
+	sets.midcast.RA.AM = {ammo=gear.RAbullet,
+		head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Odr Earring",ear2="Telos Earring",
+		body="Meg. Cuirie +2",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Begrudging Ring",
+		back=gear.crit_jse_back,waist="K. Kachina Belt +1",legs="Darraigner's Brais",feet="Osh. Leggings +1"}
 
     sets.midcast.RA.Acc = {}
 		

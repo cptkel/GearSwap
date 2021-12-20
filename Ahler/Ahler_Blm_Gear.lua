@@ -1,10 +1,10 @@
 function user_job_setup()
 	-- Options: Override default values
-	state.CastingMode:options('Normal','Resistant','Fodder','Proc','OccultAcumen')
+	state.CastingMode:options('Normal','OccultAcumen')
 	state.OffenseMode:options('Normal')
-	state.IdleMode:options('Normal','PDT','DTHippo')
+	state.IdleMode:options('Normal','DT','DTHippo')
 	state.Weapons:options('None','Nuke','BurstWeapons','Staff')
-
+	state.RecoverMode = M('Always','35%','60%','Never')
 	
 	
 	gear.nuke_jse_back = {name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
@@ -80,7 +80,7 @@ function init_gear_sets()
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 	
-	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
+	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Crepuscular Cloak"})
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",})
 
 	sets.precast.FC.Death = {}
@@ -177,11 +177,9 @@ function init_gear_sets()
 
     sets.midcast.Stun = {}
 		
-    sets.midcast.Stun.Resistant = {}
-
     sets.midcast.BardSong = {}
 		
-	sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], {head=empty, body="Twilight Cloak"})
+	sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], {head=empty, body="Crepuscular Cloak"})
 		
     -- Elemental Magic sets
     
@@ -190,23 +188,13 @@ function init_gear_sets()
         body="Arch. Coat +3",hands="Arch. Gloves +3",ring1="Freke Ring",ring2="Metamor. Ring +1",
         back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Arch. Tonban +3",feet="Arch. Sabots +3"}
 		
-    sets.midcast['Elemental Magic'].Resistant = {}
-		
-    sets.midcast['Elemental Magic'].Fodder = {}
-
-	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {}) --head=empty,body="Cohort Cloak +1",hands="Amalric Gages +1",feet="Amalric Nails +1"
-	sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
-	sets.midcast['Elemental Magic'].HighTierNuke.Fodder = set_combine(sets.midcast['Elemental Magic'].Fodder, {})
+    sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {}) --head=empty,body="Cohort Cloak +1",hands="Amalric Gages +1",feet="Amalric Nails +1"
 	
 	sets.midcast.Helix = sets.midcast['Elemental Magic']
-	sets.midcast.Helix.Resistant = sets.midcast['Elemental Magic'].Resistant
+	
+	sets.midcast['Elemental Magic'].OccultAcumen = {}
 		
-		-- Minimal damage gear, maximum recast gear for procs.
-    sets.midcast['Elemental Magic'].Proc = {}
-		
-    sets.midcast['Elemental Magic'].OccultAcumen = {}
-		
-    sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, {head=empty,body="Twilight Cloak"})
+    sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, {head=empty,body="Crepuscular Cloak"})
 	
     -- Sets to return to when not performing an action.
     
@@ -220,10 +208,10 @@ function init_gear_sets()
     sets.idle = {ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Warder's charm +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Moonlight cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame sollerets"}
+		back=gear.nuke_jse_back,waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame sollerets"}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
-    sets.idle.PDT = {}
+    sets.idle.DT = sets.idle
 		
 	sets.idle.DTHippo = set_combine(sets.idle.PDT, {feet="Hippo. Socks +1"})
 

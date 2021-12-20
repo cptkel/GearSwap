@@ -179,7 +179,10 @@ function init_gear_sets()
 		body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Ilabrat Ring",ring2="Gelatinous Ring +1",
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Mpaca's hose",feet="Mpaca's boots"}
 
-	sets.idle.PDT = {}		
+	sets.idle.Weak = {ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Unmoving Collar +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Gelatinous Ring +1",
+		back=gear.tp_back,waist="Carrier's Sash",legs="Nyame flanchard",feet="Nyame Sollerets"}
 	
 	sets.idle.Evasion = {ammo="Sapience Orb",
 		head="Malignance Chapeau",neck="Bathy Choker +1",ear1="Infused Earring",ear2="Eabani Earring",

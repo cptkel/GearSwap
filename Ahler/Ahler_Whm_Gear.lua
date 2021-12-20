@@ -73,7 +73,7 @@ function init_gear_sets()
 
 	sets.precast.FC.CureSolace = sets.precast.FC.Cure
 
-	sets.precast.FC.Impact =  set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
+	sets.precast.FC.Impact =  set_combine(sets.precast.FC, {head=empty,body="Crepuscular Cloak"})
 	
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Ammurapi Shield"})
 
@@ -243,7 +243,7 @@ function init_gear_sets()
 		body="Ebers Bliaut +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1", --hands="Ebers Mitts +1"
 		back=gear.idle_jse_back,waist="Embla Sash",legs="Piety Pantaln. +2"} --feet="Ebers Duckbills +1"
 
-	sets.midcast.Impact = {head=empty,body="Twilight Cloak"}
+	sets.midcast.Impact = {head=empty,body="Crepuscular Cloak"}
 		
 	sets.midcast['Elemental Magic'] = {}
 
