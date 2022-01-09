@@ -116,7 +116,7 @@ function init_gear_sets()
 	sets.precast.WS['Victory Smite'] = {ammo="Knobkierrie",
 		head="Adhemar Bonnet +1",neck="Mnk. Nodowa +2",ear1="Odr Earring",ear2="Sherida Earring",
 		body="Ken. Samue +1",hands=gear.ryuo_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
-		back=gear.STRcrit_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet=gear.herculean_crit_feet}
+		back=gear.STRcrit_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet="Mpaca's Boots"}
 		
 	sets.precast.WS['Shijin Spiral'] = {ammo="Knobkierrie", --aurgelmir
 		head="Ken. Jinpachi +1",neck="Mnk. Nodowa +2",ear1="Mache Earring +1",ear2="Sherida Earring",
@@ -150,9 +150,9 @@ function init_gear_sets()
 		waist="Luminary Sash",legs="Malignance Tights",feet="Malignance Boots"}
 		
 	sets.precast.WS['Cataclysm'] = {ammo="Ghastly Tathlum +1",
-		head="Pixie Hairpin +1",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Moonshade Earring",
-		body="Samnuha Coat",hands=gear.herculean_tp_hands,ring1="Archon Ring",ring2="Metamor. Ring +1",
-		back=gear.HF_back,waist=gear.ElementalObi,legs="Hiza. Hizayoroi +2",feet=gear.herculean_WSD_feet}
+		head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
+		body="Samnuha Coat",hands="Nyame Gauntlets",ring1="Archon Ring",ring2="Metamor. Ring +1",
+		back=gear.HF_back,waist=gear.ElementalObi,legs="Hiza. Hizayoroi +2",feet="Nyame Sollerets"}
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}

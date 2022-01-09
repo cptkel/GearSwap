@@ -16,9 +16,9 @@ function user_setup()
 	gear.obi_low_nuke_waist = "Sacro Cord"
 	gear.obi_high_nuke_waist = "Sacro Cord"
 	
-	autoindi = "Precision"
-	autogeo = "Frailty"
-	autoentrust = 'Haste'
+	autoindi = "STR"
+	autogeo = "Fury"
+	autoentrust = 'Attunement'
 	autoentrustee = '<p2>'
 	
 	set_lockstyle(7)
@@ -123,7 +123,7 @@ sets.midcast.LightWeatherCure = {}
 	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {}) --main="Oranyan",sub="Clemency Grip"
 	
     sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-		head="Bagua Galero +3",neck="Baetyl Pendant",ear1="Regal Earring",ear2="Malignance Earring",
+		head="Bagua Galero +3",neck="Sanctity Necklace",ear1="Regal Earring",ear2="Malignance Earring",
 		body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamor. Ring +1",
 		gear.nuke_jse_back,waist="Sacro Cord",legs="Bagua Pants +3", feet="Amalric Nails +1"} 
 		
@@ -261,7 +261,7 @@ sets.midcast.LightWeatherCure = {}
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee group
-	sets.engaged = {}
+	sets.engaged = sets.idle
 		
 	sets.engaged.DW = {}
 

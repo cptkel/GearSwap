@@ -78,7 +78,7 @@ send_command('bind ^o fillmode') --Lets you see through walls.
 send_command('bind @m send @all mount fenrir')
 send_command('bind @n send @all /dismount')
 send_command('bind !s send @all ffo stopall')
-send_command('bind !f send @all ffo ahptfury')
+send_command('bind !f send @all ffo aptfury')
 
 
 NotifyBuffs = S{'doom','petrification'}

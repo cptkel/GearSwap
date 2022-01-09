@@ -32,10 +32,10 @@ function user_setup()
 			{Name='Earth Maneuver',	  Amount=0},
 		},
 		Tank = {
-			{Name='Earth Maneuver',	  Amount=1},
+			{Name='Earth Maneuver',	  Amount=0},
 			{Name='Fire Maneuver',	  Amount=1},
 			{Name='Light Maneuver',	  Amount=1},
-			{Name='Water Maneuver',	  Amount=0},
+			{Name='Water Maneuver',	  Amount=1},
 			{Name='Dark Maneuver',	  Amount=0},
 			{Name='Wind Maneuver', 	  Amount=0},
 			{Name='Thunder Maneuver', Amount=0},
@@ -177,7 +177,7 @@ function init_gear_sets()
 		back=gear.strCRIT_jse_back,waist="Fotia Belt",legs="Mpaca's Hose",feet="Mpaca's Boots"}
   
 	sets.precast.WS['Shijin Spiral'] = {
-		head=gear.herculean_strTA_head,neck="Fotia Gorget",ear1="Brutal Earring",ear2="Mache Earring +1",
+		head="Malignance Chapeau",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Mache Earring +1",
 		body="Tali'ah Manteel +2",hands=gear.herculean_strTA_hands,ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.strDA_jse_back,waist="Moonbow Belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet}
 		
@@ -189,9 +189,9 @@ function init_gear_sets()
 	sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS['Howling Fist'], {})
 	
 	sets.precast.WS['Aeolian Edge'] = {
-		neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
-		body="Cohort Cloak +1",hands=gear.herculean_tp_hands,ring1="Epaminondas's Ring",ring2="Metamor. Ring +1",
-		back=gear.aeolian_jse_back,waist="Orpheus's Sash",legs=gear.herculean_mab_legs,feet="Mpaca's Boots"}
+		neck="Sanctity Necklace",ear1="Moonshade Earring",ear2="Friomisi Earring",
+		body="Cohort Cloak +1",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Metamor. Ring +1",
+		back=gear.aeolian_jse_back,waist="Orpheus's Sash",legs="Nyame Flanchard",feet="Mpaca's Boots"}
 		
     -- Midcast Sets
 
@@ -333,7 +333,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         head="Ryuo Somen +1",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Schere Earring",
-		body="Mpaca's Doublet",hands=gear.herculean_tp_hands,ring1="Gere Ring",ring2="Niqmaddu Ring",
+		body="Mpaca's Doublet",hands="Mpaca's Gloves",ring1="Gere Ring",ring2="Niqmaddu Ring",
 		back=gear.strDA_jse_back,waist="Moonbow Belt +1",legs="Ryuo Hakama +1",feet=gear.herculean_tp_feet}
 		
     sets.engaged.Acc = {}

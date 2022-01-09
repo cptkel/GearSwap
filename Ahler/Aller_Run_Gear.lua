@@ -175,9 +175,9 @@ function init_gear_sets()
 	sets.precast.WS.Acc = {}
 	
 	sets.precast.WS['Fell Cleave'] = {ammo="Knobkierrie",
-		head=gear.herculean_WSD_head,neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Sherida Earring",
+		head="Nyame Helm",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Sherida Earring",
 		body=gear.adhemar_dd_body,hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Regal Ring",
-		back=gear.dimi_jse_back,waist="Fotia Belt",legs="Lustr. Subligar +1",feet=gear.herculean_WSD_feet}
+		back=gear.dimi_jse_back,waist="Fotia Belt",legs="Lustr. Subligar +1",feet="Nyame Sollerets"}
 		
     sets.precast.WS['Resolution'] = {ammo="Seething Bomblet +1",
 		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
@@ -185,7 +185,7 @@ function init_gear_sets()
 		back=gear.da_jse_back,waist="Fotia Belt",legs="Meg. Chausses +2",feet=gear.herculean_tp_feet}
 		
 	sets.precast.WS['Dimidiation'] = {ammo="Knobkierrie",
-		head=gear.herculean_WSD_head,neck="Caro Necklace",left_ear="Moonshade Earring",right_ear="Ishvara Earring",
+		head="Nyame Helm",neck="Caro Necklace",left_ear="Moonshade Earring",right_ear="Ishvara Earring",
 		body=gear.adhemar_dd_body,hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Ilabrat Ring",
 		back=gear.dimi_jse_back,waist="Grunfeld Rope",legs="Lustr. Subligar +1",feet="Lustra. Leggings +1"}
 		

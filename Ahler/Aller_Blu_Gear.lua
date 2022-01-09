@@ -120,7 +120,7 @@ function init_gear_sets()
 	sets.precast.WS['Expiacion'].DT = set_combine(sets.precast.WS.DT, {})
 	
 	sets.precast.WS['Sanguine Blade'] = {ammo="Ghastly Tathlum +1",
-		head="Pixie Hairpin +1",neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
+		head="Pixie Hairpin +1",neck="Sanctity Necklace",ear2="Friomisi Earring",ear1="Regal Earring",
 		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
 		back=gear.mab_wsd_back,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
 					 
@@ -162,7 +162,7 @@ function init_gear_sets()
 	-- Magical Spells --
 
 	sets.midcast['Blue Magic'].Magical = {ammo="Ghastly Tathlum +1",
-		 neck="Baetyl Pendant",ear2="Friomisi Earring",ear1="Regal Earring",
+		 neck="Sanctity Necklace",ear2="Friomisi Earring",ear1="Regal Earring",
 		 body="Cohort Cloak +1",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
 		 back=gear.nuking_back,waist="Eschan Stone",legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
 					 
@@ -173,7 +173,7 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
 		head="Assim. Keffiyeh +3",neck="Mirage Stole +1",ear1="Regal Earring",ear2="Njordr Earring",
-		body="Amalric Doublet +1",hands="Malignance Gloves",left_ring="Metamor. Ring +1",right_ring="Stikini Ring +1",
+		body="Amalric Doublet +1",hands="Malignance Gloves",left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
 		back="Aurist's Cape +1",waist="Acuity Belt +1",legs="Assim. Shalwar +3",feet="Malignance Boots"}
    
 	sets.midcast['Enfeebling Magic'] = {}
@@ -183,7 +183,7 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] = {}
 		
 	sets.midcast['Phalanx'] = {ammo="Staunch Tathlum +1",
-		head="Fu. Bandeau +3",neck="Incanter's Torque",ear1="Mimir Earring",ear2={name="Odnowa Earring +1", priority=15},
+		head=gear.herculean_phalanx_head,neck="Incanter's Torque",ear1="Mimir Earring",ear2={name="Odnowa Earring +1", priority=15},
 		body=gear.herculean_phalanx_body,hands=gear.herculean_phalanx_hands,ring1="Stikini Ring +1",ring2={name="Gelatinous Ring +1", priority=15},
 		back={name="Moonlight Cape", priority=15},waist="Olympus Sash",legs=gear.herculean_phalanx_legs,feet=gear.herculean_phalanx_feet}
 	
@@ -331,7 +331,7 @@ function init_gear_sets()
 	sets.weapons.MagicWeapons = {main="Maxentius",sub="Bunzi's Rod"}
 	sets.weapons.Tizbron = {main="Tizona",sub="Thibron"}
 	sets.weapons.Sanguine = {main="Naegling",sub="Maxentius"}
-	sets.weapons.TizMACC = {main="Tizona",sub="Naegling"}
+	sets.weapons.TizMACC = {main="Tizona",sub="Bunzi's Rod"}
 	sets.weapons.Tank = {main="Tizona",sub="Sakpata's Sword"}
 	sets.weapons.Savage = {main="Naegling",sub="Thibron"}
 	

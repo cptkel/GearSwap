@@ -7,7 +7,7 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal','DT','DTRostam')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','Evisceration','LastStand','LastStandACC','SBLS','Wildfire')
+	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','Evisceration','LastStand','LastStandACC','SBLS','Armageddon')
 	state.CompensatorMode:options('300','1000','Never','Always')
 
     autows = 'Savage Blade'
@@ -217,7 +217,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Evisceration'] = {
 		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
-		body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Regal Ring",ring2="Mummu Ring",
+		body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Regal Ring",ring2="Ilabrat Ring",
 		back=gear.tp_jse_back,waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
 	
 		--Because omen skillchains.
@@ -245,8 +245,9 @@ function init_gear_sets()
         head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Dingir Ring",ring2="Ilabrat Ring",
 		back=gear.shoot_jse_back,waist="Yemaya Belt",legs="Malignance Tights",feet="Malignance Boots"}
-			
-	sets.midcast.RA.AM = {ammo=gear.RAbullet,
+	
+	sets.midcast.RA.Armageddon = set_combine(sets.midcast.RA, {})
+	sets.midcast.RA.Armageddon.AM = {ammo=gear.RAbullet,
 		head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Odr Earring",ear2="Telos Earring",
 		body="Meg. Cuirie +2",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Begrudging Ring",
 		back=gear.crit_jse_back,waist="K. Kachina Belt +1",legs="Darraigner's Brais",feet="Osh. Leggings +1"}
@@ -299,7 +300,7 @@ function init_gear_sets()
 	sets.weapons.LastStand = {main={name="Rostam",bag="inventory"},sub="Gleti's Knife",range="Fomalhaut"}
 	sets.weapons.LastStandACC = {main={name="Rostam",bag="inventory"},sub="Kustawi +1",range="Fomalhaut"}
 	sets.weapons.SBLS = {main="Naegling",sub="Gleti's Knife",range="Death Penalty"}
-	sets.weapons.Wildfire = {main="Naegling",sub="Tauret",range="Armageddon"}
+	sets.weapons.Armageddon = {main="Naegling",sub="Tauret",range="Armageddon"}
 	
     -- Engaged sets
 

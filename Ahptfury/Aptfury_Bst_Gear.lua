@@ -13,7 +13,7 @@ function user_job_setup()
 
 	-- Set up Jug Pet cycling and keybind Ctrl+F7
 	-- INPUT PREFERRED JUG PETS HERE
-	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin','CaringKiyomaro','BlackbeardRandy','GenerousArthur','WarlikePatrick','SwoopingZhivago','RhymingShizuna','SharpwitHermes','SpiderFamiliar','FatsoFargann','DaringRoland'}
+	state.JugMode = M{['description']='Jug Mode', 'ScissorlegXerin','CaringKiyomaro','SultryPatrice','FluffyBredo','GenerousArthur','WarlikePatrick','SwoopingZhivago','RhymingShizuna','SharpwitHermes','SpiderFamiliar','FatsoFargann','DaringRoland'}
 	send_command('bind ^f7 gs c cycle JugMode')
 
 	-- Set up Monster Correlation Modes and keybind Alt+F7
@@ -40,7 +40,8 @@ function user_job_setup()
 	gear.strda_back = {name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.ready_back = {name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Damage taken-5%',}}
 	gear.macc_back = {name="Artio's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','Pet: "Regen"+10','System: 1 ID: 1246 Val: 4',}}
-	gear.savage_back = {name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.savage_back = {name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+	gear.primalrend_back = {name="Artio's Mantle", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	
 	select_default_macro_book()
 end
@@ -140,7 +141,10 @@ function init_gear_sets()
 	
 	sets.precast.WS['Onslaught'] = {}
 	
-	sets.precast.WS['Primal Rend'] = {}
+	sets.precast.WS['Primal Rend'] = {ammo="Voluspa Tathlum",
+		head="Nyame Helm",neck="Sanctity Necklace",ear1="Moonshade Earring",ear2="Friomisi Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",
+		back=gear.primalrend_back,waist="Orpheus;s Sash",legs="Nyame flanchard",feet="Nyame Sollerets"}
 
 	sets.precast.WS['Cloudsplitter'] = {}
 	
@@ -152,9 +156,9 @@ function init_gear_sets()
 
 				-- PET SIC & READY MOVES
 	sets.midcast.Pet.WS = {ammo="Voluspa Tathlum",
-		head="Emicho Coronet +1",neck="Shulmanu Collar",ear1="Domesticator's Earring",ear2="Enmerkar Earring",
+		head="Emicho Coronet +1",neck="Shulmanu Collar",ear1="Domesticator's Earring",ear2="Hija Earring",
 		body="Nyame Mail",hands="Nukumi Manoplas +1",ring1="Varar Ring +1",ring2="C. Palug Ring",
-		back=gear.ready_back,waist="Incarnation Sash",legs="Nyame Flanchard",feet="Gleti's Boots"}
+		back=gear.ready_back,waist="Incarnation Sash",legs="Tot. Trousers +2",feet="Gleti's Boots"}
 
 	sets.midcast.Pet.Acc = set_combine(sets.midcast.Pet.WS, {})
 	
@@ -168,7 +172,7 @@ function init_gear_sets()
 	sets.midcast.Pet.DebuffReady = {ammo="Voluspa Tathlum",
 		head="Nyame helm",neck="Adad Amulet",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Tali'ah Ring",ring2="C. Palug Ring",
-		back=gear.macc_back,waist="Incarnation Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		back=gear.macc_back,waist="Incarnation Sash",legs="Nyame Flanchard",feet="Gleti's Boots"}
 		
 	sets.midcast.Pet.PhysicalDebuffReady = {}
 
@@ -222,7 +226,10 @@ function init_gear_sets()
 	sets.NightIdle = {}
 
 	-- MELEE (SINGLE-WIELD) SETS
-	sets.engaged = {}
+	sets.engaged = {ammo="Coiste Bodhar",
+		head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Eabani Earring",
+		body="Gleti's Cuirass",hands="Malignance Gloves",ring1="Epona's Ring",ring2="Petrov Ring",
+		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 
 	sets.engaged.Acc = {}
 
@@ -256,7 +263,7 @@ function init_gear_sets()
 	
 
 	-- GEARSETS FOR MASTER ENGAGED (SINGLE-WIELD) & PET TANKING
-	sets.engaged.PetTank = set_combine(sets.engaged,{})
+	sets.engaged.PetTank = set_combine(sets.idle.Pet.Engaged,{})
 	sets.engaged.PetTank.Acc = set_combine(sets.engaged.Acc, {})
 	
 	-- GEARSETS FOR MASTER ENGAGED (DUAL-WIELD) & PET ENGAGED

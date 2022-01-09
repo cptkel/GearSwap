@@ -166,8 +166,8 @@ function init_gear_sets()
 
     sets.midcast.Drain = {ammo="Pemphredo Tathlum",
 		head="Pixie hairpin +1",neck="Incanter's Torque",ear1="Barkaro. Earring",
-		ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back=gear.nuke_jse_back,waist="Fucho-no-obi"}
+		body="Amalric Doublet +1",ring1="Archon Ring",ring2="Stikini Ring +1",
+		back=gear.nuke_jse_back,waist="Fucho-no-obi",legs="Spae. Tonban +2"}
     
     sets.midcast.Aspir = sets.midcast.Drain
 	
@@ -213,7 +213,7 @@ function init_gear_sets()
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.DT = sets.idle
 		
-	sets.idle.DTHippo = set_combine(sets.idle.PDT, {feet="Hippo. Socks +1"})
+	sets.idle.DTHippo = set_combine(sets.idle.DT, {feet="Hippo. Socks +1"})
 
 	sets.idle.Death = {}
 

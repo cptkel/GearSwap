@@ -157,9 +157,9 @@ function init_gear_sets()
     sets.precast.WS['Last Stand'] = {}
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Ghastly Tathlum +1",
-		head=gear.herculean_mab_head,neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
-		body=gear.herculean_wsd_body,hands=gear.herculean_tp_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
-		back=gear.aeolian_jse_back,waist=gear.ElementalObi,legs=gear.herculean_mab_legs,feet=gear.herculean_mab_feet}
+		head="Nyame Helm",neck="Sanctity Necklace",ear1="Moonshade Earring",ear2="Friomisi Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Dingir Ring",
+		back=gear.aeolian_jse_back,waist=gear.ElementalObi,legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 	

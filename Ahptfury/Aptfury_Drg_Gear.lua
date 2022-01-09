@@ -16,7 +16,7 @@ function user_job_setup()
 	
 	gear.tp_back = {name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	gear.stardiver_back = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
-	gear.wsd_back = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.wsd_back = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
@@ -52,7 +52,7 @@ function init_gear_sets()
 	sets.precast.JA['Spirit Link'] = {head="Vishap Armet +1"} --head="Vishap Armet",hands="Lnc. Vmbrc. +2"
 	sets.precast.JA['Call Wyvern'] = {body="Ptero. Mail +3"}
 	sets.precast.JA['Deep Breathing'] = {} --hands="Ptero. Armet +1"
-	sets.precast.JA['Spirit Surge'] = {} --body="Ptero. Mail +1"
+	sets.precast.JA['Spirit Surge'] = {body="Ptero. Mail +3"}
 	sets.precast.JA['Steady Wing'] = {legs="Vishap Brais +3",feet="Ptero. Greaves +3"}
 	
 	-- Breath sets
@@ -122,12 +122,12 @@ function init_gear_sets()
 		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Gleti's breeches",feet="Gleti's boots"}
 	
 	sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
-		head="Valorous Mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
-		body="Valorous Mail",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
-		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Sulev. Leggings +2"}
+		head="Nyame Helm",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
+		body="Nyame Mail",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
+		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Nyame Sollerets"}
 		
-	sets.precast.WS['Savage Blade'].AttCap = {ammo="Knobkierrie",
-		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
+	sets.precast.WS['Savage Blade'].AttCap = {ammo="Crepuscular Pebble",
+		head="Nyame Helm",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
 		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
 		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Gleti's boots"}
 	
@@ -144,7 +144,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Dgn. Collar +2",ear1="Brutal Earring",ear2="Sherida Earring",
-		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
+		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Moonlight Ring",ring2="Niqmaddu Ring",
 		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flam. Gambieras +2"}
 		
 	sets.idle.Refresh = {}
@@ -210,6 +210,7 @@ function init_gear_sets()
 		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flamma Gambieras +2"}
 		
     sets.engaged.Sword.Acc = set_combine(sets.engaged.Sword, {ear1="Digni. Earring",ring1="Regal Ring"})
+	sets.engaged.Sword.PDT = set_combine(sets.idle, {ring1="Defending Ring",waist="Tempus Fugit"})
 	sets.engaged.AM = {}
     
 	sets.engaged.AM.Acc = {}

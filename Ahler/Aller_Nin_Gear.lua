@@ -4,7 +4,7 @@ function user_setup()
     state.HybridMode:options('Normal','Evasion','PDT','SBPDT')
     state.RangedMode:options('Normal','Acc')
     state.WeaponskillMode:options('Match','Normal','AttCap','Acc')
-    state.CastingMode:options('Normal','Tank')
+    state.CastingMode:options('Normal','Resistant','Tank')
     state.IdleMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
@@ -23,7 +23,7 @@ function user_setup()
 	
 	send_command('bind ^` input /ja "Innin" <me>')
     send_command('bind !` input /ja "Yonin" <me>')
-	send_command('bind @` gs c cycle SkillchainMode')
+	send_command('bind @` gs c cycle MagicBurstMode')
 	send_command('bind ^r gs c set WeaponskillMode Normal;gs c set CastingMode Normal;gs c update')
 	send_command('bind @a gs c weapons Aeolian')
 	send_command('bind @h gs c weapons HeishiGleti')
@@ -165,9 +165,9 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Seeth. Bomblet +1",
-		head=gear.herculean_WSD_head,neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
+		head="Nyame Helm",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
 		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epaminondas's Ring",
-		back=gear.da_jse_back,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herculean_WSD_feet}
+		back=gear.da_jse_back,waist="Fotia Belt",legs="Samnuha Tights",feet="Nyame Sollerets"}
 	
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 	sets.precast.WS.Proc = {}
@@ -175,8 +175,8 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Blade: Chi'] = {ammo="Seeth. Bomblet +1",
 		head="Mochi. Hatsuburi +3",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Moonshade Earring",
-		body=gear.herculean_wsd_body,hands="Nyame gauntlets",ring1="Gere Ring",ring2="Epaminondas's Ring",
-		back=gear.hybrid_jse_back,waist="Orpheus's Sash",legs="Mochi. Hakama +3",feet="Nyame Sollerets"}
+		body="Nyame Mail",hands="Nyame gauntlets",ring1="Gere Ring",ring2="Epaminondas's Ring",
+		back=gear.hybrid_jse_back,waist="Orpheus's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Blade: Teki'] = sets.precast.WS['Blade: Chi']
 	sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
@@ -218,7 +218,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Savage Blade'] = {ammo="Seething Bomblet +1",
 		head="Mpaca's Cap",neck="Caro Necklace",ear1="Lugra Earring +1",ear2="Moonshade Earring",
-		body=gear.herculean_wsd_body,hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Gere Ring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Gere Ring",
 		back=gear.hybrid_jse_back,waist="Sailfi Belt +1",legs="Mochi. Hakama +3",feet="Nyame Sollerets"}
     
 	sets.precast.WS['Evisceration'] = {ammo="Yetshila +1",
@@ -228,8 +228,8 @@ function init_gear_sets()
 		
 	sets.precast.WS['Aeolian Edge'] = {ammo="Seething Bomblet +1",
 		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Moonshade Earring",
-		body=gear.herculean_wsd_body,hands="Nyame Gauntlets",ring1="Dingir Ring",ring2="Epaminondas's Ring",
-		back=gear.mab_jse_back,waist=gear.ElementalObi,legs=gear.herculean_mab_legs,feet="Nyame Sollerets"}
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Dingir Ring",ring2="Epaminondas's Ring",
+		back=gear.mab_jse_back,waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
@@ -252,25 +252,39 @@ function init_gear_sets()
 
     sets.midcast.ElementalNinjutsu = {ammo="Ghastly Tathlum +1",
 		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi earring",ear2="Crematio Earring",
-		body="Gyve doublet",hands=gear.herculean_tp_hands,ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
-		back=gear.mab_jse_back,waist=gear.ElementalObi,legs="Gyve Trousers",feet="Mochi. Kyahan +3"}
+		body="Gyve doublet",hands="Nyame Gauntlets",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
+		back=gear.mab_jse_back,waist="Orpheus's Sash",legs="Gyve Trousers",feet="Mochi. Kyahan +3"}
 		
 	sets.midcast.ElementalNinjutsu.Proc = sets.midcast.FastRecast
 		
-    sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {})
+    sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {
+		neck ="Sanctity Necklace",ear1 ="Dignitary's Earring",ear2 ="Crepuscular Earring", 
+		body="Nyame Mail",ring2="Stikini Ring +1",
+		legs="Nyame Flanchard"})
 	
 	sets.MagicBurst = set_combine(sets.midcast.ElementalNinjutsu, {
 		ear1="Static Earring",
-		body="Samnuha Coat",hands=gear.herculean_mbb_hands,ring1="Mujin Band",ring2="Locus Ring",
-		feet="Hachiya Kyahan +2"})
+		body="Samnuha Coat",hands=gear.herculean_mbb_hands,ring1="Mujin Band",ring2="Locus Ring"})
+		
+	sets.MagicBurst.Resistant = set_combine(sets.midcast.ElementalNinjutsu.Resistant, {
+		ear1="Static Earring",
+		ring1="Mujin Band",ring2="Metamor. Ring +1"})
 	
 	sets.element.Earth = {}
 
-    sets.midcast.NinjutsuDebuff = {}
+    sets.midcast.NinjutsuDebuff = {ammo = "Yamarang", 
+		head="Hachiya Hatsuburi +3",neck ="Sanctity Necklace",ear1 ="Dignitary's Earring",ear2 ="Crepuscular Earring", 
+		body="Malignance Tabard",hands ="Malignance Gloves",ring1 ="Regal Ring",ring2 ="Stikini Ring +1",
+		back=gear.mab_jse_back,waist ="Eschan Stone",legs ="Malignance Tights",feet ="Mochizuki Kyahan +3"}
 
     sets.midcast.NinjutsuBuff = set_combine(sets.midcast.FastRecast, {})
 	
-    sets.midcast.Utsusemi = set_combine(sets.midcast.NinjutsuBuff, {back="Andartia's Mantle",feet="Hattori Kyahan +1"})
+    sets.midcast['Migawari: Ichi'] = set_combine(sets.midcast.NinjutsuDebuff, {ammo="Sapience Orb",
+		neck="Incanter's Torque",ear1="Hnoss Earring",
+		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1", --HAVERTON +1?!!!
+		back=gear.fc_jse_back,legs="Nyame Flanchard",feet="Mochizuki Kyahan +3"})
+		
+	sets.midcast.Utsusemi = set_combine(sets.midcast.NinjutsuBuff, {back="Andartia's Mantle",feet="Hattori Kyahan +1"})
 
 	sets.midcast.Utsusemi.Tank = set_combine(sets.Enmity, {ammo="Staunch Tathlum +1",ring1="Defending Ring",waist="Flume Belt +1",feet="Hattori Kyahan +1"})
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
@@ -314,7 +328,7 @@ function init_gear_sets()
 	sets.DuskKiting = {}
 	sets.DuskIdle = {}
 	sets.DayIdle = {feet="Hachiya Kyahan +2"}
-	--sets.NightIdle = {feet="Danzo Sune-ate"}
+	sets.NightIdle = {feet="Danzo Sune-ate"}
 
 
     --------------------------------------
@@ -383,7 +397,7 @@ function init_gear_sets()
 	sets.weapons.GokoGleti = {main="Gokotai",sub="Gleti's Knife"}
 	sets.weapons.NagiGleti = {main="Nagi",sub="Gleti's Knife"}
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Uzura +2"}
-	sets.weapons.Aeolian = {main="Tauret",sub="Ternion Dagger +1"}
+	sets.weapons.Aeolian = {main="Tauret",sub="Kunimitsu"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife"}
 	sets.weapons.ProcDagger = {main="Qutrub Knife",sub=empty}
 	sets.weapons.ProcSword = {main="Excalipoor",sub=empty}
