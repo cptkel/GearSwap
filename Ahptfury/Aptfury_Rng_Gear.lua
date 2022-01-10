@@ -139,8 +139,8 @@ function init_gear_sets()
 
     sets.precast.WS['Last Stand'] = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Ishvara Earring",ear2="Moonshade Earring",
-		body=gear.herculean_wsd_body,hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
-		back=gear.laststand_jse_back,waist="Fotia Belt",legs="Arc. Braccae +3",feet=gear.herculean_wsd_feet}
+		body="Nyame Mail",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
+		back=gear.laststand_jse_back,waist="Fotia Belt",legs="Arc. Braccae +3",feet="Nyame Sollerets"}
 	
 	sets.precast.WS['Wildfire'] = {}
 
@@ -148,8 +148,8 @@ function init_gear_sets()
 		
     sets.precast.WS['Coronach'] = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Ishvara Earring",ear2="Sherida Earring",
-		body=gear.herculean_wsd_body,hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Regal Ring",
-		back=gear.laststand_jse_back,waist="Fotia Belt",legs="Arc. Braccae +3",feet=gear.herculean_wsd_feet}
+		body="Nyame Mail",hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Regal Ring",
+		back=gear.laststand_jse_back,waist="Fotia Belt",legs="Arc. Braccae +3",feet="Nyame Sollerets"}
 	
 	sets.precast.WS['Aeolian Edge'] = {}
 	
@@ -166,25 +166,25 @@ function init_gear_sets()
 	sets.precast.WS['Aeolian Edge'] = {
 		neck="Scout's Gorget +2",ear1="Friomisi Earring",ear2="Moonshade Earring",
 		body="Cohort Cloak +1",hands=gear.herculean_mab_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
-		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet=gear.herculean_wsd_feet}
+		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet="Nyame Sollerets"}
 		
 	
     sets.precast.WS['Trueflight'] = {
 		neck="Scout's Gorget +2",ear1="Friomisi Earring",ear2="Moonshade Earring",
 		body="Cohort Cloak +1",hands=gear.herculean_mab_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
-		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet=gear.herculean_wsd_feet}
+		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet="Nyame Sollerets"}
 
     sets.precast.WS['Trueflight'].Acc = {}
 	
 	sets.precast.WS['Savage Blade'] = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
-		hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Karieyh Ring",
-		waist="Sailfi Belt +1"}
+		body="Nyame Mail",hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Karieyh Ring",
+		waist="Sailfi Belt +1"legs="Nyame Flanchard",feet="Nyame Sollerets"}
 	
 	sets.precast.WS['Detonator'] = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
 		body="Ikenga's Vest",hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Regal Ring",
-		back=gear.laststand_jse_back,waist="Fotia Belt",legs="Arc. Braccae +3",feet=gear.herculean_wsd_feet}
+		back=gear.laststand_jse_back,waist="Fotia Belt",legs="Arc. Braccae +3",feet="Nyame Sollerets"}
 		
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}

@@ -9,7 +9,7 @@ function user_job_setup()
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'PDT','Refresh')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
-	state.Weapons:options('Trishula','ShiningOne','Sword','Staff')
+	state.Weapons:options('Trishula','ShiningOne','Sword','Staff','None')
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 
     select_default_macro_book()
@@ -131,10 +131,15 @@ function init_gear_sets()
 		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
 		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Gleti's boots"}
 	
+	sets.precast.WS['Full Swing'] = {ammo="Knobkierrie",
+		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
+		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Niqmaddu Ring",
+		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Nyame Sollerets"}
+		
 	sets.precast.WS['Retribution'] = {ammo="Knobkierrie",
 		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
 		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Niqmaddu Ring",
-		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Sulev. Leggings +2"}
+		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Nyame Sollerets"}
 	
 	-- Sets to return to when not performing an action.
 	
@@ -144,8 +149,8 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Dgn. Collar +2",ear1="Brutal Earring",ear2="Sherida Earring",
-		body="Hjarrandi Breastplate",hands="Sulev. Gauntlets +2",ring1="Moonlight Ring",ring2="Niqmaddu Ring",
-		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flam. Gambieras +2"}
+		body="Hjarrandi Breastplate",hands="Gleti's Gauntlets",ring1="Defending Ring",ring2="Niqmaddu Ring",
+		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Gleti's Boots"}
 		
 	sets.idle.Refresh = {}
 
@@ -210,7 +215,7 @@ function init_gear_sets()
 		back=gear.tp_back,waist="Ioskeha Belt +1",legs="Ptero. Brais +3",feet="Flamma Gambieras +2"}
 		
     sets.engaged.Sword.Acc = set_combine(sets.engaged.Sword, {ear1="Digni. Earring",ring1="Regal Ring"})
-	sets.engaged.Sword.PDT = set_combine(sets.idle, {ring1="Defending Ring",waist="Tempus Fugit"})
+	sets.engaged.Sword.PDT = set_combine(sets.idle, {waist="Tempus Fugit"})
 	sets.engaged.AM = {}
     
 	sets.engaged.AM.Acc = {}

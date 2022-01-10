@@ -165,9 +165,9 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
 	
 	sets.precast.WS['Savage Blade'] = {ammo=gear.WSbullet,
-        head=gear.herculean_wsd_head,neck="Comm. Charm +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        head="Nyame Helm",neck="Comm. Charm +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
 		body="Laksa. Frac +3",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
-		back=gear.sb_back,waist="Sailfi Belt +1",legs=gear.herculean_wsd_legs,feet="Lanun Bottes +3"}
+		back=gear.sb_back,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 		
 
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
