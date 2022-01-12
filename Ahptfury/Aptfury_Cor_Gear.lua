@@ -7,7 +7,7 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal','DT','DTRostam')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','Evisceration','LastStand','LastStandACC','SBLS','Armageddon')
+	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','Evisceration','DualLastStand','DualLastStandACC','LastStand','SBLS','Armageddon')
 	state.CompensatorMode:options('300','1000','Never','Always')
 
     autows = 'Savage Blade'
@@ -15,7 +15,8 @@ function user_setup()
     gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Living Bullet" --For MAB WS, do not put single-use bullets here.
     gear.QDbullet = "Animikii Bullet"
-    options.ammo_warning_limit = 15
+    gear.ACCbullet = "Devastating Bullet"
+	options.ammo_warning_limit = 15
 
 	gear.roll_jse_back = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
 	gear.leaden_back = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
@@ -175,9 +176,9 @@ function init_gear_sets()
 		waist="Grunfeld Rope"})
 	
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
-        head="Lanun Tricorne +3",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Laksa. Frac +3",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
-        back=gear.laststand_back,waist="Fotia Belt",legs="Meg. Chausses +2",feet="Lanun Bottes +3"}
+        head="Nyame Helm",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        body="Laksa. Frac +3",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Epaminondas's Ring",
+        back=gear.laststand_back,waist="Fotia Belt",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 
     sets.precast.WS['Last Stand'].Acc = {}
 		
@@ -297,8 +298,9 @@ function init_gear_sets()
 	sets.weapons.DualLeadenMeleeACC = {main={name="Rostam",bag="inventory"},sub="Demers. Degen +1",range="Death Penalty"}
 	sets.weapons.Aeolian = {main={name="Rostam",bag="inventory"},sub="Tauret",range="Anarchy +2"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife",range="Anarchy +2"}
-	sets.weapons.LastStand = {main={name="Rostam",bag="inventory"},sub="Gleti's Knife",range="Fomalhaut"}
-	sets.weapons.LastStandACC = {main={name="Rostam",bag="inventory"},sub="Kustawi +1",range="Fomalhaut"}
+	sets.weapons.DualLastStand = {main={name="Rostam",bag="inventory"},sub="Gleti's Knife",range="Fomalhaut"}
+	sets.weapons.DualLastStandACC = {main={name="Rostam",bag="inventory"},sub="Kustawi +1",range="Fomalhaut"}
+	sets.weapons.LastStand = {main={name="Rostam",bag="inventory"},sub="Nusku Shield",range="Fomalhaut"}
 	sets.weapons.SBLS = {main="Naegling",sub="Gleti's Knife",range="Death Penalty"}
 	sets.weapons.Armageddon = {main="Naegling",sub="Tauret",range="Armageddon"}
 	

@@ -227,24 +227,24 @@ function init_gear_sets()
 	sets.midcast.Pet.PetWSGear = {
 		main="Xiucoatl",
 		head ="Karagoz Capello +1",neck="Shulmanu Collar",ear1="Burana Earring",ear2="Enmerkar Earring",
-        body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="Overbearing Ring",
+        body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Varar Ring +1",ring2="Overbearing Ring",
 		back="Dispersal Mantle",waist="Klouskap Sash +1",legs="Kara. Pantaloni +1",feet="Mpaca's Boots"}
 		
 	sets.midcast.Pet.PetWSGear.Ranged = set_combine(sets.midcast.Pet.PetWSGear, {})
 	sets.midcast.Pet.PetWSGear.Melee = {
 		main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Kyrene's Earring",ear2="Domes. Earring",
-		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
+		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"}
 	sets.midcast.Pet.PetWSGear.Tank = {
 		main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Kyrene's Earring",ear2="Domes. Earring",
-		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
+		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"}
 	sets.midcast.Pet.PetWSGear.LightTank = {
 		main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Kyrene's Earring",ear2="Domes. Earring",
-		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
+		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet="Mpaca's Boots"}
     sets.midcast.Pet.PetWSGear.Magic = set_combine(sets.midcast.Pet.PetWSGear, {})
 	sets.midcast.Pet.PetWSGear.Heal = set_combine(sets.midcast.Pet.PetWSGear, {})
@@ -273,24 +273,24 @@ function init_gear_sets()
     -- Idle sets to wear while pet is engaged
     sets.idle.Pet.Engaged = {main="Xiucoatl",range="Animator P +1", --Ohtas (BiS but will drop 150HP when swapping)
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
-		body="Pitre Tobe +3",hands=gear.taeon_hands,ring1="Thurandaut Ring",ring2="C. Palug Ring",
+		body="Pitre Tobe +3",hands=gear.taeon_hands,ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet="Mpaca's Boots"} --Incarnation sash
 
 	sets.idle.Pet.Engaged.Ranged = {main="Xiucoatl",range="Animator P II +1",
 		head="Pitre Taj +3",neck="Shulmanu Collar",ear1="Burana Earring",ear2="Enmerkar Earring",
-		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="Varar Ring +1",
+		body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Varar Ring +1",ring2="Varar Ring +1",
 		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs="Kara. Pantaloni +1",feet="Mpaca's Boots"}
 		
 	sets.idle.Pet.Engaged.HybridRanged = set_combine(sets.idle.Pet.Engaged, {})
 	sets.idle.Pet.Engaged.Melee = set_combine(sets.idle.Pet.Engaged, {})
 	sets.idle.Pet.Engaged.Tank = {main="Gnafron's Adargas",ranged="Animator P +1",
 		head=gear.rao_head,neck="Shepherd's Chain",ear1="Rimeice Earring",ear2="Enmerkar Earring",
-		body="Rao Togi +1",hands="Rao Kote +1",ring1="Thurandaut Ring",ring2="Overbearing Ring",
+		body="Rao Togi +1",hands="Rao Kote +1",ring1="Varar Ring +1",ring2="Overbearing Ring",
 		back=gear.idle_jse_back,waist="Isa Belt",legs="Rao Haidate +1",feet="Rao Sune-Ate +1"}
 		
 	sets.idle.Pet.Engaged.LightTank = {main="Xiucoatl",range="Animator P +1", --Ohtas (BiS but will drop 150HP when swapping)
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
-		body=gear.taeon_body,hands=gear.taeon_hands,ring1="Thurandaut Ring",ring2="C. Palug Ring",
+		body=gear.taeon_body,hands=gear.taeon_hands,ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Incarnation Sash",legs=gear.taeon_legs,feet=gear.taeon_feet}
 	
 	sets.idle.Pet.Engaged.Magic = set_combine(sets.idle.Pet.Engaged, {})
@@ -305,18 +305,18 @@ function init_gear_sets()
 	--SE/VE OD
     sets.defense.PDT = {main="Xiucoatl",
 		head ="Karagoz Capello +1",neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
-        body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
+        body="Pitre Tobe +3",hands="Mpaca's Gloves",ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back="Dispersal Mantle",waist="Klouskap Sash +1",legs="Heyoka Subligar +1",feet="Mpaca's Boots"}
 	--VE/VE OD
     sets.defense.MDT = {main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
-		body=gear.taeon_body,hands="Mpaca's Gloves",ring1="Thurandaut Ring",ring2="C. Palug Ring",
+		body=gear.taeon_body,hands="Mpaca's Gloves",ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet="Mpaca's Boots"}
 	
 	--frog ambu	
     sets.defense.MEVA = {main="Xiucoatl",
 		head=gear.taeon_head,neck="Shulmanu Collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
-		body=gear.taeon_body,hands=gear.taeon_hands,ring1="Thurandaut Ring",ring2="C. Palug Ring",
+		body=gear.taeon_body,hands=gear.taeon_hands,ring1="Varar Ring +1",ring2="C. Palug Ring",
 		back=gear.pethybrid_jse_back,waist="Klouskap Sash +1",legs=gear.taeon_legs,feet=gear.taeon_feet}
 
     sets.Kiting = {feet="Hermes' Sandals"}

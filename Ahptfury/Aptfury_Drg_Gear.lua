@@ -2,7 +2,7 @@
 function user_job_setup()
 	-- Options: Override default values
     state.OffenseMode:options('Normal','Acc')
-    state.WeaponskillMode:options('Match','Normal','AttCap')
+    state.WeaponskillMode:options('Match','Normal','AttCap','AC')
     state.HybridMode:options('Normal','PDT')
     state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
@@ -29,8 +29,19 @@ function user_job_setup()
 	send_command('bind !i gs c weapons ShiningOne;gs c set stance Hasso;gs c autows Impulse Drive')
 	send_command('alias swing gs c showset SteadyWing;wait 4.5;input /pet "Steady Wing" <me>;wait 2;gs c showset')
 	
+	
 end
-
+--- Circle JA spells Map
+     Circle_JAs = S{
+        'Warding Circle','Arcane Crest','Ancient Circle',
+        'Holy Circle','Killer Instinct'}
+function user_job_buff_change(buffname, gain)
+  if Circle_JAs:contains(buffname) then
+    if not gain then
+      windower.chat.input('//gs c set weaponskillmode match')
+    end
+  end
+end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 	--------------------------------------
@@ -131,6 +142,8 @@ function init_gear_sets()
 		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
 		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Gleti's boots"}
 	
+	sets.precast.WS['Savage Blade'].AC = set_combine(sets.precast.WS['Savage Blade'], {body="Founder's Breastplate"})
+		
 	sets.precast.WS['Full Swing'] = {ammo="Knobkierrie",
 		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
 		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Niqmaddu Ring",
@@ -140,6 +153,8 @@ function init_gear_sets()
 		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
 		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Niqmaddu Ring",
 		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Nyame Sollerets"}
+	
+	sets.precast.WS['Judgment'] = set_combine(sets.precast.WS['Savage Blade'], {})
 	
 	-- Sets to return to when not performing an action.
 	

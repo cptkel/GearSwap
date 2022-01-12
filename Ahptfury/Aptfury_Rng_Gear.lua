@@ -179,7 +179,7 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
 		body="Nyame Mail",hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Karieyh Ring",
-		waist="Sailfi Belt +1"legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 	
 	sets.precast.WS['Detonator'] = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
@@ -208,7 +208,7 @@ function init_gear_sets()
 		body="Nisroch Jerkin",hands="Malignance Gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
 		back=gear.rngtp_jse_back,waist="K. Kachina Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 	
-    sets.midcast.RA.Acc = {}
+    sets.midcast.RA.Acc = {head="Orion Beret +3",ring2="Enervating Earring"}
 	
 	sets.midcast.RA.Gandiva = set_combine(sets.midcast.RA, {})
 	sets.midcast.RA.Gandiva.AM = {
