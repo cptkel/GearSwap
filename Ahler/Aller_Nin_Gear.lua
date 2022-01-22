@@ -20,6 +20,8 @@ function user_setup()
 	gear.enmity_jse_back = {name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Parrying rate+5%',}}
 	gear.hybrid_jse_back = {name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	gear.agi_jse_back = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Weapon skill damage +10%','Damage taken-5%',}}
+	gear.preshot_jse_back = {name="Andartia's Mantle", augments={'"Snapshot"+10',}}
+	gear.rtp_jse_back = {name="Andartia's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10',}}
 	
 	send_command('bind ^` input /ja "Innin" <me>')
     send_command('bind !` input /ja "Yonin" <me>')
@@ -27,6 +29,8 @@ function user_setup()
 	send_command('bind ^r gs c set WeaponskillMode Normal;gs c set CastingMode Normal;gs c update')
 	send_command('bind @a gs c weapons Aeolian')
 	send_command('bind @h gs c weapons HeishiGleti')
+	send_command('bind @k gs c weapons HeishiKuni')
+	send_command('bind @s gs c weapons DualSavageWeapons')
 	
 	utsusemi_cancel_delay = .3
 	utsusemi_ni_cancel_delay = .06
@@ -161,7 +165,13 @@ function init_gear_sets()
 	sets.precast.FC.Shadows = set_combine(sets.precast.FC.Utsusemi, {})
 
     -- Snapshot for ranged
-    sets.precast.RA = {}
+    sets.precast.RA = {
+       head="Taeon Chapeau",
+       body="Taeon Tabard",hands="Taeon Gloves",ring1="Crepuscular Ring",ring2="Haverton Ring +1",
+       back=gear.preshot_jse_back,legs="Adhemar Kecks +1",feet="Taeon Boots"} 
+		
+	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {})
+	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, {})
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Seeth. Bomblet +1",
@@ -224,10 +234,10 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] = {ammo="Yetshila +1",
 		head="Blistering Sallet +1",neck="Ninja Nodowa +2",ear1="Lugra Earring +1",ear2="Odr Earring",
 		body="Ken. Samue +1",hands="Ryuo Tekko +1",ring1="Regal Ring",ring2="Gere Ring",
-		back=gear.da_jse_back,waist="Fotia Belt",legs="Jokushu Haidate",feet="Ken. Sune-ate +1"}
+		back=gear.da_jse_back,waist="Fotia Belt",legs="Mpaca's Hose",feet="Ken. Sune-ate +1"}
 		
 	sets.precast.WS['Aeolian Edge'] = {ammo="Seething Bomblet +1",
-		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Moonshade Earring",
+		head="Mochi. Hatsuburi +3",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Dingir Ring",ring2="Epaminondas's Ring",
 		back=gear.mab_jse_back,waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
@@ -251,7 +261,7 @@ function init_gear_sets()
 		back=gear.fc_jse_back,legs=gear.herculean_refresh_legs,feet=gear.herculean_fc_feet}
 
     sets.midcast.ElementalNinjutsu = {ammo="Ghastly Tathlum +1",
-		head="Mochi. Hatsuburi +3",neck="Baetyl Pendant",ear1="Friomisi earring",ear2="Crematio Earring",
+		head="Mochi. Hatsuburi +3",neck="Sanctity Necklace",ear1="Friomisi earring",ear2="Crematio Earring",
 		body="Gyve doublet",hands="Nyame Gauntlets",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
 		back=gear.mab_jse_back,waist="Orpheus's Sash",legs="Gyve Trousers",feet="Mochi. Kyahan +3"}
 		
@@ -342,14 +352,14 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Seki Shuriken",
-		head="Adhemar Bonnet +1",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Cessance Earring",
-		body="Ken. Samue +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
-		back=gear.da_jse_back,waist="Windbuffet belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet}
+		head="Mpaca's Cap",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Cessance Earring",
+		body="Tatena. Harama. +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
+		back=gear.da_jse_back,waist="Windbuffet belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 		
     sets.engaged.Acc = {ammo="Date Shuriken",
-		head="Ken. Jinpachi +1",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Odr earring",
+		head="Ken. Jinpachi +1",neck="Ninja Nodowa +2",ear1="Mache Earring +1",ear2="Odr earring",
 		body="Tatena. Harama. +1",hands="Ken. Tekko +1",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back=gear.da_jse_back,waist="Kentarch Belt +1",legs="Tatena. Haidate +1",feet="Ken. Sune-ate +1"}
+		back=gear.da_jse_back,waist="Kentarch Belt +1",legs="Tatena. Haidate +1",feet="Tatena. Sune. +1"}
 		
 	sets.engaged.Crit = set_combine(sets.engaged, {ammo="Happo Shuriken",head="Blistering Sallet +1",ear1="Odr Earring",body="Mummu jacket +2",hands="Mummu wrists +2",legs="Mummu Kecks +2",feet="Mummu gamashes +2"})
     
@@ -396,7 +406,7 @@ function init_gear_sets()
 	sets.weapons.KikokuKuni = {main="Kikoku",sub="Kunimitsu"}
 	sets.weapons.GokoGleti = {main="Gokotai",sub="Gleti's Knife"}
 	sets.weapons.NagiGleti = {main="Nagi",sub="Gleti's Knife"}
-	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Uzura +2"}
+	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Uzura +3"}
 	sets.weapons.Aeolian = {main="Tauret",sub="Kunimitsu"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife"}
 	sets.weapons.ProcDagger = {main="Qutrub Knife",sub=empty}

@@ -171,28 +171,31 @@ function init_gear_sets()
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 
 	-- Weaponskill sets
-	sets.precast.WS = {}
+	sets.precast.WS = {ammo="Knobkierrie",
+		head="Nyame Helm",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Sherida Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Regal Ring",
+		back=gear.dimi_jse_back,waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		
 	sets.precast.WS.Acc = {}
 	
 	sets.precast.WS['Fell Cleave'] = {ammo="Knobkierrie",
 		head="Nyame Helm",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Sherida Earring",
-		body=gear.adhemar_dd_body,hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Regal Ring",
-		back=gear.dimi_jse_back,waist="Fotia Belt",legs="Lustr. Subligar +1",feet="Nyame Sollerets"}
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Regal Ring",
+		back=gear.dimi_jse_back,waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
     sets.precast.WS['Resolution'] = {ammo="Seething Bomblet +1",
-		head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
+		head="Nyame Helm",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
 		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Regal Ring",
-		back=gear.da_jse_back,waist="Fotia Belt",legs="Meg. Chausses +2",feet=gear.herculean_tp_feet}
+		back=gear.da_jse_back,waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Dimidiation'] = {ammo="Knobkierrie",
 		head="Nyame Helm",neck="Caro Necklace",left_ear="Moonshade Earring",right_ear="Ishvara Earring",
-		body=gear.adhemar_dd_body,hands="Meg. Gloves +2",ring1="Epaminondas's Ring",ring2="Ilabrat Ring",
-		back=gear.dimi_jse_back,waist="Grunfeld Rope",legs="Lustr. Subligar +1",feet="Lustra. Leggings +1"}
+		body=gear.adhemar_dd_body,hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Regal Ring",
+		back=gear.dimi_jse_back,waist="Grunfeld Rope",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
     sets.precast.WS['Dimidiation'].DT = set_combine(sets.precast.WS['Dimidiation'],{
-			head="Fu. Bandeau +3",ear1="Eabani Earring",ear2={name="Odnowa Earring +1", priority=15},
-			body="Futhark Coat +3",ring2="Moonlight Ring",
-			legs="Meg. Chausses +2",feet="Meg. Jam. +2"})
+			ear2={name="Odnowa Earring +1", priority=15},
+			body="Nyame Mail"})
 	
 	sets.precast.WS['Ground Strike'] = set_combine(sets.precast.WS,{})
     sets.precast.WS['Ground Strike'].Acc = set_combine(sets.precast.WS.Acc,{})

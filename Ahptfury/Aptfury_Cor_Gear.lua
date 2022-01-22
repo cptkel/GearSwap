@@ -176,11 +176,11 @@ function init_gear_sets()
 		waist="Grunfeld Rope"})
 	
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
-        head="Nyame Helm",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Laksa. Frac +3",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Epaminondas's Ring",
-        back=gear.laststand_back,waist="Fotia Belt",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
+        head="Nyame Helm",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Telos Earring",
+        body="Laksa. Frac +3",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Dingir Ring",
+        back=gear.laststand_back,waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
-    sets.precast.WS['Last Stand'].Acc = {}
+    sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {ammo=gear.ACCbullet,neck="Comm. Charm +2",waist="K. Kachina Belt +1"})
 		
     sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
     sets.precast.WS['Detonator'].Acc = sets.precast.WS['Last Stand'].Acc
@@ -253,7 +253,7 @@ function init_gear_sets()
 		body="Meg. Cuirie +2",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Begrudging Ring",
 		back=gear.crit_jse_back,waist="K. Kachina Belt +1",legs="Darraigner's Brais",feet="Osh. Leggings +1"}
 
-    sets.midcast.RA.Acc = {}
+    sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {neck="Comm. Charm +2",body="Laksa. Frac +3",ring1="Regal Ring",ring2="Cacoethic Ring +1",waist="K. Kachina Belt +1"})
 		
 	sets.buff['Triple Shot'] = {head="Oshosi Mask +1",body="Chasseur's Frac +1",hands="Lanun Gants +3",back=gear.shoot_jse_back,legs="Osh. Trousers +1",feet="Osh. Leggings +1"}
     
@@ -301,6 +301,7 @@ function init_gear_sets()
 	sets.weapons.DualLastStand = {main={name="Rostam",bag="inventory"},sub="Gleti's Knife",range="Fomalhaut"}
 	sets.weapons.DualLastStandACC = {main={name="Rostam",bag="inventory"},sub="Kustawi +1",range="Fomalhaut"}
 	sets.weapons.LastStand = {main={name="Rostam",bag="inventory"},sub="Nusku Shield",range="Fomalhaut"}
+	sets.weapons.LastStandACC = {main={name="Rostam",bag="inventory"},sub="Nusku Shield",range="Armageddon"}
 	sets.weapons.SBLS = {main="Naegling",sub="Gleti's Knife",range="Death Penalty"}
 	sets.weapons.Armageddon = {main="Naegling",sub="Tauret",range="Armageddon"}
 	
@@ -322,7 +323,7 @@ function init_gear_sets()
 		head="Adhemar Bonnet +1",neck="Loricate torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Epona's Ring",ring2="Defending Ring",
         back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
-	sets.engaged.Acc.DT = {}
+	sets.engaged.Acc.DT = set_combine(sets.engaged.DT, {ear2="Telos Earring"})
 	sets.engaged.DW = {
 		head="Adhemar Bonnet +1",neck="Iskur Gorget",ear1="Suppanomimi",ear2="Telos Earring",
 		body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",

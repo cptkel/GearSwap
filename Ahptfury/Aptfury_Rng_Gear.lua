@@ -59,7 +59,7 @@ function user_job_setup()
 	ammostock = 98
 	  
 	  -- Additional local binds
-    send_command('bind !` input /ra <t>')
+    send_command('bind numpad0 input /ra <t>')
 	send_command('bind !backspace input /ja "Bounty Shot" <t>')
 	send_command('bind @f7 gs c toggle RngHelper')
 	send_command('bind @` gs c cycle SkillchainMode')
@@ -208,10 +208,16 @@ function init_gear_sets()
 		body="Nisroch Jerkin",hands="Malignance Gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
 		back=gear.rngtp_jse_back,waist="K. Kachina Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 	
-    sets.midcast.RA.Acc = {head="Orion Beret +3",ring2="Enervating Earring"}
+    sets.midcast.RA.Acc = {head="Orion Beret +3",ear2="Enervating Earring",ring1="Cacoethic Ring +1",feet="Orion Socks +2"}
 	
 	sets.midcast.RA.Gandiva = set_combine(sets.midcast.RA, {})
 	sets.midcast.RA.Gandiva.AM = {
+		head="Meghanada Visor +2",neck="Scout's Gorget +2",ear1="Telos Earring",ear2="Enervating Earring",
+		body="Nisroch Jerkin",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
+		back=crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1"}
+		
+	sets.midcast.RA.Armageddon = set_combine(sets.midcast.RA, {})
+	sets.midcast.RA.Armageddon.AM = {
 		head="Meghanada Visor +2",neck="Scout's Gorget +2",ear1="Telos Earring",ear2="Enervating Earring",
 		body="Nisroch Jerkin",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
 		back=crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1"}
