@@ -5,7 +5,7 @@ function user_job_setup()
 	state.RangedMode:options('Normal','Acc')
 	state.WeaponskillMode:options('Match','Normal','Acc')
 	state.IdleMode:options('Normal', 'PDT')
-	state.Weapons:options('None','Default','LastStand','DualSavageWeapons','DualEviscerationWeapons','DualMalevolence','Aeolian','Gandiva','Detonator','Coronach')
+	state.Weapons:options('Default','LastStand','DualSavageWeapons','DualEviscerationWeapons','DualMalevolence','Aeolian','Gandiva','Detonator','Coronach','None')
 	
 	WeaponType =  {['Sparrowhawk +2'] = "Bow",
                    ['Fomalhaut'] = "Gun",
@@ -108,7 +108,7 @@ function init_gear_sets()
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
 	sets.precast.JA['Scavenge'] = {feet="Orion Socks +2"}
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +3"}
-	sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +2"}
+	sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +3"}
 	sets.precast.JA['Double Shot'] = {back=gear.rngtp_jse_back}
 
 
@@ -122,14 +122,16 @@ function init_gear_sets()
 	-- Ranged sets (snapshot)
 
 	sets.precast.RA = 	{
-		head="Orion Beret +3",neck="Scout's Gorget +2",
-		body="Amini Caban +1",hands="Carmine Fin. Ga. +1",
-		back=gear.snapshot_jse_back,waist="Impulse Belt",legs="Orion Braccae +2",feet="Meg. Jam. +2"}
-		
-	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {legs="Adhemar Kecks +1",feet="Meg. Jam. +2",})
-	sets.precast.RA.Flurry.Gastraphetes = set_combine(sets.precast.RA, {legs="Adhemar Kecks +1",feet="Pursuer's Gaiters",})
-	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA, {waist="Yemaya Belt",legs="Pursuer's Pants",feet="Arcadian Socks +2",})
-
+		head="Taeon Chapeau",neck="Scout's Gorget +2",
+		body="Amini Caban +1",hands="Carmine Fin. Ga. +1",ring1="Crepuscular Ring",
+		back=gear.snapshot_jse_back,waist="Yemaya Belt",legs="Orion Braccae +3",feet="Meg. Jam. +2"}
+	sets.precast.RA.Gastraphetes = set_combine(sets.precast.RA, {head="Orion Beret +3"})	
+	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {head="Orion Beret +3",legs="Adhemar Kecks +1",feet="Meg. Jam. +2",})
+	sets.precast.RA.Flurry.Gastraphetes = set_combine(sets.precast.RA.Flurry, {feet="Pursuer's Gaiters",})
+	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, {feet="Arcadian Socks +3",}) --75 snapshot
+	sets.precast.RA.Flurry2.Gastraphetes = set_combine(sets.precast.RA.Flurry2, {legs="Pursuer's Pants"})
+	
+	sets.precast.RA.Embrava = set_combine(sets.precast.RA.Flurry2, {}) --embrava is 25 snapshot
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -142,7 +144,10 @@ function init_gear_sets()
 		body="Nyame Mail",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
 		back=gear.laststand_jse_back,waist="Fotia Belt",legs="Arc. Braccae +3",feet="Nyame Sollerets"}
 	
-	sets.precast.WS['Wildfire'] = {}
+	sets.precast.WS['Wildfire'] = {
+		neck="Scout's Gorget +2",ear1="Friomisi Earring",ear2="Crematio Earring",
+		body="Cohort Cloak +1",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Dingir Ring",
+		back=gear.tf_jse_back,waist="Orpheus's Sash",legs="Arc. Braccae +3",feet="Nyame Sollerets"}
 
     sets.precast.WS['Wildfire'].Acc = {}
 		
@@ -171,8 +176,8 @@ function init_gear_sets()
 	
     sets.precast.WS['Trueflight'] = {
 		neck="Scout's Gorget +2",ear1="Friomisi Earring",ear2="Moonshade Earring",
-		body="Cohort Cloak +1",hands=gear.herculean_mab_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
-		back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet="Nyame Sollerets"}
+		body="Cohort Cloak +1",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Dingir Ring",
+		back=gear.tf_jse_back,waist=gear.ElementalObi,legs="Arc. Braccae +3",feet="Nyame Sollerets"}
 
     sets.precast.WS['Trueflight'].Acc = {}
 	
@@ -212,23 +217,24 @@ function init_gear_sets()
 	
 	sets.midcast.RA.Gandiva = set_combine(sets.midcast.RA, {})
 	sets.midcast.RA.Gandiva.AM = {
-		head="Meghanada Visor +2",neck="Scout's Gorget +2",ear1="Telos Earring",ear2="Enervating Earring",
+		head="Meghanada Visor +2",neck="Scout's Gorget +2",ear1="Telos Earring",ear2="Odr Earring",
 		body="Nisroch Jerkin",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
-		back=crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1"}
+		back=gear.crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1"}
 		
 	sets.midcast.RA.Armageddon = set_combine(sets.midcast.RA, {})
 	sets.midcast.RA.Armageddon.AM = {
-		head="Meghanada Visor +2",neck="Scout's Gorget +2",ear1="Telos Earring",ear2="Enervating Earring",
+		head="Meghanada Visor +2",neck="Scout's Gorget +2",ear1="Telos Earring",ear2="Odr Earring",
 		body="Nisroch Jerkin",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
-		back=crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1"}
+		back=gear.crit_jse_back,waist="K. Kachina Belt +1",legs="Mummu Kecks +2",feet="Osh. Leggings +1"}
 		
 	--These sets will overlay based on accuracy level, regardless of other options.
 	sets.buff.Camouflage = {body="Orion Jerkin +3"}
 	sets.buff.Camouflage.Acc = {}
 	sets.buff['Double Shot'] = {
-		head="Arcadian Beret +3",
-		body="Arcadian Jerkin +3",
+		head="Oshosi Mask +1",
+		body="Arcadian Jerkin +3",hands="Oshosi Gloves +1",
 		back=gear.rngtp_jse_back,legs="Osh. Trousers +1",feet="Osh. Leggings +1"}
+	sets.buff['Double Shot'].AM = set_combine(sets.buff['Double Shot'], {hands="Mummu Wrists +2",back=gear.crit_jse_back})
 	sets.buff['Double Shot'].Acc = {}
 	sets.buff.Barrage = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Enervating Earring",ear2="Telos Earring",
@@ -268,7 +274,7 @@ function init_gear_sets()
 	sets.NightIdle = {}
 	
 	-- Weapons sets
-	sets.weapons.Default = {main="Kustawi +1",sub="Nusku Shield",range="Fomalhaut"}
+	sets.weapons.Default = {main="Perun +1",sub="Nusku Shield",range="Armageddon"}
 	sets.weapons.LastStand = {main="Perun +1",sub="Nusku Shield",range="Fomalhaut"}
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Blurred Knife +1",range="Sparrowhawk +2",ammo="Hauksbok Arrow"}
 	sets.weapons.DualEviscerationWeapons = {main="Tauret",sub="Ternion Dagger +1",range="Anarchy +2"}
@@ -320,7 +326,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     if player.sub_job == 'NIN' then
-        set_macro_page(1, 19)
+        set_macro_page(2, 19)
     elseif player.sub_job == 'DNC' then
 		set_macro_page(1, 19)
     elseif player.sub_job == 'DRG' then
@@ -328,4 +334,88 @@ function select_default_macro_book()
     else
         set_macro_page(1, 19)
     end
+end
+
+function job_post_precast(spell, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' then
+		if not (spell.skill == 'Marksmanship' or spell.skill == 'Archery') and WeaponType[player.equipment.range] == 'Bow' and item_available('Hauksbok Arrow') then
+			equip({ammo="Hauksbok Arrow"})
+		end
+	
+		local WSset = standardize_set(get_precast_set(spell, spellMap))
+		local wsacc = check_ws_acc()
+		
+		if (WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring") then
+			-- Replace Moonshade Earring if we're at cap TP
+			if get_effective_player_tp(spell, WSset) > 3200 then
+				if data.weaponskills.elemental:contains(spell.english) then
+					if wsacc:contains('Acc') and sets.MagicalAccMaxTP then
+						equip(sets.MagicalAccMaxTP[spell.english] or sets.MagicalAccMaxTP)
+					elseif sets.MagicalMaxTP then
+						equip(sets.MagicalMaxTP[spell.english] or sets.MagicalMaxTP)
+					else
+					end
+				elseif S{25,26}:contains(spell.skill) then
+					if wsacc:contains('Acc') and sets.RangedAccMaxTP then
+						equip(sets.RangedAccMaxTP[spell.english] or sets.RangedAccMaxTP)
+					elseif sets.RangedMaxTP then
+						equip(sets.RangedMaxTP[spell.english] or sets.RangedMaxTP)
+					else
+					end
+				else
+					if wsacc:contains('Acc') and not buffactive['Sneak Attack'] and sets.AccMaxTP then
+						equip(sets.AccMaxTP[spell.english] or sets.AccMaxTP)
+					elseif sets.MaxTP then
+						equip(sets.MaxTP[spell.english] or sets.MaxTP)
+					else
+					end
+				end
+			end
+		end
+		
+	elseif spell.action_type == 'Ranged Attack' then
+			if buffactive.Embrava then			
+			if buffactive.Flurry then
+			if lastflurry == 1 then
+				if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry then
+					equip(sets.precast.RA[state.Weapons.value].FlurryEM)
+				elseif sets.precast.RA.Flurry then
+					equip(sets.precast.RA.FlurryEM)
+				end
+			elseif lastflurry == 2 then
+				if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry2 then
+					equip(sets.precast.RA[state.Weapons.value].Flurry2EM)
+				elseif sets.precast.RA.Flurry2 then
+					equip(sets.precast.RA.Flurry2EM)
+					else
+						if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Embrava then
+					equip(sets.precast.RA[state.Weapons.value].Embrava)
+			elseif	sets.precast.RA.Embrava then
+			equip(sets.precast.RA.Embrava)
+				end
+				end
+				end
+				end
+			end
+		
+		if buffactive.Flurry then
+			if lastflurry == 1 then
+				if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry then
+					equip(sets.precast.RA[state.Weapons.value].Flurry)
+				elseif sets.precast.RA.Flurry then
+					equip(sets.precast.RA.Flurry)
+				end
+			elseif lastflurry == 2 then
+				if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry2 then
+					equip(sets.precast.RA[state.Weapons.value].Flurry2)
+				elseif sets.precast.RA.Flurry2 then
+					equip(sets.precast.RA.Flurry2)
+				end
+			end
+		end
+
+		if statusammo then
+			equip({ammo=statusammo})
+		end
+	end
 end

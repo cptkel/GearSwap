@@ -230,7 +230,7 @@ function init_gear_sets()
     --------------------------------------
 
     -- Normal melee group
-    sets.engaged = {ammo="Ginsen",
+    sets.engaged = {ammo="Coiste Bodhar",
         head="Adhemar Bonnet +1",neck="Erudition Necklace",ear1="Dedition Earring",ear2="Sherida Earring",
         body="Pillager's Vest +2",hands="Adhemar Wrist. +1",ring1="Hetairoi Ring",ring2="Gere Ring",
         back=gear.tp_jse_back,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.herculean_tp_feet}

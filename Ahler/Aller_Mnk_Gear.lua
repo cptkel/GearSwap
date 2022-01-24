@@ -175,8 +175,7 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = {ammo="Impatiens",
 	head=gear.herculean_fc_head,neck="Orunmila's Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
-	body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Prolix Ring",ring2="Kishar Ring",
-	legs="Rawhide Trousers"}
+	body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Prolix Ring",ring2="Kishar Ring"}
 		
 	-- Specific spells
 	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {})
@@ -226,14 +225,14 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee sets
-	sets.engaged = {ammo="Ginsen",
+	sets.engaged = {ammo="Coiste Bodhar",
 		head="Adhemar bonnet +1",neck="Mnk. Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
 		body="Ken. Samue +1",hands="Adhemar wrist. +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Hes. Hose +3", feet="Anchorite's Gaiters +3"}
 		
 	sets.engaged.Godhands = set_combine(sets.engaged, {ear1="Mache Earring +1"})
 	
-	sets.engaged.Acc = {ammo="Ginsen",
+	sets.engaged.Acc = {ammo="Coiste Bodhar",
 		head="Ken. Jinpachi +1",neck="Monk's Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
 		body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
 		back=gear.tp_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-ate +1"}

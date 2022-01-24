@@ -21,7 +21,7 @@ function user_job_setup()
 	send_command('bind !f7 gs c cycle CorrelationMode')
 
 	-- Set up Pet Modes for Hybrid sets and keybind 'Windows Key'+F7
-	state.PetMode = M{['description']='Pet Mode','Tank','DD'}
+	state.PetMode = M{['description']='Pet Mode','DD','Tank'}
 	send_command('bind @f7 gs c cycle PetMode')
 
 	-- Set up Reward Modes and keybind Ctrl+Backspace

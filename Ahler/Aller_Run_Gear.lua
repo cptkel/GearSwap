@@ -355,7 +355,7 @@ function init_gear_sets()
 			
 	sets.engaged.DT = {ammo="Coiste Bodhar",
 		head="Nyame Helm",neck="Anu Torque",ear1="Brutal Earring",ear2="Sherida Earring",
-		body="Futhark Coat +3",hands="Nyame Gauntlets",ring1="Niqmaddu Ring",ring2="Moonlight Ring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Niqmaddu Ring",ring2="Moonlight Ring",
 		back=gear.stp_jse_back,waist="Ioskeha Belt +1",legs="Nyame flanchard",feet="Nyame Sollerets"}
 		
    --[[sets.engaged.Parry = {ammo="Staunch Tathlum +1",

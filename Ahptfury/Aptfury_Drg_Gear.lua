@@ -197,7 +197,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Trishula = {main="Trishula",sub="Utu Grip"}
 	sets.weapons.ShiningOne = {main="Shining One",sub="Utu Grip"}
-	sets.weapons.Sword = {main="Naegling",sub=none}
+	sets.weapons.Sword = {main="Naegling",sub="Legion Scutum"}
 	sets.weapons.Staff = {main="Malignance Pole",sub="Utu Grip"}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP

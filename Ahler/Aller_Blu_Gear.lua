@@ -338,12 +338,12 @@ function init_gear_sets()
 
 	-- Engaged sets
 
-	sets.engaged = {ammo="Ginsen",
+	sets.engaged = {ammo="Coiste Bodhar",
 		head="Adhemar Bonnet +1",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Suppanomimi",
 		body=gear.adhemar_dd_body,hands="Adhemar Wrist. +1",ring1="Epona's Ring",ring2="Petrov Ring",
 		back=gear.tp_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_tp_feet}
 
-	sets.engaged.AM = {ammo="Ginsen",
+	sets.engaged.AM = {ammo="Coiste Bodhar",
 		head="Malignance Chapeau",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
@@ -352,12 +352,12 @@ function init_gear_sets()
 
 	sets.engaged.Acc.AM = set_combine(sets.engaged.AM, {})
 
-	sets.engaged.DT = {ammo="Ginsen",
+	sets.engaged.DT = {ammo="Coiste Bodhar",
 		head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
 		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
 
-	sets.engaged.DT.AM = {ammo="Ginsen",
+	sets.engaged.DT.AM = {ammo="Coiste Bodhar",
 		head="Malignance Chapeau",neck="Mirage Stole +1",ear1="Telos Earring",ear2="Eabani Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
