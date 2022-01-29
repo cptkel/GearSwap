@@ -65,8 +65,8 @@ function user_setup()
 			{Name='Earth Maneuver',	  Amount=0},
 		},
 		Nuke = {
-			{Name='Ice Maneuver',	  Amount=3},
-			{Name='Dark Maneuver',	  Amount=0},
+			{Name='Ice Maneuver',	  Amount=2},
+			{Name='Dark Maneuver',	  Amount=1},
 			{Name='Water Maneuver',	  Amount=0},
 			{Name='Earth Maneuver',	  Amount=0},
 		},
@@ -334,7 +334,7 @@ function init_gear_sets()
     sets.engaged = {
         head="Ryuo Somen +1",neck="Shulmanu Collar",ear1="Telos Earring",ear2="Schere Earring",
 		body="Mpaca's Doublet",hands="Mpaca's Gloves",ring1="Gere Ring",ring2="Niqmaddu Ring",
-		back=gear.strDA_jse_back,waist="Moonbow Belt +1",legs="Ryuo Hakama +1",feet=gear.herculean_tp_feet}
+		back=gear.strDA_jse_back,waist="Moonbow Belt +1",legs="Ryuo Hakama +1",feet="Mpaca's Boots"}
 		
     sets.engaged.Acc = {}
     

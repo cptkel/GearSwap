@@ -4,7 +4,7 @@ function user_job_setup()
 	state.HybridMode:options('Normal','DT')
     state.WeaponskillMode:options('Match','Normal','Acc')
     state.CastingMode:options('Normal','Evasion','Ody')
-    state.IdleMode:options('Normal','Evasion','Tank','DTHippo')
+    state.IdleMode:options('Evasion','Tank','DTHippo','Normal')
 	state.PhysicalDefenseMode:options('Tank')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
@@ -171,10 +171,8 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {})
 	sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
-	sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
-		head="Assim. Keffiyeh +3",neck="Mirage Stole +1",ear1="Regal Earring",ear2="Njordr Earring",
-		body="Amalric Doublet +1",hands="Malignance Gloves",left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
-		back="Aurist's Cape +1",waist="Acuity Belt +1",legs="Assim. Shalwar +3",feet="Malignance Boots"}
+	
+	
    
 	sets.midcast['Enfeebling Magic'] = {}
 

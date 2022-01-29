@@ -60,6 +60,8 @@ function user_job_setup()
 	  
 	  -- Additional local binds
     send_command('bind numpad0 input /ra <t>')
+	send_command('bind numpad1 input /ja "Double Shot" <me>')
+	send_command('bind numpad3 input /ws Last Stand <t>')
 	send_command('bind !backspace input /ja "Bounty Shot" <t>')
 	send_command('bind @f7 gs c toggle RngHelper')
 	send_command('bind @` gs c cycle SkillchainMode')
@@ -238,8 +240,8 @@ function init_gear_sets()
 	sets.buff['Double Shot'].Acc = {}
 	sets.buff.Barrage = {
 		head="Orion Beret +3",neck="Scout's Gorget +2",ear1="Enervating Earring",ear2="Telos Earring",
-		body="Orion Jerkin +3",hands="Orion Bracers +3",ring1="Regal Ring",
-		back=gear.crit_jse_back,waist="K. Kachina Belt +1",feet="Orion Socks +2"}
+		body="Orion Jerkin +3",hands="Orion Bracers +3",ring1="Regal Ring",ring2="Cacoethic Ring +1",
+		back=gear.crit_jse_back,waist="K. Kachina Belt +1",legs="Adhemar Kecks +1",feet="Orion Socks +2"}
 	
 	sets.Self_Healing = {}
 	sets.Cure_Received = {}
@@ -274,7 +276,7 @@ function init_gear_sets()
 	sets.NightIdle = {}
 	
 	-- Weapons sets
-	sets.weapons.Default = {main="Perun +1",sub="Nusku Shield",range="Armageddon"}
+	sets.weapons.Default = {main="Oneiros Knife",sub="Nusku Shield",range="Armageddon"}
 	sets.weapons.LastStand = {main="Perun +1",sub="Nusku Shield",range="Fomalhaut"}
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Blurred Knife +1",range="Sparrowhawk +2",ammo="Hauksbok Arrow"}
 	sets.weapons.DualEviscerationWeapons = {main="Tauret",sub="Ternion Dagger +1",range="Anarchy +2"}
@@ -337,85 +339,85 @@ function select_default_macro_book()
 end
 
 function job_post_precast(spell, spellMap, eventArgs)
-	if spell.type == 'WeaponSkill' then
-		if not (spell.skill == 'Marksmanship' or spell.skill == 'Archery') and WeaponType[player.equipment.range] == 'Bow' and item_available('Hauksbok Arrow') then
-			equip({ammo="Hauksbok Arrow"})
-		end
-	
-		local WSset = standardize_set(get_precast_set(spell, spellMap))
-		local wsacc = check_ws_acc()
-		
-		if (WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring") then
-			-- Replace Moonshade Earring if we're at cap TP
-			if get_effective_player_tp(spell, WSset) > 3200 then
-				if data.weaponskills.elemental:contains(spell.english) then
-					if wsacc:contains('Acc') and sets.MagicalAccMaxTP then
-						equip(sets.MagicalAccMaxTP[spell.english] or sets.MagicalAccMaxTP)
-					elseif sets.MagicalMaxTP then
-						equip(sets.MagicalMaxTP[spell.english] or sets.MagicalMaxTP)
-					else
-					end
-				elseif S{25,26}:contains(spell.skill) then
-					if wsacc:contains('Acc') and sets.RangedAccMaxTP then
-						equip(sets.RangedAccMaxTP[spell.english] or sets.RangedAccMaxTP)
-					elseif sets.RangedMaxTP then
-						equip(sets.RangedMaxTP[spell.english] or sets.RangedMaxTP)
-					else
-					end
-				else
-					if wsacc:contains('Acc') and not buffactive['Sneak Attack'] and sets.AccMaxTP then
-						equip(sets.AccMaxTP[spell.english] or sets.AccMaxTP)
-					elseif sets.MaxTP then
-						equip(sets.MaxTP[spell.english] or sets.MaxTP)
-					else
-					end
-				end
-			end
-		end
-		
-	elseif spell.action_type == 'Ranged Attack' then
-			if buffactive.Embrava then			
-			if buffactive.Flurry then
-			if lastflurry == 1 then
-				if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry then
-					equip(sets.precast.RA[state.Weapons.value].FlurryEM)
-				elseif sets.precast.RA.Flurry then
-					equip(sets.precast.RA.FlurryEM)
-				end
-			elseif lastflurry == 2 then
-				if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry2 then
-					equip(sets.precast.RA[state.Weapons.value].Flurry2EM)
-				elseif sets.precast.RA.Flurry2 then
-					equip(sets.precast.RA.Flurry2EM)
-					else
-						if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Embrava then
-					equip(sets.precast.RA[state.Weapons.value].Embrava)
-			elseif	sets.precast.RA.Embrava then
-			equip(sets.precast.RA.Embrava)
-				end
-				end
-				end
-				end
-			end
-		
-		if buffactive.Flurry then
-			if lastflurry == 1 then
-				if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry then
-					equip(sets.precast.RA[state.Weapons.value].Flurry)
-				elseif sets.precast.RA.Flurry then
-					equip(sets.precast.RA.Flurry)
-				end
-			elseif lastflurry == 2 then
-				if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry2 then
-					equip(sets.precast.RA[state.Weapons.value].Flurry2)
-				elseif sets.precast.RA.Flurry2 then
-					equip(sets.precast.RA.Flurry2)
-				end
-			end
-		end
+    if spell.type == 'WeaponSkill' then
+        if not (spell.skill == 'Marksmanship' or spell.skill == 'Archery') and WeaponType[player.equipment.range] == 'Bow' and item_available('Hauksbok Arrow') then
+            equip({ammo="Hauksbok Arrow"})
+        end
+    
+        local WSset = standardize_set(get_precast_set(spell, spellMap))
+        local wsacc = check_ws_acc()
+        
+        if (WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring") then
+            -- Replace Moonshade Earring if we're at cap TP
+            if get_effective_player_tp(spell, WSset) > 3200 then
+                if data.weaponskills.elemental:contains(spell.english) then
+                    if wsacc:contains('Acc') and sets.MagicalAccMaxTP then
+                        equip(sets.MagicalAccMaxTP[spell.english] or sets.MagicalAccMaxTP)
+                    elseif sets.MagicalMaxTP then
+                        equip(sets.MagicalMaxTP[spell.english] or sets.MagicalMaxTP)
+                    else
+                    end
+                elseif S{25,26}:contains(spell.skill) then
+                    if wsacc:contains('Acc') and sets.RangedAccMaxTP then
+                        equip(sets.RangedAccMaxTP[spell.english] or sets.RangedAccMaxTP)
+                    elseif sets.RangedMaxTP then
+                        equip(sets.RangedMaxTP[spell.english] or sets.RangedMaxTP)
+                    else
+                    end
+                else
+                    if wsacc:contains('Acc') and not buffactive['Sneak Attack'] and sets.AccMaxTP then
+                        equip(sets.AccMaxTP[spell.english] or sets.AccMaxTP)
+                    elseif sets.MaxTP then
+                        equip(sets.MaxTP[spell.english] or sets.MaxTP)
+                    else
+                    end
+                end
+            end
+        end
+        
+    elseif spell.action_type == 'Ranged Attack' then
+            if buffactive.Embrava then            
+            if buffactive.Flurry then
+            if lastflurry == 1 then
+                if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry then
+                    equip(sets.precast.RA[state.Weapons.value].FlurryEM)
+                elseif sets.precast.RA.Flurry then
+                    equip(sets.precast.RA.FlurryEM)
+                end
+            elseif lastflurry == 2 then
+                if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry2 then
+                    equip(sets.precast.RA[state.Weapons.value].Flurry2EM)
+                elseif sets.precast.RA.Flurry2 then
+                    equip(sets.precast.RA.Flurry2EM)
+                    
+                end
+                end
+                end                            
+            if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Embrava then
+                    equip(sets.precast.RA[state.Weapons.value].Embrava)
+            elseif    sets.precast.RA.Embrava then
+            equip(sets.precast.RA.Embrava)
+            end
+            end
+        
+        if buffactive.Flurry then
+            if lastflurry == 1 then
+                if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry then
+                    equip(sets.precast.RA[state.Weapons.value].Flurry)
+                elseif sets.precast.RA.Flurry then
+                    equip(sets.precast.RA.Flurry)
+                end
+            elseif lastflurry == 2 then
+                if sets.precast.RA[state.Weapons.value] and sets.precast.RA[state.Weapons.value].Flurry2 then
+                    equip(sets.precast.RA[state.Weapons.value].Flurry2)
+                elseif sets.precast.RA.Flurry2 then
+                    equip(sets.precast.RA.Flurry2)
+                end
+            end
+        end
 
-		if statusammo then
-			equip({ammo=statusammo})
-		end
-	end
+        if statusammo then
+            equip({ammo=statusammo})
+        end
+    end
 end

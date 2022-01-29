@@ -8,8 +8,9 @@ function user_setup()
 	state.HybridMode:options('Normal','DT','DTRostam')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
 	state.Weapons:options('None','Default','DualSavageWeapons','DualSavageWeaponsACC','DualLeadenRanged','DualLeadenRangedACC','DualLeadenMelee','DualLeadenMeleeACC','Aeolian','Evisceration','DualLastStand','DualLastStandACC','LastStand','SBLS','Armageddon')
-	state.CompensatorMode:options('300','1000','Never','Always')
-
+	state.CompensatorMode:options('Always','300','1000','Never')
+	state.ElementalMode 	  = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
+	
     autows = 'Savage Blade'
 	gear.RAbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
@@ -91,7 +92,7 @@ function init_gear_sets()
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
 
-    sets.precast.CorsairRoll = {main={name="Rostam", bag="Wardrobe 2"},--range="Compensator",
+    sets.precast.CorsairRoll = {main={name="Rostam", bag="Wardrobe 2"},range="Compensator",
         head="Lanun Tricorne +3",neck="Regal Necklace",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Malignance Tabard",hands="Chasseur's Gants +1",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.tp_jse_back,waist="Flume Belt",legs="Desultor Tassets",feet="Malignance boots"}
@@ -151,6 +152,8 @@ function init_gear_sets()
 		
 	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {head="Chass. Tricorne +1",hands="Carmine Fin. Ga. +1"})
 	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry, {feet="Pursuer's Gaiters"})
+	
+	sets.precast.RA.Embrava = set_combine(sets.precast.RA.Flurry2, {}) --embrava is 25 snapshot
 
        
     -- Weaponskill sets
@@ -202,9 +205,9 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'].Acc = {}
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
-        head=gear.herculean_mab_head,neck="Comm. Charm +2",ear1="Crematio Earring",ear2="Friomisi Earring",
-        body="Lanun Frac +3",hands=gear.herculean_wsd_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
-        back=gear.leaden_back,waist="Eschan Stone",legs=gear.herculean_leaden_legs,feet="Lanun Bottes +3"} --skymir cord +1
+        head="Nyame Helm",neck="Comm. Charm +2",ear1="Crematio Earring",ear2="Friomisi Earring",
+        body="Lanun Frac +3",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Dingir Ring",
+        back=gear.leaden_back,waist="Eschan Stone",legs="Nyame Flanchard",feet="Lanun Bottes +3"} --skymir cord +1
 
     sets.precast.WS['Wildfire'].Acc = {}
 		
@@ -372,4 +375,131 @@ function select_default_macro_book()
     end   
 
 
+end
+
+function job_buff_change(buff, gain)
+    if player.equipment.Ranged and buff:contains('Aftermath') then
+        classes.CustomRangedGroups:clear()
+        if (player.equipment.Ranged == 'Armageddon' and buffactive['Aftermath: Lv.3']) then
+            classes.CustomRangedGroups:append('AM')
+        end
+    end
+end
+
+function job_post_precast(spell, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' then
+		local WSset = standardize_set(get_precast_set(spell, spellMap))
+		local wsacc = check_ws_acc()
+		
+		if (WSset.ear1 == "Moonshade Earring" or WSset.ear2 == "Moonshade Earring") then
+			-- Replace Moonshade Earring if we're at cap TP
+			if get_effective_player_tp(spell, WSset) > 3200 then
+				if data.weaponskills.elemental:contains(spell.english) then
+					if wsacc:contains('Acc') and sets.MagicalAccMaxTP then
+						equip(sets.MagicalAccMaxTP[spell.english] or sets.MagicalAccMaxTP)
+					elseif sets.MagicalMaxTP then
+						equip(sets.MagicalMaxTP[spell.english] or sets.MagicalMaxTP)
+					else
+					end
+				elseif spell.skill == 26 then
+					if wsacc:contains('Acc') and sets.RangedAccMaxTP then
+						equip(sets.RangedAccMaxTP[spell.english] or sets.RangedAccMaxTP)
+					elseif sets.RangedMaxTP then
+						equip(sets.RangedMaxTP[spell.english] or sets.RangedMaxTP)
+					else
+					end
+				else
+					if wsacc:contains('Acc') and not buffactive['Sneak Attack'] and sets.AccMaxTP then
+						equip(sets.AccMaxTP[spell.english] or sets.AccMaxTP)
+					elseif sets.MaxTP then
+						equip(sets.MaxTP[spell.english] or sets.MaxTP)
+					else
+					end
+				end
+			end
+		end
+	elseif spell.type == 'CorsairShot' and not (spell.english == 'Light Shot' or spell.english == 'Dark Shot') then
+		if (state.WeaponskillMode.value == "Proc" or state.CastingMode.value == "Proc") and sets.precast.CorsairShot.Proc then
+			equip(sets.precast.CorsairShot.Proc)
+		elseif state.CastingMode.value == 'Fodder' and sets.precast.CorsairShot.Damage then
+			equip(sets.precast.CorsairShot.Damage)
+			
+			local distance = spell.target.distance - spell.target.model_size
+			local single_obi_intensity = 0
+			local orpheus_intensity = 0
+			local hachirin_intensity = 0
+
+			if item_available("Orpheus's Sash") then
+				orpheus_intensity = (16 - (distance <= 1 and 1 or distance >= 15 and 15 or distance))
+			end
+			
+			if item_available(data.elements.obi_of[spell.element]) then
+				if spell.element == world.weather_element then
+					single_obi_intensity = single_obi_intensity + data.weather_bonus_potency[world.weather_intensity]
+				end
+				if spell.element == world.day_element then
+					single_obi_intensity = single_obi_intensity + 10
+				end
+			end
+			
+			if item_available('Hachirin-no-Obi') then
+				if spell.element == world.weather_element then
+					hachirin_intensity = hachirin_intensity + data.weather_bonus_potency[world.weather_intensity]
+				elseif spell.element == data.elements.weak_to[world.weather_element] then
+					hachirin_intensity = hachirin_intensity - data.weather_bonus_potency[world.weather_intensity]
+				end
+				if spell.element == world.day_element then
+					hachirin_intensity = hachirin_intensity + 10
+				elseif spell.element == data.elements.weak_to[world.day_element] then
+					hachirin_intensity = hachirin_intensity - 10
+				end
+			end
+			
+			if single_obi_intensity >= hachirin_intensity and single_obi_intensity >= orpheus_intensity and single_obi_intensity >= 5 then
+				equip({waist=data.elements.obi_of[spell.element]})
+			elseif hachirin_intensity >= orpheus_intensity and hachirin_intensity >= 5 then
+				equip({waist="Hachirin-no-Obi"})
+			elseif orpheus_intensity >= 5 then
+				equip({waist="Orpheus's Sash"})
+			end
+			
+		end
+		
+	elseif spell.action_type == 'Ranged Attack' then
+			if buffactive.Embrava then			
+				if buffactive.Flurry then
+			if sets.precast.RA.Flurry and lastflurry == 1 then
+				equip(sets.precast.RA.FlurryEM)
+			elseif sets.precast.RA.Flurry2 and lastflurry == 2 then
+				equip(sets.precast.RA.Flurry2EM)				
+				end
+				end	
+			if  sets.precast.RA.Embrava then								
+				equip(sets.precast.RA.Embrava)
+				end
+				end
+		if buffactive.Flurry then
+			if sets.precast.RA.Flurry and lastflurry == 1 then
+				equip(sets.precast.RA.Flurry)
+			elseif sets.precast.RA.Flurry2 and lastflurry == 2 then
+				equip(sets.precast.RA.Flurry2)
+			end
+		end
+	elseif spell.type == 'CorsairRoll' or spell.english == "Double-Up" then
+		if state.LuzafRing.value and item_available("Luzaf's Ring") then
+			equip(sets.precast.LuzafRing)
+		end
+		if spell.type == 'CorsairRoll' and state.CompensatorMode.value ~= 'Never' and (state.CompensatorMode.value == 'Always' or tonumber(state.CompensatorMode.value) > player.tp) then
+			if item_available("Compensator") then
+				enable('range')
+				equip({range="Compensator"})
+			end
+			if sets.precast.CorsairRoll.main and sets.precast.CorsairRoll.main ~= player.equipment.main then
+				enable('main')
+				equip({main=sets.precast.CorsairRoll.main})
+			end
+		end
+    elseif spell.english == 'Fold' and buffactive['Bust'] == 2 and sets.precast.FoldDoubleBust then
+		equip(sets.precast.FoldDoubleBust)
+	end
 end

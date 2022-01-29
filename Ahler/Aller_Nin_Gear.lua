@@ -9,7 +9,7 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('HeishiGleti','HeishiKuni','GokoGleti','KikokuKuni','NagiGleti','DualSavageWeapons','Aeolian','Evisceration','None','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
+	state.Weapons:options('HeishiGleti','HeishiKuni','GokoGleti','KikokuKuni','NagiGleti','DualSavageWeapons','Aeolian','Evisceration','GKT','EmpyArrow','Macc','None','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
 	
 	state.Stance = M{['description']='Stance','Yonin','Innin','None'}
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None','DW20','DWMax'}
@@ -31,6 +31,7 @@ function user_setup()
 	send_command('bind @h gs c weapons HeishiGleti')
 	send_command('bind @k gs c weapons HeishiKuni')
 	send_command('bind @s gs c weapons DualSavageWeapons')
+	send_command('bind @j gs c weapons GKT')
 	
 	utsusemi_cancel_delay = .3
 	utsusemi_ni_cancel_delay = .06
@@ -241,6 +242,14 @@ function init_gear_sets()
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Dingir Ring",ring2="Epaminondas's Ring",
 		back=gear.mab_jse_back,waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
+	sets.precast.WS['Empyreal Arrow'] = {
+		head="Nyame Helm",neck="Iskur Gorget",ear1="Telos Earring",ear2="Ishvara Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Cacoethic Ring +1",
+		waist="Yemaya Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		
+	sets.precast.WS['Tachi: Kagero'] = sets.precast.WS['Blade: Chi']
+	sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Blade: Chi']
+		
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
@@ -282,16 +291,16 @@ function init_gear_sets()
 	
 	sets.element.Earth = {}
 
-    sets.midcast.NinjutsuDebuff = {ammo = "Yamarang", 
+    sets.midcast.NinjutsuDebuff = {
 		head="Hachiya Hatsuburi +3",neck ="Sanctity Necklace",ear1 ="Dignitary's Earring",ear2 ="Crepuscular Earring", 
-		body="Malignance Tabard",hands ="Malignance Gloves",ring1 ="Regal Ring",ring2 ="Stikini Ring +1",
-		back=gear.mab_jse_back,waist ="Eschan Stone",legs ="Malignance Tights",feet ="Mochizuki Kyahan +3"}
+		body="Malignance Tabard",hands ="Malignance Gloves",ring1 ="Stikini Ring +1",ring2 ="Stikini Ring +1",
+		back=gear.mab_jse_back,waist ="Eschan Stone",legs ="Malignance Tights",feet ="Mochi. Kyahan +3"}
 
     sets.midcast.NinjutsuBuff = set_combine(sets.midcast.FastRecast, {})
 	
     sets.midcast['Migawari: Ichi'] = set_combine(sets.midcast.NinjutsuDebuff, {ammo="Sapience Orb",
 		neck="Incanter's Torque",ear1="Hnoss Earring",
-		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1", --HAVERTON +1?!!!
+		body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Stikini Ring +1",ring2="Haverton Ring +1", 
 		back=gear.fc_jse_back,legs="Nyame Flanchard",feet="Mochizuki Kyahan +3"})
 		
 	sets.midcast.Utsusemi = set_combine(sets.midcast.NinjutsuBuff, {back="Andartia's Mantle",feet="Hattori Kyahan +1"})
@@ -300,7 +309,10 @@ function init_gear_sets()
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
 	sets.midcast.Stun = set_combine(sets.Enmity, {})
 	
-    sets.midcast.RA = {}
+    sets.midcast.RA = {
+		head="Malignance Chapeau",neck="Iskur Gorget",ear1="Telos Earring",ear2="Crep. Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Crepuscular Ring",ring2="Cacoethic Ring +1",
+		waist="Yemaya Belt",legs="Malignance Tights",feet="Malignance Boots"}
 		
     sets.midcast.RA.Acc = {}
 
@@ -334,11 +346,11 @@ function init_gear_sets()
 		back=gear.enmity_jse_back,waist="Engraved Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
 
-    sets.Kiting = {feet="Hachiya Kyahan +2"}
-	sets.DuskKiting = {}
+    sets.Kiting = {feet="Danzo Sune-ate"}
+	sets.DuskKiting = {feet="Hachiya Kyahan +2"}
 	sets.DuskIdle = {}
-	sets.DayIdle = {feet="Hachiya Kyahan +2"}
-	sets.NightIdle = {feet="Danzo Sune-ate"}
+	sets.DayIdle = {}
+	sets.NightIdle = {}
 
 
     --------------------------------------
@@ -409,6 +421,9 @@ function init_gear_sets()
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Uzura +3"}
 	sets.weapons.Aeolian = {main="Tauret",sub="Kunimitsu"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife"}
+	sets.weapons.GKT = {main="Hachimonji",sub="Alber Strap"}
+	sets.weapons.EmpyArrow = {main="Uzura +3",sub="Uzura +2",range="Ullr",ammo="Beryllium Arrow"}
+	sets.weapons.Macc = {main="Nagi",sub="Gokotai",range="Ullr",ammo=empty}
 	sets.weapons.ProcDagger = {main="Qutrub Knife",sub=empty}
 	sets.weapons.ProcSword = {main="Excalipoor",sub=empty}
 	sets.weapons.ProcGreatSword = {main="Ophidian Sword",sub=empty}

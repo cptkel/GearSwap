@@ -9,7 +9,8 @@ function user_setup()
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Tank','Evasion','Normal')
 	state.Weapons:options('Epeolatry','EpeoTank','Aettir','Lionheart','FellCleave','DualWeapons')
-	
+	state.Buff["Fast Cast"] = buffactive["Fast Cast"] or false
+
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
 	gear.enmity_jse_back = {name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Parrying rate+5%',}}
@@ -159,11 +160,12 @@ function init_gear_sets()
 		
 	-- Fast cast sets for spells
     sets.precast.FC = {ammo="Sapience Orb",
-            head="Rune. Bandeau +3",neck="Orunmila's Torque",ear1="Etiolation Earring",ear2={name="Odnowa Earring +1", priority=15},
+            head="Rune. Bandeau +3",neck="Orunmila's Torque",ear1="Etiolation Earring",ear2="Loquac. Earring",
             body=gear.adhemar_fc_body,hands="Leyline Gloves",ring1="Kishar Ring",ring2={name="Gelatinous Ring +1", priority=15},
-            back=gear.fc_jse_back,waist="Kasiri Belt",legs="Aya. Cosciales +2",feet="Carmine Greaves +1"}
+            back=gear.fc_jse_back,waist="Kasiri Belt",legs="Agwu's Slops",feet="Carmine Greaves +1"}
 			
-	sets.precast.FC.DT = set_combine(sets.precast.FC, {ammo="Staunch Tathlum +1",body="Futhark Coat +3",ring1="Defending Ring",waist="Audumbla Sash"})
+	--[[sets.precast.FC.DT = set_combine(sets.precast.FC, {ammo="Staunch Tathlum +1",body="Nyame Mail",ring1="Defending Ring",waist="Audumbla Sash"})]]--
+	sets.precast.FC.Inspiration = set_combine(sets.precast.FC, {ammo="Staunch Tathlum +1",ear1="Tuisto Earring",ear2={name="Odnowa Earring +1", priority=15},body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",waist="Audumbla Sash"})
 	sets.precast.FC.Evasion = sets.precast.FC.DT
 	
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {legs="Futhark Trousers +3"})
@@ -457,3 +459,9 @@ buff_spell_lists = {
 		{Name='Regen IV',	Buff='Regen',			SpellID=477,	Reapply=false},
 	},
 }
+
+function user_precast(spell, spellMap, eventArgs)
+    if spell.action_type == 'Magic' and state.Buff["Fast Cast"] then
+        classes.CustomClass = 'Inspiration'
+    end
+end
