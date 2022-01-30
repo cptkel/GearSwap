@@ -2,7 +2,7 @@
 function user_job_setup()
 	-- Options: Override default values
     state.OffenseMode:options('Normal','Acc')
-    state.WeaponskillMode:options('Match','Normal','AttCap','AC')
+    state.WeaponskillMode:options('Match','Normal','AttCap','Founders')
     state.HybridMode:options('Normal','PDT')
     state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
@@ -142,7 +142,7 @@ function init_gear_sets()
 		body="Gleti's cuirass",hands="Ptero. Fin. G. +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
 		back=gear.wsd_back,waist="Sailfi Belt +1",legs="Vishap Brais +3",feet="Gleti's boots"}
 	
-	sets.precast.WS['Savage Blade'].AC = set_combine(sets.precast.WS['Savage Blade'], {body="Founder's Breastplate"})
+	sets.precast.WS['Savage Blade'].Founders = set_combine(sets.precast.WS['Savage Blade'], {body="Founder's Breastplate"})
 		
 	sets.precast.WS['Full Swing'] = {ammo="Knobkierrie",
 		head="Gleti's mask",neck="Dgn. Collar +2",ear1="Thrud Earring",ear2="Moonshade Earring",
