@@ -16,28 +16,29 @@ state.DisplayMode = M(true, 'Display Mode') --Set this to false if you don't wan
 --displaystroke = 2
 --displaytransparancy = 192
 --state.DisplayColors = {
-    -- h='\\cs(255, 0, 0)', -- Red for active booleans and non-default modals
-    -- w='\\cs(255,255,255)', -- White for labels and default modals
-    -- n='\\cs(192,192,192)', -- White for labels and default modals
-    -- s='\\cs(96,96,96)' -- Gray for inactive booleans
+  -- h='\\cs(255, 0, 0)', -- Red for active booleans and non-default modals
+
+  -- w='\\cs(255,255,255)', -- White for labels and default modals
+  -- n='\\cs(192,192,192)', -- White for labels and default modals
+  -- s='\\cs(96,96,96)' -- Gray for inactive booleans
 --}
 
 --Options for automation.
-state.ReEquip 		  		= M(true, 'ReEquip Mode')		 --Set this to false if you don't want to equip your current Weapon set when you aren't wearing any weapons.
-state.AutoArts 		  		= M(true, 'AutoArts') 		 --Set this to false if you don't want to automatically try to keep up Solace/Arts.
-state.CancelStoneskin 		= M(true, 'Cancel Stone Skin') --Set this to false if you don't want to automatically cancel stoneskin when you're slept.
-state.SkipProcWeapons 		= M(true, 'Skip Proc Weapons') --Set this to false if you want to display weapon sets fulltime rather than just Aby/Voidwatch.
-state.NotifyBuffs	  		= M(false, 'Notify Buffs') 	 --Set this to true if you want to notify your party when you recieve a specific buff/debuff. (List Below)
+state.ReEquip           = M(true, 'ReEquip Mode')     --Set this to false if you don't want to equip your current Weapon set when you aren't wearing any weapons.
+state.AutoArts           = M(true, 'AutoArts')      --Set this to false if you don't want to automatically try to keep up Solace/Arts.
+state.CancelStoneskin     = M(true, 'Cancel Stone Skin') --Set this to false if you don't want to automatically cancel stoneskin when you're slept.
+state.SkipProcWeapons     = M(true, 'Skip Proc Weapons') --Set this to false if you want to display weapon sets fulltime rather than just Aby/Voidwatch.
+state.NotifyBuffs        = M(false, 'Notify Buffs')    --Set this to true if you want to notify your party when you recieve a specific buff/debuff. (List Below)
 
 --[[Binds you may want to change.
-	Bind special characters.
-	@ = Windows Key
-	% = Works only when text bar not up.
-	$ = Works only when text bar is up.
-	^ = Control Key
-	! = Alt Key
-	~ = Shift Key
-	# = Apps Key
+  Bind special characters.
+  @ = Windows Key
+  % = Works only when text bar not up.
+  $ = Works only when text bar is up.
+  ^ = Control Key
+  ! = Alt Key
+  ~ = Shift Key
+  # = Apps Key
 ]]
 
 
@@ -81,7 +82,7 @@ send_command('bind @q send aptfury exec aeolian')
 send_command('bind !r send aptfury exec savage')
 send_command('bind !q send aptfury exec leadenranged')
 send_command('bind ^q send aptfury exec leadenmelee')
-send_command('bind @l send aptfury exec duallaststand')
+send_command('bind ^l send aptfury exec duallaststand')
 send_command('bind @r send aptfury gs c toggle rnghelper')
 send_command('bind !a send aptfury atkwm slave on')
 send_command('bind ^a atkwm master')
