@@ -9,7 +9,7 @@ function user_setup()
   state.PhysicalDefenseMode:options('PDT')
   state.MagicalDefenseMode:options('MDT')
   state.ResistDefenseMode:options('MEVA')
-  state.Weapons:options('HeishiGleti','HeishiKuni','GokoGleti','KikokuKuni','NagiGleti','DualSavageWeapons','Aeolian','Evisceration','GKT','EmpyArrow','Macc','None','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
+  state.Weapons:options('HeishiGleti','HeishiKuni','GokoGleti','KikokuKuni','NagiGleti','DualSavageWeapons','Aeolian','Evisceration','GKT','EmpyArrow','Macc','Club','None','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcGreatKatana','ProcKatana','ProcClub','ProcStaff')
   
   state.Stance = M{['description']='Stance','Yonin','Innin','None'}
   state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None','DW20','DWMax'}
@@ -249,7 +249,8 @@ function init_gear_sets()
     
   sets.precast.WS['Tachi: Kagero'] = sets.precast.WS['Blade: Chi']
   sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Blade: Chi']
-    
+  
+  sets.precast.WS['Judgment'] = set_combine(sets.precast.WS['Savage Blade'], {})
   
   -- Swap to these on Moonshade using WS if at 3000 TP
   sets.MaxTP = {}
@@ -364,9 +365,9 @@ function init_gear_sets()
   
   -- Normal melee group
   sets.engaged = {ammo="Seki Shuriken",
-    head="Mpaca's Cap",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Cessance Earring",
+    head="Mpaca's Cap",neck="Ninja Nodowa +2",ear1="Telos Earring",ear2="Dedition Earring",
     body="Tatena. Harama. +1",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
-    back=gear.da_jse_back,waist="Windbuffet belt +1",legs="Malignance Tights",feet="Malignance Boots"}
+    back=gear.da_jse_back,waist="Sailfi Belt +1",legs="Tatena. Haidate +1",feet="Tatena. Sune. +1"}
     
   sets.engaged.Acc = {ammo="Date Shuriken",
     head="Ken. Jinpachi +1",neck="Ninja Nodowa +2",ear1="Mache Earring +1",ear2="Odr earring",
@@ -424,6 +425,7 @@ function init_gear_sets()
   sets.weapons.GKT = {main="Hachimonji",sub="Alber Strap"}
   sets.weapons.EmpyArrow = {main="Uzura +3",sub="Uzura +2",range="Ullr",ammo="Beryllium Arrow"}
   sets.weapons.Macc = {main="Nagi",sub="Gokotai",range="Ullr",ammo=empty}
+  sets.weapons.Club = {main="Mafic Cudgel",sub="Uzura +3"}
   sets.weapons.ProcDagger = {main="Qutrub Knife",sub=empty}
   sets.weapons.ProcSword = {main="Excalipoor",sub=empty}
   sets.weapons.ProcGreatSword = {main="Ophidian Sword",sub=empty}

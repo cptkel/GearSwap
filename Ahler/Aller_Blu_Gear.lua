@@ -113,7 +113,7 @@ function init_gear_sets()
   
   sets.precast.WS['Expiacion'] = {ammo="Knobkierrie",
     head="Nyame Helm",neck="Mirage Stole +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
-    body="Nyame Mail",hands="Nyame Gauntlets",ring1="Metemor. Ring +1", ring2="Epaminondas's Ring",
+    body="Nyame Mail",hands="Nyame Gauntlets",ring1="Metamor. Ring +1", ring2="Epaminondas's Ring",
     back=gear.expsb_jse_back,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
     
   sets.precast.WS['Expiacion'].Acc = set_combine(sets.precast.WS['Expiacion'], {})

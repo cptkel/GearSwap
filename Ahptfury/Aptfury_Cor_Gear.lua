@@ -176,15 +176,15 @@ function init_gear_sets()
     
 
   sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
-    head="Meghanada Visor +2",neck="Decimus Torque",ear2="Telos Earring", 
+    neck="Decimus Torque",ear2="Telos Earring", 
     waist="Grunfeld Rope"})
   
   sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
     head="Nyame Helm",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Telos Earring",
-    body="Laksa. Frac +3",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Dingir Ring",
+    body="Ikenga's Vest",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Regal Ring",
     back=gear.laststand_back,waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
-  sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {ammo=gear.ACCbullet,neck="Comm. Charm +2",waist="K. Kachina Belt +1"})
+  sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {ammo=gear.ACCbullet,head="Lanun Tricorne +3",neck="Comm. Charm +2",waist="K. Kachina Belt +1"})
     
   sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
   sets.precast.WS['Detonator'].Acc = sets.precast.WS['Last Stand'].Acc

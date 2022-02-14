@@ -237,11 +237,14 @@ function init_gear_sets()
     body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
     back=gear.tp_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-ate +1"}
   
+  sets.engaged.Godhands.Acc = set_combine(sets.engaged.Acc, {ear1="Mache Earring +1"})
   sets.engaged.SB = {ammo="Staunch Tathlum +1",
     head="Malignance Chapeau",neck="Monk's Nodowa +2",ear1="Telos Earring",ear2="Sherida Earring",
     body="Malignance Tabard",hands="Malignance Gloves",ring1="Niqmaddu Ring",ring2="Defending Ring",
     back=gear.tp_back,waist="Moonbow Belt +1",legs="Hes. Hose +3",feet="Malignance Boots"}
     
+  sets.engaged.Godhands.SB = set_combine(sets.engaged.SB, {ear1="Mache Earring +1"})
+  
   -- Defensive melee hybrid sets
   sets.engaged.PDT = {ammo="Coiste Bodhar",
     head="Ken. Jinpachi +1",neck="Monk's Nodowa +2",ear1="Schere Earring",ear2="Sherida Earring",

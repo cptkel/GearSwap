@@ -172,8 +172,8 @@ function init_gear_sets()
     
   sets.precast.WS['Aeolian Edge'] = {
     neck="Scout's Gorget +2",ear1="Friomisi Earring",ear2="Moonshade Earring",
-    body="Cohort Cloak +1",hands=gear.herculean_mab_hands,ring1="Epaminondas's Ring",ring2="Dingir Ring",
-    back=gear.tf_jse_back,waist=gear.ElementalObi,legs=gear.herculean_leaden_legs,feet="Nyame Sollerets"}
+    body="Cohort Cloak +1",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Dingir Ring",
+    back=gear.tf_jse_back,waist=gear.ElementalObi,legs="Nyame Flanchard",feet="Nyame Sollerets"}
     
   
   sets.precast.WS['Trueflight'] = {

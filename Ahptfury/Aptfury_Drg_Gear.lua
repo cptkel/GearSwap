@@ -9,7 +9,7 @@ function user_job_setup()
   state.ResistDefenseMode:options('MEVA')
   state.IdleMode:options('Normal', 'PDT','Refresh')
   state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
-  state.Weapons:options('Trishula','ShiningOne','Sword','Staff','None')
+  state.Weapons:options('Trishula','ShiningOne','Sword','Club','Staff','None')
   state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 
   select_default_macro_book()
@@ -199,6 +199,7 @@ function init_gear_sets()
   sets.weapons.ShiningOne = {main="Shining One",sub="Utu Grip"}
   sets.weapons.Sword = {main="Naegling",sub="Legion Scutum"}
   sets.weapons.Staff = {main="Malignance Pole",sub="Utu Grip"}
+  sets.weapons.Club = {main="Mafic Cudgel",sub="Legion Scutum"}
 
   -- Swap to these on Moonshade using WS if at 3000 TP
   sets.MaxTP = {ear1="Lugra Earring +1",ear2="Sherida Earring",}
